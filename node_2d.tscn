@@ -1,10 +1,20 @@
 [gd_scene load_steps=2 format=3 uid="uid://br3mwdmh16vny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajmhe"]
+size = Vector2(577, 275.25)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="pambisito" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pambisito"]
+position = Vector2(269, -2)
 shape = SubResource("RectangleShape2D_ajmhe")
+
+[node name="TextEdit" type="TextEdit" parent="pambisito/CollisionShape2D"]
+offset_left = -80.0
+offset_top = -42.0
+offset_right = 126.0
+offset_bottom = 40.0
+text = "Alvaro la chupa
+"
