@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl2oolmiwu4lm"]
+
+[ext_resource type="Texture2D" uid="uid://nh5tq3k7n7fo" path="res://Arte_Combate/Sprites/Fondo/Fondo.jpg" id="1_sdyp6"]
+[ext_resource type="Texture2D" uid="uid://c760v1doxqsc" path="res://Arte_Combate/Sprites/Personajes/HormigaAlien.webp" id="2_58me6"]
+[ext_resource type="Texture2D" uid="uid://b88myw565aikt" path="res://Arte_Combate/Sprites/Personajes/HormigaTrbajadora.png" id="3_ixsfh"]
+
+[node name="Combate" type="Node2D"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(578, 366)
+scale = Vector2(1.173, 1.04468)
+texture = ExtResource("1_sdyp6")
+
+[node name="HormigaAlien" type="Sprite2D" parent="."]
+position = Vector2(628, 325)
+texture = ExtResource("2_58me6")
+
+[node name="HormigaTrbajadora" type="Sprite2D" parent="."]
+position = Vector2(270, 563)
+scale = Vector2(0.51875, 0.477586)
+texture = ExtResource("3_ixsfh")
+
+[node name="DialogueLabel" type="Label" parent="."]
+offset_left = 61.0
+offset_top = 117.0
+offset_right = 584.0
+offset_bottom = 314.0
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 701.0
+offset_top = 159.0
+offset_right = 1104.0
+offset_bottom = 358.0
+
+[node name="Button1" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 17.0
+offset_right = 326.0
+offset_bottom = 91.0
+text = "$"
+
+[node name="Button 2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 18.0
+offset_right = 174.0
+offset_bottom = 92.0
+text = "??"
+
+[node name="Button 3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 103.0
+offset_right = 175.0
+offset_bottom = 177.0
+text = "·$¿"
+
+[node name="Button 4" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 99.0
+offset_right = 331.0
+offset_bottom = 173.0
+text = "%&"
+
+[node name="SymbolsLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 231.0
+offset_right = 341.0
+offset_bottom = 358.0
