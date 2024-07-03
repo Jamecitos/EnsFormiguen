@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b61rog7oe2n2k"]
+[gd_scene load_steps=8 format=3 uid="uid://b61rog7oe2n2k"]
 
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/MenuOpciones.gd" id="1_8qs3k"]
 [ext_resource type="Texture2D" uid="uid://nh5tq3k7n7fo" path="res://Arte_Combate/Sprites/Fondo/Fondo.jpg" id="1_bnv77"]
 [ext_resource type="FontFile" uid="uid://bdsrg5djj8r2y" path="res://Fonts/Kenney Mini.ttf" id="2_lsywk"]
-[ext_resource type="Script" path="res://OptionsLabel.gd" id="3_gtwuh"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/OptionsLabel.gd" id="3_c4eiq"]
+[ext_resource type="AudioStream" uid="uid://bo61mjl42advo" path="res://Assets/Sounds/Tuneles.mp3" id="5_3s51u"]
+[ext_resource type="FontFile" uid="uid://vih3oix4tuqk" path="res://Fonts/Kenney Pixel.ttf" id="5_v3ynr"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_arlll"]
 
 [node name="MenuOpciones" type="Control"]
 layout_mode = 3
@@ -11,19 +16,92 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8qs3k")
 
 [node name="Fondo" type="Sprite2D" parent="."]
-position = Vector2(584, 343)
+position = Vector2(585, 354)
 scale = Vector2(1.166, 1.0305)
 texture = ExtResource("1_bnv77")
 
-[node name="Label" type="Label" parent="."]
+[node name="Lab_Options" type="Label" parent="."]
 layout_mode = 0
-offset_left = 391.0
-offset_top = 46.0
-offset_right = 780.0
-offset_bottom = 187.0
+offset_left = 311.0
+offset_top = 64.0
+offset_right = 701.0
+offset_bottom = 205.0
 theme_override_fonts/font = ExtResource("2_lsywk")
 theme_override_font_sizes/font_size = 100
 text = "OPTIONS"
-script = ExtResource("3_gtwuh")
+script = ExtResource("3_c4eiq")
+
+[node name="Lab_Audio" type="Label" parent="Lab_Options"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Lab_Options"]
+layout_mode = 0
+offset_left = -206.0
+offset_top = 113.0
+offset_right = 72.0
+offset_bottom = 303.0
+alignment = 1
+
+[node name="Labels" type="VBoxContainer" parent="Lab_Options/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Master" type="Label" parent="Lab_Options/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_v3ynr")
+theme_override_font_sizes/font_size = 28
+text = "Master"
+
+[node name="Music" type="Label" parent="Lab_Options/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_v3ynr")
+theme_override_font_sizes/font_size = 28
+text = "Music"
+
+[node name="SoundFX" type="Label" parent="Lab_Options/HBoxContainer/Labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_v3ynr")
+theme_override_font_sizes/font_size = 28
+text = "SoundFX"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Lab_Options/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Master" type="HSlider" parent="Lab_Options/HBoxContainer/VBoxContainer2"]
+modulate = Color(0.679788, 0.547754, 9.62615e-07, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="Music" type="HSlider" parent="Lab_Options/HBoxContainer/VBoxContainer2"]
+modulate = Color(0.679788, 0.547754, 9.62615e-07, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="SoundFX" type="HSlider" parent="Lab_Options/HBoxContainer/VBoxContainer2"]
+modulate = Color(0.679788, 0.547754, 9.62615e-07, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="MusicaMenuOpciones" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3s51u")
+
+[connection signal="value_changed" from="Lab_Options/HBoxContainer/VBoxContainer2/Master" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Lab_Options/HBoxContainer/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Lab_Options/HBoxContainer/VBoxContainer2/Music" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Lab_Options/HBoxContainer/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Lab_Options/HBoxContainer/VBoxContainer2/SoundFX" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Lab_Options/HBoxContainer/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkvc20g8d8qdq"]
+[gd_scene load_steps=10 format=3 uid="uid://bkvc20g8d8qdq"]
 
-[ext_resource type="Script" path="res://MenuPrincipal.gd" id="1_o5anv"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/MenuPrincipal.gd" id="1_5sy46"]
 [ext_resource type="Texture2D" uid="uid://cxbakr4vfxhbk" path="res://Assets/Sprites/FondoMenu.png" id="2_gie67"]
 [ext_resource type="FontFile" uid="uid://ihk4kdacjiuj" path="res://Fonts/Kenney Blocks.ttf" id="3_ig23o"]
-[ext_resource type="Script" path="res://PLAY.gd" id="4_6e71w"]
-[ext_resource type="Script" path="res://OPTIONS.gd" id="5_vm5fy"]
-[ext_resource type="Script" path="res://LANGUAGE.gd" id="6_hvqtk"]
-[ext_resource type="Script" path="res://EXIT.gd" id="7_7wx0l"]
-[ext_resource type="Script" path="res://CONTINUE.gd" id="8_5vf1m"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_PLAY.gd" id="4_hyh1a"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_OPTIONS.gd" id="5_vwmmu"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_LANGUAGE.gd" id="6_68sb7"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_EXIT.gd" id="7_t6cxi"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_CONTINUE.gd" id="8_xvkwv"]
+[ext_resource type="AudioStream" uid="uid://bo61mjl42advo" path="res://Assets/Sounds/Tuneles.mp3" id="9_vd5w1"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o5anv")
+script = ExtResource("1_5sy46")
 
 [node name="FondoMenu" type="Sprite2D" parent="."]
 position = Vector2(599, 289)
@@ -33,7 +34,7 @@ theme_override_colors/font_hover_color = Color(0.972549, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ig23o")
 theme_override_font_sizes/font_size = 50
 text = "PLAY"
-script = ExtResource("4_6e71w")
+script = ExtResource("4_hyh1a")
 
 [node name="OPTIONS" type="Button" parent="."]
 offset_left = 757.0
@@ -44,7 +45,7 @@ theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ig23o")
 theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
-script = ExtResource("5_vm5fy")
+script = ExtResource("5_vwmmu")
 
 [node name="LANGUAGE" type="Button" parent="."]
 offset_left = 424.0
@@ -55,7 +56,7 @@ theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ig23o")
 theme_override_font_sizes/font_size = 50
 text = "LANGUAGE"
-script = ExtResource("6_hvqtk")
+script = ExtResource("6_68sb7")
 
 [node name="EXIT" type="Button" parent="."]
 offset_left = 797.0
@@ -67,7 +68,7 @@ theme_override_fonts/font = ExtResource("3_ig23o")
 theme_override_font_sizes/font_size = 50
 text = "EXIT
 "
-script = ExtResource("7_7wx0l")
+script = ExtResource("7_t6cxi")
 
 [node name="CONTINUE" type="Button" parent="."]
 offset_left = 785.0
@@ -78,7 +79,10 @@ theme_override_fonts/font = ExtResource("3_ig23o")
 theme_override_font_sizes/font_size = 50
 disabled = true
 text = "CONTINUE"
-script = ExtResource("8_5vf1m")
+script = ExtResource("8_xvkwv")
+
+[node name="MusicaMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_vd5w1")
 
 [connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="OPTIONS" to="." method="_on_options_pressed"]
