@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dit2xa105mjok"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Movement.gd" id="1_ngc2c"]
+[ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="2_dwqvc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1pnpj"]
+vertices = PackedVector2Array(904, 600, 906, 600, 544, 613, 1096, 308, 1085, 432, 1085, 431, 427, 371, 321, 271, 237, 97, 310, 72, 506, 264, 637, 398, 621, 279, 822, 300, 745, 214, 844, 136, 753, 131, 774, 60, 984, 123, 973, 46, 1048, 100, 975, 284, 965, 404, 1055, 573, 308, 526, 323, 474, 557, 554, 906, 537)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(13, 11, 12, 14), PackedInt32Array(15, 13, 14, 16, 17), PackedInt32Array(18, 15, 17, 19, 20), PackedInt32Array(18, 20, 3, 21), PackedInt32Array(22, 21, 3, 5, 23), PackedInt32Array(24, 25, 26, 2), PackedInt32Array(0, 2, 26, 27, 23), PackedInt32Array(23, 27, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(242, 101, 311, 74, 508, 266, 618, 282, 746, 214, 749, 52, 809, 41, 973, 45, 1051, 98, 1099, 303, 1084, 439, 1056, 577, 902, 606, 546, 618, 310, 528, 318, 476, 556, 552, 905, 533, 964, 398, 975, 288, 947, 178, 863, 171, 824, 263, 702, 355, 623, 364, 448, 323, 350, 226)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="Area2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(600, 300)
+scale = Vector2(0.305, 0.305)
+script = ExtResource("1_ngc2c")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+position = Vector2(41.8204, 45.099)
+scale = Vector2(0.883443, 0.934672)
+texture = ExtResource("2_dwqvc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+debug_enabled = true
+debug_path_custom_color = Color(1, 0.152941, 1, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-17, -10)
+navigation_polygon = SubResource("NavigationPolygon_1pnpj")
