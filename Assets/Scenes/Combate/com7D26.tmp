@@ -1,0 +1,163 @@
+[gd_scene load_steps=4 format=3 uid="uid://btovjhdqxjqmp"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_k0myo"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
+
+[node name="Combat" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k0myo")
+
+[node name="ProgressBarTime" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 25.0
+offset_right = 1250.0
+offset_bottom = 85.0
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+wait_time = 0.1
+autostart = true
+
+[node name="IconBarTime" type="TextureRect" parent="CanvasLayer/Control"]
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 74.0
+offset_bottom = 84.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="ProgressBarPlayer" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 639.0
+offset_right = 700.0
+offset_bottom = 695.0
+max_value = 90.0
+show_percentage = false
+
+[node name="ProgressBarEnemy" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 571.0
+offset_right = 363.0
+offset_bottom = 627.0
+max_value = 90.0
+show_percentage = false
+
+[node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 107.0
+offset_right = 700.0
+offset_bottom = 223.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="DialoguePlayer" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 268.0
+offset_right = 369.0
+offset_bottom = 377.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="DialogueEnemy" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 366.0
+offset_right = 501.0
+offset_bottom = 475.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="SpritePlayer" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 401.0
+offset_right = 638.0
+offset_bottom = 611.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="SpriteEnemy" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 336.0
+offset_right = 237.0
+offset_bottom = 546.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 723.0
+offset_top = 106.0
+offset_right = 1249.0
+offset_bottom = 698.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="ControlPanel" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 110.0
+offset_right = 1243.0
+offset_bottom = 606.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="Button1" type="Button" parent="CanvasLayer/Control/ControlPanel"]
+layout_mode = 2
+offset_left = 32.0
+offset_top = 28.0
+offset_right = 232.0
+offset_bottom = 228.0
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/ControlPanel"]
+layout_mode = 2
+offset_left = 285.0
+offset_top = 28.0
+offset_right = 485.0
+offset_bottom = 228.0
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/ControlPanel"]
+layout_mode = 2
+offset_left = 33.0
+offset_top = 256.0
+offset_right = 233.0
+offset_bottom = 456.0
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="CanvasLayer/Control/ControlPanel"]
+layout_mode = 2
+offset_left = 285.0
+offset_top = 256.0
+offset_right = 485.0
+offset_bottom = 456.0
+size_flags_vertical = 3
+
+[node name="ControlPanel2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 575.0
+offset_right = 1243.0
+offset_bottom = 689.0
+
+[node name="PuzzlePanel" type="Container" parent="CanvasLayer/Control"]
+offset_left = 35.0
+offset_top = 115.0
+offset_right = 692.0
+offset_bottom = 216.0
+script = ExtResource("2_2sw2p")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
