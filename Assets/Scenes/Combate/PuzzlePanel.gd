@@ -7,7 +7,6 @@ const signSprite2 = preload("res://Assets/Sprites/xbox_button_color_b.png")
 const signSprite3 = preload("res://Assets/Sprites/xbox_button_color_a.png")
 const signSprite4 = preload("res://Assets/Sprites/xbox_button_color_y.png")
 var sequence = [signSprite1, signSprite2, signSprite3, signSprite4]
-@onready var cont: Container = $PuzzlePanel
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=9 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_k0myo"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
 [ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
+[ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
+[ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
+[ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
 
@@ -161,6 +164,7 @@ offset_left = 285.0
 offset_top = 28.0
 offset_right = 480.0
 offset_bottom = 225.0
+texture_normal = ExtResource("3_n1mf3")
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
 layout_mode = 0
@@ -168,6 +172,7 @@ offset_left = 33.0
 offset_top = 256.0
 offset_right = 228.0
 offset_bottom = 453.0
+texture_normal = ExtResource("4_apb6d")
 
 [node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
 layout_mode = 0
@@ -175,6 +180,7 @@ offset_left = 285.0
 offset_top = 256.0
 offset_right = 480.0
 offset_bottom = 453.0
+texture_normal = ExtResource("3_gga02")
 
 [node name="ControlPanel2" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
