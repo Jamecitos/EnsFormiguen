@@ -1,5 +1,6 @@
 extends Container
 
+
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const signSprite1 = preload("res://Assets/Sprites/xbox_button_color_x.png")

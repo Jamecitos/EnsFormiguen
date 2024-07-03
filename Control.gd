@@ -1,5 +1,6 @@
 extends Control
 
+
 #Variables:
 var empiezaTiempo:bool = false
 const rapidezContador:int = 1
