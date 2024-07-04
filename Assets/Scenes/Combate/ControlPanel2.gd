@@ -7,6 +7,9 @@ extends TextureRect
 @onready var texturaBoton3 = $"../ControlPanel/TextureButton3"
 @onready var texturaBoton4 = $"../ControlPanel/TextureButton4"
 @onready var nodoPuzzlePanel = $"../PuzzlePanel"
+@onready var progress_bar_enemy = $"../ProgressBarEnemy"
+@onready var controlEnemigos = $"../../../SpawnEnemies"
+
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const corduraGanada = 30
 var x = 55
@@ -52,7 +55,14 @@ func _sequenciaCompletada():
 	var barraEnemigo = $"../ProgressBarEnemy"
 	barraEnemigo.value -= corduraGanada
 	_resetSecuenciaJugador()
-	nodoPuzzlePanel._resetSecuenciaEnemigo()
+	if barraEnemigo.value<=0:
+		nodoPuzzlePanel._limpiarSecuenciaEnemigo()
+		controlEnemigos._retirarEnemigo()
+		
+	else:
+		nodoPuzzlePanel._resetSecuenciaEnemigo()
+	
+
 
 
 func _sequenciaFallida():
@@ -77,12 +87,13 @@ func _botonPulsado(textura):
 		_resetSecuenciaJugador()
 
 
-func _on_spawn_enemies_señal_hormiga():
-	texturaBoton1.disabled = false
-	texturaBoton2.disabled = false
-	texturaBoton3.disabled = false
-	texturaBoton4.disabled = false
-
 
 func _on_puzzle_panel_codigo_listo():
 	secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
+
+
+func _on_spawn_enemies_switch_enable_botons():
+	texturaBoton1.disabled = not texturaBoton1.disabled
+	texturaBoton2.disabled = not texturaBoton2.disabled
+	texturaBoton3.disabled = not texturaBoton3.disabled
+	texturaBoton4.disabled = not texturaBoton4.disabled

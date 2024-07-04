@@ -3,6 +3,8 @@ extends Container
 
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
+@onready var controlEnemics = $"../../../SpawnEnemies"
+
 var secuenciaEnemigo = []
 signal codigoListo
 
@@ -38,7 +40,13 @@ func _resetSecuenciaEnemigo():
 	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
 
 
+func _limpiarSecuenciaEnemigo():
+	for child in get_children():
+		child.queue_free()
+
+
+
 func _on_spawn_enemies_señal_hormiga():
-	var copiaSecuencia = $"../../../SpawnEnemies".get_child(2).vocabulario
+	var copiaSecuencia = controlEnemics.get_child(controlEnemics.POSICIO_CHILD_ENEMIC).vocabulario
 	secuenciaEnemigo = copiaSecuencia.duplicate()
 	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)

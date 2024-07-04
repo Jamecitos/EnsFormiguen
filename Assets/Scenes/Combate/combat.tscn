@@ -236,6 +236,6 @@ texture = ExtResource("10_y2nvk")
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
 [connection signal="codigoListo" from="CanvasLayer/Control/PuzzlePanel" to="CanvasLayer/Control/ControlPanel2" method="_on_puzzle_panel_codigo_listo"]
-[connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/ControlPanel2" method="_on_spawn_enemies_señal_hormiga"]
 [connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/PuzzlePanel" method="_on_spawn_enemies_señal_hormiga"]
+[connection signal="switchEnableBotons" from="SpawnEnemies" to="CanvasLayer/Control/ControlPanel2" method="_on_spawn_enemies_switch_enable_botons"]
 [connection signal="timeout" from="SpawnEnemies/Timer" to="SpawnEnemies" method="_on_timer_timeout"]
