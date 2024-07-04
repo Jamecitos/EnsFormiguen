@@ -38,7 +38,17 @@ func _añadirSimbolo(textura):#tamañoSecuenciaHormiga
 
 
 func _comparacionSecuencias():
+	var secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
+	for i in secuenciaJugador.size():
+		if secuenciaJugador[i] != secuenciaEnem[i]:
+			return false
 	return true
+
+
+func _resetSecuencia():
+	secuenciaJugador.clear()
+	for child in get_children():
+		child.queue_free()
 
 
 func _botonPulsado(textura):
@@ -46,4 +56,4 @@ func _botonPulsado(textura):
 	if _comparacionSecuencias():
 		_añadirSimbolo(textura)
 	else:
-		secuenciaJugador.clear()
+		_resetSecuencia()
