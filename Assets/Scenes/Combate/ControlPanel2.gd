@@ -6,12 +6,13 @@ extends TextureRect
 @onready var texturaBoton2 = $"../ControlPanel/TextureButton2"
 @onready var texturaBoton3 = $"../ControlPanel/TextureButton3"
 @onready var texturaBoton4 = $"../ControlPanel/TextureButton4"
+@onready var secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
+@onready var nodoPuzzlePanel = $"../PuzzlePanel"
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const corduraGanada = 30
 var x = 55
 var y = 55
 var secuenciaJugador = []
-@onready var secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
 
 
 func _on_texture_button_1_button_down():
@@ -49,8 +50,9 @@ func _comparacionSecuencias():
 
 func _sequenciaCompletada():
 	var barraEnemigo = $"../ProgressBarEnemy"
-	barraEnemigo.value += corduraGanada
-	_resetSecuencia()
+	barraEnemigo.value -= corduraGanada
+	_resetSecuenciaJugador()
+	nodoPuzzlePanel._resetSecuenciaEnemigo()
 
 
 func _sequenciaFallida():
@@ -58,7 +60,7 @@ func _sequenciaFallida():
 	barraPlayer.value += corduraGanada
 
 
-func _resetSecuencia():
+func _resetSecuenciaJugador():
 	secuenciaJugador.clear()
 	for child in get_children():
 		child.queue_free()
@@ -72,4 +74,4 @@ func _botonPulsado(textura):
 	elif _comparacionSecuencias():
 		_añadirSimbolo(textura)
 	else:
-		_resetSecuencia()
+		_resetSecuenciaJugador()

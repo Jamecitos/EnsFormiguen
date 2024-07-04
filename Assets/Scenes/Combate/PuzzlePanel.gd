@@ -13,7 +13,7 @@ var secuenciaEnemigo = [signSprite1, signSprite2, signSprite3, signSprite4]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#while $"../ProgressBarPlayer" != 90 or $"../ProgressBarEnemy" != 90
-	_generarSequencia(secuenciaEnemigo.size(), secuenciaEnemigo)
+	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -27,12 +27,15 @@ func _generarSimbolo(x, y, textura):
 	add_child(simbolo2)
 
 
-func _generarSequencia(numero, arrayTexturas):
+func _generarSecuencia(numero, arrayTexturas):
 	arrayTexturas.shuffle()
 	if numero > arrayTexturas.size():
 		numero = arrayTexturas.size()
 	for i in numero:
 		_generarSimbolo(50*(i+1), 50, arrayTexturas[i])
 
-#shuffle secuenciaEnemigo
-#reseteo secuenciaEnemigo
+
+func _resetSecuenciaEnemigo():
+	for child in get_children():
+		child.queue_free()
+	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
