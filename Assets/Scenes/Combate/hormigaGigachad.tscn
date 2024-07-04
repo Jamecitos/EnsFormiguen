@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cithef7fgjfsd"]
+
+[ext_resource type="Texture2D" uid="uid://bh33hj4ujiy0d" path="res://Assets/Sprites/gigachad.jpg" id="1_5emjr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s7rcf"]
+
+[node name="Gigachad" type="Sprite2D"]
+texture = ExtResource("1_5emjr")
+
+[node name="DialogueEnemy" type="TextureRect" parent="."]
+offset_left = 102.0
+offset_top = -96.0
+offset_right = 219.0
+offset_bottom = 13.0
+texture = SubResource("CanvasTexture_s7rcf")
+
+[node name="Label" type="Label" parent="DialogueEnemy"]
+layout_mode = 0
+offset_right = 117.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Los osos
+hormiguero
+no esisten"

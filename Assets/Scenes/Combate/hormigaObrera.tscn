@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5oqp7jqd1i4a"]
+
+[ext_resource type="Texture2D" uid="uid://dqanqsrnfmfcl" path="res://Assets/Sprites/mqdefault.jpg" id="1_1kyx6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_knv81"]
+
+[node name="Obrera" type="Sprite2D"]
+texture = ExtResource("1_1kyx6")
+
+[node name="DialogueEnemy" type="TextureRect" parent="."]
+offset_left = 173.0
+offset_top = -92.0
+offset_right = 290.0
+offset_bottom = 17.0
+texture = SubResource("CanvasTexture_knv81")
+
+[node name="Label" type="Label" parent="DialogueEnemy"]
+layout_mode = 0
+offset_right = 117.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Los osos
+hormiguero
+no esisten"
