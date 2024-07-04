@@ -225,3 +225,7 @@ texture = ExtResource("10_y2nvk")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/Control/Timer2" to="CanvasLayer/Control" method="_on_timer_2_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton1" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_1_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
