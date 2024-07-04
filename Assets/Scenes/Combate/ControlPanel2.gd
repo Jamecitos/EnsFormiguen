@@ -38,7 +38,7 @@ func _añadirSimbolo(textura):#tamañoSecuenciaHormiga
 
 
 func _comparacionSecuencias():
-	
+	return true
 
 
 func _botonPulsado(textura):
