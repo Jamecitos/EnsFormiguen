@@ -3,6 +3,8 @@ extends Area2D
 
 #Variables
 const HORMIGA_OBRERA = preload("res://Assets/Scenes/Combate/hormigaObrera.tscn")
+const HORMIGA_SOLDADO = preload("res://Assets/Scenes/Combate/hormigaSoldado.tscn")
+const HORMIGA_GIGACHAD = preload("res://Assets/Scenes/Combate/hormigaGigachad.tscn")
 var enemigo
 signal señalHormiga
 
