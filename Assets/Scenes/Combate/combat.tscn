@@ -1,16 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=14 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/ProgressBarEnemy.gd" id="2_nkpeu"]
 [ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
 [ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
 [ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
 [ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
 [ext_resource type="Texture2D" uid="uid://dbr4uco4ytf4w" path="res://Assets/Sprites/Captura de pantalla 2024-07-04 005805.jpg" id="8_eclvp"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
 [ext_resource type="Texture2D" uid="uid://dm3ocxdt3xvh0" path="res://Assets/Sprites/8-ant-with-glasses-cartoon-clipart.jpg" id="10_y2nvk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3yhc"]
+size = Vector2(219, 252)
 
 [node name="Combat" type="Node2D"]
 
@@ -39,6 +44,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Timer2" type="Timer" parent="CanvasLayer/Control"]
+wait_time = 1.5
 autostart = true
 
 [node name="IconBarTime" type="TextureRect" parent="CanvasLayer/Control"]
@@ -67,6 +73,7 @@ offset_bottom = 627.0
 max_value = 90.0
 value = 90.0
 show_percentage = false
+script = ExtResource("2_nkpeu")
 
 [node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -193,15 +200,15 @@ offset_right = 692.0
 offset_bottom = 216.0
 script = ExtResource("2_2sw2p")
 
-[node name="SpawnEnemies" type="Container" parent="."]
-z_index = 1
-offset_left = -434.0
-offset_top = 282.0
-offset_right = -236.0
-offset_bottom = 576.0
+[node name="SpawnEnemies" type="Area2D" parent="."]
+position = Vector2(-165, 425)
+script = ExtResource("9_3vtxa")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-434, 282)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnEnemies"]
+shape = SubResource("RectangleShape2D_e3yhc")
+
+[node name="Timer" type="Timer" parent="SpawnEnemies"]
+wait_time = 0.01
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -221,3 +228,4 @@ texture = ExtResource("10_y2nvk")
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
+[connection signal="timeout" from="SpawnEnemies/Timer" to="SpawnEnemies" method="_on_timer_timeout"]

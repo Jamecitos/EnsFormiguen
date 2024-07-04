@@ -3,11 +3,7 @@ extends Container
 
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
-const signSprite1 = preload("res://Assets/Sprites/xbox_button_color_x.png")
-const signSprite2 = preload("res://Assets/Sprites/xbox_button_color_b.png")
-const signSprite3 = preload("res://Assets/Sprites/xbox_button_color_a.png")
-const signSprite4 = preload("res://Assets/Sprites/xbox_button_color_y.png")
-var secuenciaEnemigo = [signSprite1, signSprite2, signSprite3, signSprite4]
+var secuenciaEnemigo = []
 
 
 # Called when the node enters the scene tree for the first time.
