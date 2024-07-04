@@ -33,3 +33,6 @@ func _generarSequencia(numero, arrayTexturas):
 		numero = arrayTexturas.size()
 	for i in numero:
 		_generarSimbolo(50*(i+1), 50, arrayTexturas[i])
+
+#shuffle secuenciaEnemigo
+#reseteo secuenciaEnemigo

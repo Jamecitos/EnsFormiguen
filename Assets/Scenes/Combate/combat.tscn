@@ -43,6 +43,7 @@ autostart = true
 autostart = true
 
 [node name="IconBarTime" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 27.0
 offset_right = 74.0
@@ -84,6 +85,7 @@ offset_bottom = 258.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialoguePlayer2"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 32.0
 offset_right = 42.0
@@ -91,6 +93,7 @@ offset_bottom = 57.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialoguePlayer2/DialoguePlayer2"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 31.0
 offset_right = 42.0
@@ -124,6 +127,7 @@ offset_bottom = 475.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/DialoguePlayer"]
+layout_mode = 0
 offset_right = 117.0
 offset_bottom = 109.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -200,6 +204,7 @@ script = ExtResource("2_iolq6")
 
 [node name="PuzzlePanel" type="Container" parent="CanvasLayer/Control"]
 z_index = 1
+layout_mode = 0
 offset_left = 35.0
 offset_top = 115.0
 offset_right = 692.0

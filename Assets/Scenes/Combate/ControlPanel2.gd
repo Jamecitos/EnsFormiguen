@@ -7,9 +7,11 @@ extends TextureRect
 @onready var texturaBoton3 = $"../ControlPanel/TextureButton3"
 @onready var texturaBoton4 = $"../ControlPanel/TextureButton4"
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
+const corduraGanada = 30
 var x = 55
 var y = 55
 var secuenciaJugador = []
+@onready var secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
 
 
 func _on_texture_button_1_button_down():
@@ -28,7 +30,7 @@ func _on_texture_button_4_button_down():
 	_botonPulsado(texturaBoton4.texture_normal)
 
 
-func _añadirSimbolo(textura):#tamañoSecuenciaHormiga
+func _añadirSimbolo(textura):
 	var simbolo2 = SIMBOLO.instantiate()
 	var tamañoSecuencia = secuenciaJugador.size()
 	simbolo2.position.x = x * tamañoSecuencia
@@ -38,11 +40,22 @@ func _añadirSimbolo(textura):#tamañoSecuenciaHormiga
 
 
 func _comparacionSecuencias():
-	var secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
 	for i in secuenciaJugador.size():
 		if secuenciaJugador[i] != secuenciaEnem[i]:
+			_sequenciaFallida()
 			return false
 	return true
+
+
+func _sequenciaCompletada():
+	var barraEnemigo = $"../ProgressBarEnemy"
+	barraEnemigo.value += corduraGanada
+	_resetSecuencia()
+
+
+func _sequenciaFallida():
+	var barraPlayer = $"../ProgressBarPlayer"
+	barraPlayer.value += corduraGanada
 
 
 func _resetSecuencia():
@@ -53,7 +66,10 @@ func _resetSecuencia():
 
 func _botonPulsado(textura):
 	secuenciaJugador.append(textura)
-	if _comparacionSecuencias():
+	if secuenciaJugador.size() == secuenciaEnem.size() \
+	and _comparacionSecuencias():
+		_sequenciaCompletada()
+	elif _comparacionSecuencias():
 		_añadirSimbolo(textura)
 	else:
 		_resetSecuencia()
