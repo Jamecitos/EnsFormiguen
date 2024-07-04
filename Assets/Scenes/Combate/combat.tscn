@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=15 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dbr4uco4ytf4w" path="res://Assets/Sprites/Captura de pantalla 2024-07-04 005805.jpg" id="8_eclvp"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
 [ext_resource type="Texture2D" uid="uid://dm3ocxdt3xvh0" path="res://Assets/Sprites/8-ant-with-glasses-cartoon-clipart.jpg" id="10_y2nvk"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
 
@@ -221,6 +222,7 @@ wait_time = 0.01
 position = Vector2(577.375, 523.5)
 scale = Vector2(0.30055, 0.466216)
 texture = ExtResource("8_eclvp")
+script = ExtResource("11_2e5da")
 
 [node name="ANTthonySprite" type="Sprite2D" parent="."]
 position = Vector2(684, 548)
