@@ -108,6 +108,7 @@ offset_bottom = 56.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="DialoguePlayer" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 0
 offset_left = 384.0
 offset_top = 366.0
@@ -150,6 +151,7 @@ offset_left = 33.0
 offset_top = 28.0
 offset_right = 228.0
 offset_bottom = 225.0
+disabled = true
 texture_normal = ExtResource("2_qq1cc")
 stretch_mode = 0
 
@@ -160,6 +162,7 @@ offset_left = 285.0
 offset_top = 28.0
 offset_right = 480.0
 offset_bottom = 225.0
+disabled = true
 texture_normal = ExtResource("3_n1mf3")
 stretch_mode = 0
 
@@ -170,6 +173,7 @@ offset_left = 33.0
 offset_top = 256.0
 offset_right = 228.0
 offset_bottom = 453.0
+disabled = true
 texture_normal = ExtResource("4_apb6d")
 stretch_mode = 0
 
@@ -180,6 +184,7 @@ offset_left = 285.0
 offset_top = 256.0
 offset_right = 480.0
 offset_bottom = 453.0
+disabled = true
 texture_normal = ExtResource("3_gga02")
 stretch_mode = 0
 
@@ -228,4 +233,7 @@ texture = ExtResource("10_y2nvk")
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
+[connection signal="codigoListo" from="CanvasLayer/Control/PuzzlePanel" to="CanvasLayer/Control/ControlPanel2" method="_on_puzzle_panel_codigo_listo"]
+[connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/ControlPanel2" method="_on_spawn_enemies_señal_hormiga"]
+[connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/PuzzlePanel" method="_on_spawn_enemies_señal_hormiga"]
 [connection signal="timeout" from="SpawnEnemies/Timer" to="SpawnEnemies" method="_on_timer_timeout"]

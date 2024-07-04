@@ -4,14 +4,14 @@ extends Container
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 var secuenciaEnemigo = []
+signal codigoListo
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
 	#while $"../ProgressBarPlayer" != 90 or $"../ProgressBarEnemy" != 90
-	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
 	pass
 	
@@ -29,9 +29,15 @@ func _generarSecuencia(numero, arrayTexturas):
 		numero = arrayTexturas.size()
 	for i in numero:
 		_generarSimbolo(50*(i+1), 50, arrayTexturas[i])
+	codigoListo.emit()
 
 
 func _resetSecuenciaEnemigo():
 	for child in get_children():
 		child.queue_free()
+	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
+
+
+func _on_spawn_enemies_señal_hormiga():
+	secuenciaEnemigo = $"../../../SpawnEnemies".get_child(2).vocabulario
 	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)

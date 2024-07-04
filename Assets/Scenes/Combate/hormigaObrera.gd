@@ -18,3 +18,6 @@ func _ready():
 
 func _process(_delta):
 	pass
+
+#func aparecerDialogo():
+	#animacion - fade-in

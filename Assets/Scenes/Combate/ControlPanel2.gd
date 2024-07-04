@@ -6,13 +6,13 @@ extends TextureRect
 @onready var texturaBoton2 = $"../ControlPanel/TextureButton2"
 @onready var texturaBoton3 = $"../ControlPanel/TextureButton3"
 @onready var texturaBoton4 = $"../ControlPanel/TextureButton4"
-@onready var secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
 @onready var nodoPuzzlePanel = $"../PuzzlePanel"
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const corduraGanada = 30
 var x = 55
 var y = 55
 var secuenciaJugador = []
+var secuenciaEnem = []
 
 
 func _on_texture_button_1_button_down():
@@ -75,3 +75,14 @@ func _botonPulsado(textura):
 		_añadirSimbolo(textura)
 	else:
 		_resetSecuenciaJugador()
+
+
+func _on_spawn_enemies_señal_hormiga():
+	texturaBoton1.disabled = false
+	texturaBoton2.disabled = false
+	texturaBoton3.disabled = false
+	texturaBoton4.disabled = false
+
+
+func _on_puzzle_panel_codigo_listo():
+	secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo

@@ -4,6 +4,7 @@ extends Area2D
 #Variables
 const HORMIGA_OBRERA = preload("res://Assets/Scenes/Combate/hormigaObrera.tscn")
 var enemigo
+signal señalHormiga
 
 
 func _ready():
@@ -23,3 +24,4 @@ func _on_timer_timeout():#Entra enemigo en combate
 	enemigo.position.x += 5
 	if enemigo.position.x >= 400:
 		$Timer.stop()
+		señalHormiga.emit()
