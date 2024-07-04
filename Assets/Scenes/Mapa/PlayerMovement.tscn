@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://dit2xa105mjok"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Mapa/Movement.gd" id="1_i8k1x"]
+[ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="2_dwqvc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1pnpj"]
+vertices = PackedVector2Array(1088, 305, 1074, 438, 1074, 437, 976, 127, 1008, 171, 1007, 170, 452, 313, 357, 219, 358, 219, 503, 275, 624, 353, 259, 104, 308, 85, 620, 292, 698, 345, 321, 521, 326, 489, 555, 562, 547, 607, 905, 586, 993, 523, 1047, 567, 1024, 422, 1020, 283, 953, 169, 894, 119, 834, 152, 815, 119, 753, 222, 814, 257)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(8, 11, 12, 9), PackedInt32Array(10, 9, 13, 14), PackedInt32Array(15, 16, 17, 18), PackedInt32Array(19, 18, 17, 20, 21), PackedInt32Array(2, 21, 20, 22, 0), PackedInt32Array(0, 22, 23), PackedInt32Array(5, 0, 23, 24, 3), PackedInt32Array(25, 3, 24, 26, 27), PackedInt32Array(28, 27, 26, 29, 14), PackedInt32Array(13, 28, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(242, 101, 311, 74, 508, 266, 618, 282, 746, 214, 809, 109, 895, 109, 982, 118, 1016, 165, 1099, 303, 1084, 439, 1056, 577, 906, 596, 546, 618, 310, 528, 318, 476, 556, 552, 985, 514, 1014, 421, 1010, 286, 947, 178, 842, 163, 824, 263, 702, 355, 623, 364, 448, 323, 350, 226)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_p6ybx"]
+
+[node name="Area2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(600, 300)
+scale = Vector2(0.305, 0.305)
+script = ExtResource("1_i8k1x")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+position = Vector2(41.8204, 45.099)
+scale = Vector2(0.883443, 0.934672)
+texture = ExtResource("2_dwqvc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+debug_enabled = true
+debug_path_custom_color = Color(1, 0.152941, 1, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-17, -10)
+navigation_polygon = SubResource("NavigationPolygon_1pnpj")
+
+[node name="Cueva1" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 54.0
+offset_right = 331.0
+offset_bottom = 170.0
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_p6ybx")
+icon_alignment = 1
+
+[node name="Cueva2" type="Button" parent="."]
+offset_left = 290.0
+offset_top = 463.0
+offset_right = 401.0
+offset_bottom = 539.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_p6ybx")
+
+[node name="Cueva3" type="Button" parent="."]
+offset_left = 947.0
+offset_top = 370.0
+offset_right = 1058.0
+offset_bottom = 446.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_p6ybx")
+
+[node name="Cueva4" type="Button" parent="."]
+offset_left = 827.0
+offset_top = 42.0
+offset_right = 938.0
+offset_bottom = 118.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_p6ybx")
