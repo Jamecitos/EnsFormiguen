@@ -39,5 +39,6 @@ func _resetSecuenciaEnemigo():
 
 
 func _on_spawn_enemies_señal_hormiga():
-	secuenciaEnemigo = $"../../../SpawnEnemies".get_child(2).vocabulario
+	var copiaSecuencia = $"../../../SpawnEnemies".get_child(2).vocabulario
+	secuenciaEnemigo = copiaSecuencia.duplicate()
 	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
