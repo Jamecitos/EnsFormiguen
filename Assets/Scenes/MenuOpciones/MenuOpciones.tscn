@@ -1,12 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://b61rog7oe2n2k"]
+[gd_scene load_steps=16 format=3 uid="uid://b61rog7oe2n2k"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/MenuOpciones.gd" id="1_lxtyl"]
-[ext_resource type="Texture2D" uid="uid://nh5tq3k7n7fo" path="res://Arte_Combate/Sprites/Fondo/Fondo.jpg" id="2_fn81d"]
+[ext_resource type="Texture2D" uid="uid://nh5tq3k7n7fo" path="res://Assets/Sprites/Fondo.jpg" id="2_fn81d"]
 [ext_resource type="FontFile" uid="uid://bdsrg5djj8r2y" path="res://Fonts/Kenney Mini.ttf" id="3_fecfv"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/OptionsLabel.gd" id="4_dtcfx"]
 [ext_resource type="FontFile" uid="uid://c0dlpq3rk445s" path="res://Fonts/Kenney Mini Square.ttf" id="5_lb4i8"]
 [ext_resource type="FontFile" uid="uid://vih3oix4tuqk" path="res://Fonts/Kenney Pixel.ttf" id="6_afom6"]
 [ext_resource type="AudioStream" uid="uid://bo61mjl42advo" path="res://Assets/Sounds/Tuneles.mp3" id="7_jhupx"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Master.gd" id="7_ub07u"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Music.gd" id="8_jeota"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/SoundFX.gd" id="9_b1m41"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Lab_Screen.gd" id="10_kqthh"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/FullScreen.gd" id="11_w6rb2"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Borderless.gd" id="12_kfk1k"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/VSync.gd" id="13_fij2g"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_arlll"]
 
@@ -62,12 +69,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_afom6")
 theme_override_font_sizes/font_size = 28
 text = "Master"
+script = ExtResource("7_ub07u")
 
 [node name="Music" type="Label" parent="Lab_Options/AudioBox/Labels"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_afom6")
 theme_override_font_sizes/font_size = 28
 text = "Music"
+script = ExtResource("8_jeota")
 
 [node name="SoundFX" type="Label" parent="Lab_Options/AudioBox/Labels"]
 layout_mode = 2
@@ -75,6 +84,7 @@ theme_override_fonts/font = ExtResource("6_afom6")
 theme_override_font_sizes/font_size = 28
 text = "SoundFX"
 horizontal_alignment = 1
+script = ExtResource("9_b1m41")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Lab_Options/AudioBox"]
 layout_mode = 2
@@ -111,6 +121,7 @@ offset_bottom = 216.0
 theme_override_fonts/font = ExtResource("5_lb4i8")
 theme_override_font_sizes/font_size = 50
 text = "SCREEN"
+script = ExtResource("10_kqthh")
 
 [node name="ScreenBox" type="HBoxContainer" parent="Lab_Options"]
 layout_mode = 0
@@ -128,18 +139,21 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_afom6")
 theme_override_font_sizes/font_size = 28
 text = "FullScreen"
+script = ExtResource("11_w6rb2")
 
 [node name="Borderless" type="Label" parent="Lab_Options/ScreenBox/Labels"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_afom6")
 theme_override_font_sizes/font_size = 28
 text = "Borderless"
+script = ExtResource("12_kfk1k")
 
 [node name="VSync" type="Label" parent="Lab_Options/ScreenBox/Labels"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_afom6")
 theme_override_font_sizes/font_size = 28
 text = "VSync"
+script = ExtResource("13_fij2g")
 
 [node name="Checks" type="VBoxContainer" parent="Lab_Options/ScreenBox"]
 layout_mode = 2

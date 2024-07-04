@@ -22,7 +22,7 @@ func _on_exit_pressed():
 
 func _on_options_pressed():	
 		# Cambia la escena actual a 'MenuOpciones.tscn'. Se asume que este archivo existe en el directorio 'res://'.
-		get_tree().change_scene_to_file("res://MenuOpciones.tscn")
+		get_tree().change_scene_to_file("res://Assets/Scenes/MenuOpciones/MenuOpciones.tscn")
 
 func _on_bu_catalan_pressed():
 	TranslationServer.set_locale("ca")

@@ -49,5 +49,5 @@ func _on_v_sync_item_selected(index):
 # Función que se llama cuando se presiona el botón de regresar.
 func _on_button_pressed():
 	# Cambia la escena actual a 'MenuPrincipal.tscn'.
-	get_tree().change_scene_to_file("res://MenuPrincipal.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scenes/MenuPrincipal/MenuPrincipal.tscn")
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nh5tq3k7n7fo"
-path="res://.godot/imported/Fondo.jpg-92e5d536bd66ea6ef5a3139218e76573.ctex"
+path="res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arte_Combate/Sprites/Fondo/Fondo.jpg"
-dest_files=["res://.godot/imported/Fondo.jpg-92e5d536bd66ea6ef5a3139218e76573.ctex"]
+source_file="res://Assets/Sprites/Fondo.jpg"
+dest_files=["res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"]
 
 [params]
 
