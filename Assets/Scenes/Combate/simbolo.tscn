@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2clktqdi7ifa"]
+
+[ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="1_nwdv0"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_nwdv0")
