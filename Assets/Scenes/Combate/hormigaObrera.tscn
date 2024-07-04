@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5oqp7jqd1i4a"]
+[gd_scene load_steps=4 format=3 uid="uid://b5oqp7jqd1i4a"]
 
 [ext_resource type="Texture2D" uid="uid://dqanqsrnfmfcl" path="res://Assets/Sprites/mqdefault.jpg" id="1_1kyx6"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/hormigaObrera.gd" id="2_gpaem"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_knv81"]
 
 [node name="Obrera" type="Sprite2D"]
 texture = ExtResource("1_1kyx6")
+script = ExtResource("2_gpaem")
 
 [node name="DialogueEnemy" type="TextureRect" parent="."]
 offset_left = 173.0
