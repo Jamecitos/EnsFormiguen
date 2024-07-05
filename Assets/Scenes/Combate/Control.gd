@@ -2,7 +2,7 @@ extends Control
 
 
 #Variables:
-const rapidezContador:float = 0.5
+const rapidezContador:float = 0.1
 
 
 func _on_timer_timeout():

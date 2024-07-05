@@ -215,7 +215,7 @@ wait_time = 0.01
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(577.375, 523.5)
+position = Vector2(569, 519)
 scale = Vector2(0.30055, 0.466216)
 texture = ExtResource("8_eclvp")
 script = ExtResource("11_2e5da")

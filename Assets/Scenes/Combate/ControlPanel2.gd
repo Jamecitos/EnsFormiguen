@@ -44,7 +44,7 @@ func _añadirSimbolo(textura):
 
 
 func _comparacionSecuencias():
-	var tipusFormiga:String=controlEnemigos.enemigo.name
+	var tipusFormiga:String=controlEnemigos.enemigo.nom
 	if tipusFormiga=="Obrera":
 		for i in secuenciaJugador.size():
 			if secuenciaJugador[i] != secuenciaEnem[i]:
@@ -95,7 +95,7 @@ func _resetSecuenciaJugador():
 
 func _botonPulsado(textura):
 	secuenciaJugador.append(textura)
-	if secuenciaJugador.size() == secuenciaEnem.size() \
+	if secuenciaJugador.size() >= secuenciaEnem.size() \
 	and _comparacionSecuencias():
 		_sequenciaCompletada()
 	elif _comparacionSecuencias():
