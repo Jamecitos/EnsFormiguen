@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=19 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
 [ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
 [ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/DialoguePlayer.gd" id="3_yo3q0"]
 [ext_resource type="Texture2D" uid="uid://3u7r3fb0uc2w" path="res://Assets/Sprites/botonBase.png" id="4_56nhf"]
 [ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
 [ext_resource type="Texture2D" uid="uid://dbr4uco4ytf4w" path="res://Assets/Sprites/Captura de pantalla 2024-07-04 005805.jpg" id="8_eclvp"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dm3ocxdt3xvh0" path="res://Assets/Sprites/8-ant-with-glasses-cartoon-clipart.jpg" id="10_y2nvk"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
 [ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="13_1b2n7"]
+[ext_resource type="AudioStream" uid="uid://bd7vuojgxkd2l" path="res://Assets/Sounds/CombateV2.mp3" id="16_ahvp4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
 
@@ -113,6 +115,7 @@ offset_top = 366.0
 offset_right = 501.0
 offset_bottom = 475.0
 texture = SubResource("CanvasTexture_5ghdi")
+script = ExtResource("3_yo3q0")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/DialoguePlayer"]
 layout_mode = 0
@@ -243,12 +246,22 @@ scale = Vector2(1.53906, 2.14844)
 texture = ExtResource("13_1b2n7")
 flip_v = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_ahvp4")
+autoplay = true
+
+[node name="cooldownError" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton1" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_1_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
+[connection signal="secuenciaAcertada" from="CanvasLayer/Control/ControlPanel2" to="CanvasLayer/Control/DialoguePlayer" method="_on_control_panel_2_secuencia_acertada"]
 [connection signal="codigoListo" from="CanvasLayer/Control/PuzzlePanel" to="CanvasLayer/Control/ControlPanel2" method="_on_puzzle_panel_codigo_listo"]
 [connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/PuzzlePanel" method="_on_spawn_enemies_señal_hormiga"]
 [connection signal="switchEnableBotons" from="SpawnEnemies" to="CanvasLayer/Control/ControlPanel2" method="_on_spawn_enemies_switch_enable_botons"]
 [connection signal="timeout" from="SpawnEnemies/Timer" to="SpawnEnemies" method="_on_timer_timeout"]
+[connection signal="timeout" from="cooldownError" to="CanvasLayer/Control/ControlPanel2" method="_on_cooldown_error_timeout"]

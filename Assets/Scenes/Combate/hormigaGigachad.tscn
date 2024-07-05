@@ -10,6 +10,7 @@ texture = ExtResource("1_5emjr")
 script = ExtResource("2_m2ckc")
 
 [node name="DialogueEnemy" type="TextureRect" parent="."]
+visible = false
 offset_left = 102.0
 offset_top = -96.0
 offset_right = 219.0

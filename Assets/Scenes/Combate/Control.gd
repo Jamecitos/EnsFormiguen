@@ -3,7 +3,11 @@ extends Control
 
 #Variables:
 const rapidezContador:float = 0.1
+var gameOver:bool=false
 
+func _process(_delta):
+	if not $"../../AudioStreamPlayer".playing and not gameOver:
+		$"../../AudioStreamPlayer".play()
 
 func _on_timer_timeout():
 	$ProgressBarTime.value -= rapidezContador
@@ -21,7 +25,5 @@ func _derrota():
 
 func _finalCombat():
 	$Timer.stop()
-	$ControlPanel/TextureButton1.disabled=true
-	$ControlPanel/TextureButton2.disabled=true
-	$ControlPanel/TextureButton3.disabled=true
-	$ControlPanel/TextureButton4.disabled=true
+	gameOver=true
+	$"../../AudioStreamPlayer".stop()

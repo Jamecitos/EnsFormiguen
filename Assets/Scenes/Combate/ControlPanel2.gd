@@ -17,6 +17,8 @@ var y = 55
 var secuenciaJugador = []
 var secuenciaEnem = []
 
+signal secuenciaAcertada
+
 
 func _on_texture_button_1_button_down():
 	_botonPulsado(texturaBoton1.texture_normal)
@@ -70,6 +72,7 @@ func _sequenciaCompletada():
 	var barraEnemigo = $"../ProgressBarEnemy"
 	barraEnemigo.value -= corduraGanada
 	_resetSecuenciaJugador()
+	secuenciaAcertada.emit()
 	if barraEnemigo.value<=0:
 		nodoPuzzlePanel._limpiarSecuenciaEnemigo()
 		controlEnemigos._retirarEnemigo()
@@ -83,6 +86,10 @@ func _sequenciaCompletada():
 func _sequenciaFallida():
 	var barraPlayer = $"../ProgressBarPlayer"
 	barraPlayer.value += corduraGanada
+	
+	_switchDisabledButton()
+	$"../../../cooldownError".start()
+	
 	if barraPlayer.value >=90:
 		$".."._derrota()
 
@@ -103,7 +110,11 @@ func _botonPulsado(textura):
 	else:
 		_resetSecuenciaJugador()
 
-
+func _switchDisabledButton():
+	texturaBoton1.disabled = not texturaBoton1.disabled
+	texturaBoton2.disabled = not texturaBoton2.disabled
+	texturaBoton3.disabled = not texturaBoton3.disabled
+	texturaBoton4.disabled = not texturaBoton4.disabled
 
 func _on_puzzle_panel_codigo_listo():
 	secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
@@ -115,7 +126,9 @@ func _on_puzzle_panel_codigo_listo():
 
 
 func _on_spawn_enemies_switch_enable_botons():
-	texturaBoton1.disabled = not texturaBoton1.disabled
-	texturaBoton2.disabled = not texturaBoton2.disabled
-	texturaBoton3.disabled = not texturaBoton3.disabled
-	texturaBoton4.disabled = not texturaBoton4.disabled
+	_switchDisabledButton()
+
+
+func _on_cooldown_error_timeout():
+	if not $"..".gameOver:
+		_switchDisabledButton()
