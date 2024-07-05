@@ -48,12 +48,14 @@ func _liberarEnemigo():
 	if enemicsPendents>0:
 		_generarEnemigo()
 	else:
-		pass#victoria!!!
+		$"../CanvasLayer/Control"._victoria()
+
 
 func _retirarEnemigo():
 	recentGenerat=false
 	switchEnableBotons.emit()
 	$Timer.start()
+	$"../CanvasLayer/Control/Timer".stop()
 
 func _on_timer_timeout():#Entra/sale enemigo en combate
 	if recentGenerat:
@@ -62,6 +64,7 @@ func _on_timer_timeout():#Entra/sale enemigo en combate
 			$Timer.stop()
 			señalHormiga.emit()
 			switchEnableBotons.emit()
+			$"../CanvasLayer/Control/Timer".start()
 	else:
 		enemigo.position.x -= 5
 		if enemigo.position.x <= 0:

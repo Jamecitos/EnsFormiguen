@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=16 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
 [ext_resource type="Texture2D" uid="uid://dm3ocxdt3xvh0" path="res://Assets/Sprites/8-ant-with-glasses-cartoon-clipart.jpg" id="10_y2nvk"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
+[ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="13_1b2n7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
 
@@ -42,11 +43,6 @@ show_percentage = false
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control"]
 wait_time = 0.1
-autostart = true
-
-[node name="Timer2" type="Timer" parent="CanvasLayer/Control"]
-wait_time = 1.5
-autostart = true
 
 [node name="IconBarTime" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -229,8 +225,20 @@ position = Vector2(684, 548)
 scale = Vector2(0.17027, 0.17027)
 texture = ExtResource("10_y2nvk")
 
+[node name="Victoria" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(382, 418)
+scale = Vector2(3.5625, 2.26563)
+texture = ExtResource("13_1b2n7")
+
+[node name="Derrota" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(376.5, 433.5)
+scale = Vector2(1.53906, 2.14844)
+texture = ExtResource("13_1b2n7")
+flip_v = true
+
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
-[connection signal="timeout" from="CanvasLayer/Control/Timer2" to="CanvasLayer/Control" method="_on_timer_2_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton1" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_1_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]

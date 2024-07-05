@@ -11,7 +11,7 @@ extends TextureRect
 @onready var controlEnemigos = $"../../../SpawnEnemies"
 
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
-const corduraGanada = 30
+const corduraGanada = 150
 var x = 55
 var y = 55
 var secuenciaJugador = []
@@ -44,11 +44,26 @@ func _añadirSimbolo(textura):
 
 
 func _comparacionSecuencias():
-	for i in secuenciaJugador.size():
-		if secuenciaJugador[i] != secuenciaEnem[i]:
-			_sequenciaFallida()
-			return false
-	return true
+	var tipusFormiga:String=controlEnemigos.enemigo.name
+	if tipusFormiga=="Obrera":
+		for i in secuenciaJugador.size():
+			if secuenciaJugador[i] != secuenciaEnem[i]:
+				_sequenciaFallida()
+				return false
+		return true
+	elif tipusFormiga=="Soldado":
+		var tamanySecuenciaEnemiga = secuenciaEnem.size()
+		for i in secuenciaJugador.size():
+			if secuenciaJugador[i] != secuenciaEnem[tamanySecuenciaEnemiga-i-1]:
+				_sequenciaFallida()
+				return false
+		return true
+	else:
+		for i in secuenciaJugador.size():
+			if secuenciaJugador[i] == secuenciaEnem[i]:
+				_sequenciaFallida()
+				return false
+		return true
 
 
 func _sequenciaCompletada():
@@ -68,6 +83,8 @@ func _sequenciaCompletada():
 func _sequenciaFallida():
 	var barraPlayer = $"../ProgressBarPlayer"
 	barraPlayer.value += corduraGanada
+	if barraPlayer.value >=90:
+		$".."._derrota()
 
 
 func _resetSecuenciaJugador():
