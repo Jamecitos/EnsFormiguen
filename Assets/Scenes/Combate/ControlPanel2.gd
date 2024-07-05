@@ -11,7 +11,7 @@ extends TextureRect
 @onready var controlEnemigos = $"../../../SpawnEnemies"
 
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
-const corduraGanada = 150
+const corduraGanada = 30
 var x = 55
 var y = 55
 var secuenciaJugador = []
