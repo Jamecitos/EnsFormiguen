@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=17 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
 [ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
 [ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
+[ext_resource type="Texture2D" uid="uid://3u7r3fb0uc2w" path="res://Assets/Sprites/botonBase.png" id="4_56nhf"]
 [ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
 [ext_resource type="Texture2D" uid="uid://dbr4uco4ytf4w" path="res://Assets/Sprites/Captura de pantalla 2024-07-04 005805.jpg" id="8_eclvp"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
@@ -150,6 +151,7 @@ offset_right = 228.0
 offset_bottom = 225.0
 disabled = true
 texture_normal = ExtResource("2_qq1cc")
+texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -161,6 +163,7 @@ offset_right = 480.0
 offset_bottom = 225.0
 disabled = true
 texture_normal = ExtResource("3_n1mf3")
+texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -172,6 +175,7 @@ offset_right = 228.0
 offset_bottom = 453.0
 disabled = true
 texture_normal = ExtResource("4_apb6d")
+texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -183,6 +187,7 @@ offset_right = 480.0
 offset_bottom = 453.0
 disabled = true
 texture_normal = ExtResource("3_gga02")
+texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="ControlPanel2" type="TextureRect" parent="CanvasLayer/Control"]

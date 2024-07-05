@@ -107,6 +107,11 @@ func _botonPulsado(textura):
 
 func _on_puzzle_panel_codigo_listo():
 	secuenciaEnem = $"../PuzzlePanel".secuenciaEnemigo
+	texturaBoton1.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[0]
+	texturaBoton2.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[1]
+	texturaBoton3.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[2]
+	texturaBoton4.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[3]
+	
 
 
 func _on_spawn_enemies_switch_enable_botons():
