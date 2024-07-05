@@ -76,12 +76,12 @@ func _mostrarPensamiento():
 	$"../CanvasLayer/Control/DialogueBattle".visible=true
 
 func _actualitzarTamanyGrup():
-	$"../CanvasLayer/Control/Label".text=str(tamanyGrupFormigues)
+	$"../CanvasLayer/Control/ContadorTamanyGrup".text=str(tamanyGrupFormigues)
 
 func _on_timer_timeout():#Entra/sale enemigo en combate
 	if recentGenerat:
 		enemigo.position.x += 5
-		if enemigo.position.x >= 400:
+		if enemigo.position.x >= 350:
 			$Timer.stop()
 			señalHormiga.emit()
 			switchEnableBotons.emit()

@@ -72,6 +72,7 @@ func _sequenciaCompletada():
 	var barraEnemigo = $"../ProgressBarEnemy"
 	barraEnemigo.value -= corduraGanada
 	_resetSecuenciaJugador()
+	controlEnemigos.enemigo._dialogoDuda()
 	secuenciaAcertada.emit()
 	if barraEnemigo.value<=0:
 		nodoPuzzlePanel._limpiarSecuenciaEnemigo()
@@ -86,7 +87,7 @@ func _sequenciaCompletada():
 func _sequenciaFallida():
 	var barraPlayer = $"../ProgressBarPlayer"
 	barraPlayer.value += corduraGanada
-	
+	controlEnemigos.enemigo._dialogoEntrada()
 	_switchDisabledButton()
 	$"../../../cooldownError".start()
 	

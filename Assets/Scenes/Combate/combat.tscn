@@ -1,21 +1,24 @@
-[gd_scene load_steps=19 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=22 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ProgressBarEnemy.gd" id="2_nkpeu"]
 [ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
+[ext_resource type="Texture2D" uid="uid://bv1wucskxg5cm" path="res://Assets/Sprites/UI/Contador Tiempo.png" id="2_xo1kp"]
 [ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
 [ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/DialoguePlayer.gd" id="3_yo3q0"]
 [ext_resource type="Texture2D" uid="uid://3u7r3fb0uc2w" path="res://Assets/Sprites/botonBase.png" id="4_56nhf"]
 [ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
-[ext_resource type="Texture2D" uid="uid://dbr4uco4ytf4w" path="res://Assets/Sprites/Captura de pantalla 2024-07-04 005805.jpg" id="8_eclvp"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
-[ext_resource type="Texture2D" uid="uid://dm3ocxdt3xvh0" path="res://Assets/Sprites/8-ant-with-glasses-cartoon-clipart.jpg" id="10_y2nvk"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
+[ext_resource type="Texture2D" uid="uid://bgtwlm7wnv46q" path="res://Assets/Sprites/Personajes/Combate/Combate Alien.png" id="12_3t4pb"]
+[ext_resource type="Texture2D" uid="uid://circhyyxkap5b" path="res://Assets/Sprites/UI/Contador Hormigas.png" id="12_438y7"]
 [ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="13_1b2n7"]
+[ext_resource type="Texture2D" uid="uid://cwo483lih4s8n" path="res://Assets/Sprites/Personajes/Combate/Combate Anthony_1.png" id="14_luk0i"]
 [ext_resource type="AudioStream" uid="uid://bd7vuojgxkd2l" path="res://Assets/Sounds/CombateV2.mp3" id="16_ahvp4"]
+[ext_resource type="Texture2D" uid="uid://ctpm15fspvrh8" path="res://Assets/Sprites/Fondo.jpg" id="19_gbruj"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
 
@@ -49,11 +52,12 @@ wait_time = 0.1
 
 [node name="IconBarTime" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 27.0
-offset_right = 74.0
-offset_bottom = 84.0
-texture = SubResource("CanvasTexture_5ghdi")
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 236.0
+offset_bottom = 234.0
+scale = Vector2(0.444321, 0.444321)
+texture = ExtResource("2_xo1kp")
 
 [node name="ProgressBarPlayer" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -67,15 +71,16 @@ show_percentage = false
 [node name="ProgressBarEnemy" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 571.0
+offset_top = 566.0
 offset_right = 363.0
-offset_bottom = 627.0
+offset_bottom = 622.0
 max_value = 90.0
 value = 90.0
 show_percentage = false
 script = ExtResource("2_nkpeu")
 
 [node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0.683077, 0.683077, 0.683077, 1)
 layout_mode = 0
 offset_left = 26.0
 offset_top = 107.0
@@ -108,19 +113,19 @@ offset_bottom = 56.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="DialoguePlayer" type="TextureRect" parent="CanvasLayer/Control"]
-visible = false
+modulate = Color(0.685835, 0.685835, 0.685835, 1)
 layout_mode = 0
-offset_left = 384.0
-offset_top = 366.0
-offset_right = 501.0
-offset_bottom = 475.0
+offset_left = 400.0
+offset_top = 360.0
+offset_right = 550.0
+offset_bottom = 465.0
 texture = SubResource("CanvasTexture_5ghdi")
 script = ExtResource("3_yo3q0")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/DialoguePlayer"]
 layout_mode = 0
-offset_right = 117.0
-offset_bottom = 109.0
+offset_right = 150.0
+offset_bottom = 105.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 17
 text = "Y cómo
@@ -128,8 +133,10 @@ explicas
 esta pedazo
 de trompa?"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0.251745, 0.152084, 0.0121218, 1)
 layout_mode = 0
 offset_left = 723.0
 offset_top = 106.0
@@ -138,6 +145,7 @@ offset_bottom = 698.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="ControlPanel" type="TextureRect" parent="CanvasLayer/Control"]
+self_modulate = Color(0.25098, 0.152941, 0.0117647, 1)
 layout_mode = 0
 offset_left = 728.0
 offset_top = 110.0
@@ -210,21 +218,22 @@ offset_right = 692.0
 offset_bottom = 216.0
 script = ExtResource("2_2sw2p")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
+[node name="ContadorTamanyGrup" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -321.0
-offset_top = 658.0
-offset_right = -281.0
-offset_bottom = 681.0
+offset_left = -559.0
+offset_top = 661.0
+offset_right = -519.0
+offset_bottom = 684.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 horizontal_alignment = 1
 
-[node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control/Label"]
+[node name="FonsContador" type="TextureRect" parent="CanvasLayer/Control/ContadorTamanyGrup"]
+modulate = Color(0.688595, 0.688595, 0.688595, 1)
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -241,6 +250,11 @@ grow_vertical = 2
 scale = Vector2(0.0987675, 0.461164)
 texture = SubResource("CanvasTexture_5ghdi")
 
+[node name="ContadorHormigas" type="Sprite2D" parent="CanvasLayer/Control/ContadorTamanyGrup"]
+position = Vector2(-37, 11.0001)
+scale = Vector2(0.356534, 0.356534)
+texture = ExtResource("12_438y7")
+
 [node name="SpawnEnemies" type="Area2D" parent="."]
 position = Vector2(-165, 425)
 script = ExtResource("9_3vtxa")
@@ -254,15 +268,15 @@ wait_time = 0.01
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(569, 519)
-scale = Vector2(0.30055, 0.466216)
-texture = ExtResource("8_eclvp")
+position = Vector2(502, 553)
+scale = Vector2(0.22089, 0.218681)
+texture = ExtResource("12_3t4pb")
 script = ExtResource("11_2e5da")
 
 [node name="ANTthonySprite" type="Sprite2D" parent="."]
-position = Vector2(684, 548)
-scale = Vector2(0.17027, 0.17027)
-texture = ExtResource("10_y2nvk")
+position = Vector2(624, 552)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("14_luk0i")
 
 [node name="Victoria" type="Sprite2D" parent="."]
 visible = false
@@ -284,6 +298,12 @@ autoplay = true
 [node name="cooldownError" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(639, 359)
+scale = Vector2(1.29637, 1.04073)
+texture = ExtResource("19_gbruj")
 
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton1" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_1_button_down"]
