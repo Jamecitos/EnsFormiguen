@@ -91,8 +91,14 @@ func _sequenciaFallida():
 	$"../../../cooldownError".start()
 	
 	if barraPlayer.value >=90:
-		$".."._derrota()
+		barraPlayer.value=0
+		if _perduaMembreGrup()<=0:
+			$".."._derrota()
 
+func _perduaMembreGrup():
+	$"../../../SpawnEnemies".tamanyGrupFormigues-=1
+	$"../../../SpawnEnemies"._actualitzarTamanyGrup()
+	return $"../../../SpawnEnemies".tamanyGrupFormigues
 
 func _resetSecuenciaJugador():
 	secuenciaJugador.clear()

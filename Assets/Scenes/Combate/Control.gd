@@ -5,6 +5,7 @@ extends Control
 const rapidezContador:float = 0.1
 var gameOver:bool=false
 
+
 func _process(_delta):
 	if not $"../../AudioStreamPlayer".playing and not gameOver:
 		$"../../AudioStreamPlayer".play()

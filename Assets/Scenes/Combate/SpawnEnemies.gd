@@ -9,7 +9,10 @@ const HORMIGA_GIGACHAD = preload("res://Assets/Scenes/Combate/hormigaGigachad.ts
 const POSICIO_CHILD_ENEMIC:int = 2
 var enemicsPendents:int = 3
 var recentGenerat:bool = true
-var probabilitatTipusFormiga = [1]
+
+var probabilitatTipusFormiga = [1,2,3]
+var tamanyGrupFormigues:int =17
+
 var enemigo
 signal señalHormiga
 signal switchEnableBotons
@@ -17,6 +20,7 @@ signal switchEnableBotons
 
 func _ready():
 	_generarEnemigo()
+	_actualitzarTamanyGrup()
 
 func _process(_delta):
 	pass
@@ -45,6 +49,8 @@ func _escollirTipusEnemicAGenerar():
 func _liberarEnemigo():
 	get_child(POSICIO_CHILD_ENEMIC).queue_free()
 	enemicsPendents-=1
+	tamanyGrupFormigues+=1
+	_actualitzarTamanyGrup()
 	if enemicsPendents>0:
 		_generarEnemigo()
 	else:
@@ -57,10 +63,20 @@ func _retirarEnemigo():
 	$Timer.start()
 	$"../CanvasLayer/Control/Timer".stop()
 	_ocultarDialogos()
+	_ocultarPensamiento()
 
 func _ocultarDialogos():
 	$"../CanvasLayer/Control/DialoguePlayer".visible=false
 	enemigo.get_child(0).visible=false
+
+func _ocultarPensamiento():
+	$"../CanvasLayer/Control/DialogueBattle".visible=false
+
+func _mostrarPensamiento():
+	$"../CanvasLayer/Control/DialogueBattle".visible=true
+
+func _actualitzarTamanyGrup():
+	$"../CanvasLayer/Control/Label".text=str(tamanyGrupFormigues)
 
 func _on_timer_timeout():#Entra/sale enemigo en combate
 	if recentGenerat:
@@ -71,6 +87,7 @@ func _on_timer_timeout():#Entra/sale enemigo en combate
 			switchEnableBotons.emit()
 			$"../CanvasLayer/Control/Timer".start()
 			enemigo.get_child(0).visible=true
+			_mostrarPensamiento()
 	else:
 		enemigo.position.x -= 5
 		if enemigo.position.x <= 0:

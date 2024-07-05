@@ -57,10 +57,10 @@ texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="ProgressBarPlayer" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 366.0
-offset_top = 639.0
-offset_right = 700.0
-offset_bottom = 695.0
+offset_left = 385.0
+offset_top = 642.0
+offset_right = 704.0
+offset_bottom = 698.0
 max_value = 90.0
 show_percentage = false
 
@@ -83,15 +83,15 @@ offset_right = 700.0
 offset_bottom = 223.0
 texture = SubResource("CanvasTexture_5ghdi")
 
-[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="BolasPensamiento" type="TextureRect" parent="CanvasLayer/Control/DialogueBattle"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 233.0
-offset_right = 69.0
-offset_bottom = 258.0
+offset_left = 18.0
+offset_top = 126.0
+offset_right = 43.0
+offset_bottom = 151.0
 texture = SubResource("CanvasTexture_5ghdi")
 
-[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialoguePlayer2"]
+[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialogueBattle/BolasPensamiento"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 32.0
@@ -99,7 +99,7 @@ offset_right = 42.0
 offset_bottom = 57.0
 texture = SubResource("CanvasTexture_5ghdi")
 
-[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialoguePlayer2/DialoguePlayer2"]
+[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialogueBattle/BolasPensamiento/DialoguePlayer2"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 31.0
@@ -209,6 +209,37 @@ offset_top = 115.0
 offset_right = 692.0
 offset_bottom = 216.0
 script = ExtResource("2_2sw2p")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -321.0
+offset_top = 658.0
+offset_right = -281.0
+offset_bottom = 681.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "10"
+horizontal_alignment = 1
+
+[node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control/Label"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -26.5
+offset_right = 640.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0987675, 0.461164)
+texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="SpawnEnemies" type="Area2D" parent="."]
 position = Vector2(-165, 425)
