@@ -55,6 +55,8 @@ func _liberarEnemigo():
 		_generarEnemigo()
 	else:
 		$"../CanvasLayer/Control"._victoria()
+		get_parent().remove_child($"../")
+		$"../".call_deferred("free")
 
 
 func _retirarEnemigo():
