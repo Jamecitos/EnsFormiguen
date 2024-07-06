@@ -23,6 +23,12 @@ buses/default_bus_layout="res://Assets/Sounds/Masterizador.tres"
 
 ControlMusica="*res://Assets/Scenes/Música/ControlMusica.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+mouse_cursor/custom_image="res://Assets/Sprites/cursor 3.png"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -30,7 +36,7 @@ version_control/autoload_on_startup=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Assets/Language/Translate - Hoja 1 (7).en.translation", "res://Assets/Language/Translate - Hoja 1 (7).ca.translation")
+locale/translations=PackedStringArray("res://Assets/Language/Translate - Hoja 1 (10).es.translation", "res://Assets/Language/Translate - Hoja 1 (10).ca.translation")
 
 [rendering]
 

@@ -1,13 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkvc20g8d8qdq"]
+[gd_scene load_steps=15 format=3 uid="uid://bkvc20g8d8qdq"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/MenuPrincipal.gd" id="1_sxf7w"]
-[ext_resource type="Texture2D" uid="uid://cxbakr4vfxhbk" path="res://Assets/Sprites/FondoMenu.png" id="2_wittu"]
-[ext_resource type="FontFile" uid="uid://ihk4kdacjiuj" path="res://Fonts/Kenney Blocks.ttf" id="3_rlgse"]
+[ext_resource type="FontFile" uid="uid://bx5wrvmbi735q" path="res://Fonts/MADE Waffle Soft PERSONAL USE.otf" id="3_j7lfx"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_PLAY.gd" id="4_igupd"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_OPTIONS.gd" id="5_0mv6m"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/BU_CATALAN.gd" id="6_vwcjo"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/BU_ENGLISH.gd" id="7_0jj01"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_EXIT.gd" id="8_qv7fk"]
+[ext_resource type="AudioStream" uid="uid://bik80a0oqqihn" path="res://Assets/Sounds/BotonMenú__alirabiei__digging-dirt.mp3" id="9_g1csa"]
+[ext_resource type="Texture2D" uid="uid://bjgdsuet55p8y" path="res://Assets/Sprites/Fondo_menu.jpg" id="9_xcme0"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/FondoMenu.gd" id="10_7wg6q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvlmv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n61gh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2ca4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x05vh"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -19,70 +29,115 @@ grow_vertical = 2
 script = ExtResource("1_sxf7w")
 
 [node name="FondoMenu" type="Sprite2D" parent="."]
-position = Vector2(599, 289)
-scale = Vector2(2.2875, 2.22176)
-texture = ExtResource("2_wittu")
+position = Vector2(640, 360)
+scale = Vector2(0.418437, 0.418118)
+texture = ExtResource("9_xcme0")
+script = ExtResource("10_7wg6q")
+
+[node name="BU_CASTELLANO" type="Button" parent="."]
+offset_left = 886.0
+offset_top = 431.0
+offset_right = 1099.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_hover_color = Color(0.4305, 0.75, 0.2175, 1)
+theme_override_colors/font_focus_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_j7lfx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvlmv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n61gh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2ca4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x05vh")
+text = "CASTELLANO
+"
+script = ExtResource("7_0jj01")
 
 [node name="BU_PLAY" type="Button" parent="."]
 layout_mode = 0
-offset_left = 671.0
-offset_top = 21.0
-offset_right = 995.0
-offset_bottom = 160.0
-theme_override_colors/font_hover_color = Color(0.972549, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlgse")
-theme_override_font_sizes/font_size = 50
+offset_left = 705.0
+offset_top = 88.0
+offset_right = 969.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_hover_color = Color(0.4305, 0.75, 0.2175, 1)
+theme_override_colors/font_focus_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_j7lfx")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvlmv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n61gh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2ca4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x05vh")
+text = "JUGAR"
 script = ExtResource("4_igupd")
 
 [node name="BU_OPTIONS" type="Button" parent="."]
 layout_mode = 0
-offset_left = 717.0
-offset_top = 201.0
-offset_right = 1072.0
-offset_bottom = 315.0
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlgse")
-theme_override_font_sizes/font_size = 50
+offset_left = 891.0
+offset_top = 264.0
+offset_right = 1135.0
+offset_bottom = 386.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_hover_color = Color(0.4305, 0.75, 0.2175, 1)
+theme_override_colors/font_focus_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_j7lfx")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvlmv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n61gh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2ca4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x05vh")
+text = "OPCIONES"
 script = ExtResource("5_0mv6m")
 
 [node name="BU_CATALAN" type="Button" parent="."]
 layout_mode = 0
-offset_left = 505.0
-offset_top = 336.0
-offset_right = 784.0
-offset_bottom = 462.0
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlgse")
-theme_override_font_sizes/font_size = 50
+offset_left = 628.0
+offset_top = 431.0
+offset_right = 803.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_hover_color = Color(0.4305, 0.75, 0.2175, 1)
+theme_override_colors/font_focus_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_j7lfx")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvlmv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n61gh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2ca4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x05vh")
+text = "CATALAN"
 script = ExtResource("6_vwcjo")
-
-[node name="BU_ENGLISH" type="Button" parent="."]
-layout_mode = 0
-offset_left = 836.0
-offset_top = 333.0
-offset_right = 1144.0
-offset_bottom = 457.0
-theme_override_fonts/font = ExtResource("3_rlgse")
-theme_override_font_sizes/font_size = 50
-script = ExtResource("7_0jj01")
 
 [node name="BU_EXIT" type="Button" parent="."]
 layout_mode = 0
-offset_left = 725.0
-offset_top = 484.0
-offset_right = 1037.0
-offset_bottom = 601.0
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_rlgse")
-theme_override_font_sizes/font_size = 50
-text = "
-"
+offset_left = 910.0
+offset_top = 586.0
+offset_right = 1158.0
+offset_bottom = 694.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_hover_color = Color(0.4305, 0.75, 0.2175, 1)
+theme_override_colors/font_focus_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_j7lfx")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gvlmv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n61gh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2ca4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x05vh")
+text = "SALIR"
 script = ExtResource("8_qv7fk")
 
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g1csa")
+
+[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_language_pressed"]
+[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_bu_catalan_pressed"]
+[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_bu_castellano_pressed"]
 [connection signal="pressed" from="BU_PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="BU_OPTIONS" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="BU_CATALAN" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_CATALAN" to="." method="_on_bu_catalan_pressed"]
-[connection signal="pressed" from="BU_ENGLISH" to="." method="_on_bu_english_pressed"]
 [connection signal="pressed" from="BU_EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="BU_EXIT" to="." method="_on_bu_exit_pressed"]

@@ -1,21 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://b61rog7oe2n2k"]
+[gd_scene load_steps=14 format=3 uid="uid://b61rog7oe2n2k"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/MenuOpciones.gd" id="1_lxtyl"]
-[ext_resource type="Texture2D" uid="uid://nh5tq3k7n7fo" path="res://Assets/Sprites/Fondo.jpg" id="2_fn81d"]
-[ext_resource type="FontFile" uid="uid://bdsrg5djj8r2y" path="res://Fonts/Kenney Mini.ttf" id="3_fecfv"]
-[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/OptionsLabel.gd" id="4_dtcfx"]
-[ext_resource type="FontFile" uid="uid://c0dlpq3rk445s" path="res://Fonts/Kenney Mini Square.ttf" id="5_lb4i8"]
-[ext_resource type="FontFile" uid="uid://vih3oix4tuqk" path="res://Fonts/Kenney Pixel.ttf" id="6_afom6"]
+[ext_resource type="Texture2D" uid="uid://beqxeyxb2ymiu" path="res://Assets/Sprites/Fondo_Configuracion.jpg" id="2_3ecxw"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/FondoConfiguracion.gd" id="3_2hdlg"]
+[ext_resource type="FontFile" uid="uid://bx5wrvmbi735q" path="res://Fonts/MADE Waffle Soft PERSONAL USE.otf" id="4_xsn3x"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Master.gd" id="7_ub07u"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Music.gd" id="8_jeota"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/SoundFX.gd" id="9_b1m41"]
-[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Lab_Screen.gd" id="10_kqthh"]
-[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/FullScreen.gd" id="11_w6rb2"]
-[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Borderless.gd" id="12_kfk1k"]
-[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/VSync.gd" id="13_fij2g"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Button.gd" id="15_4movy"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_arlll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i5ak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xicsi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_daowj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwi8o"]
 
 [node name="MenuOpciones" type="Control"]
 layout_mode = 3
@@ -26,163 +28,105 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lxtyl")
 
-[node name="Fondo" type="Sprite2D" parent="."]
-position = Vector2(585, 354)
-scale = Vector2(1.166, 1.0305)
-texture = ExtResource("2_fn81d")
+[node name="FondoConfiguracion" type="Sprite2D" parent="."]
+position = Vector2(640.063, 360)
+scale = Vector2(0.418478, 0.418118)
+texture = ExtResource("2_3ecxw")
+script = ExtResource("3_2hdlg")
 
-[node name="Lab_Options" type="Label" parent="."]
+[node name="Lab_Audio" type="Label" parent="."]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 71.0
-offset_right = 775.0
-offset_bottom = 212.0
-theme_override_fonts/font = ExtResource("3_fecfv")
-theme_override_font_sizes/font_size = 100
-text = "OPTIONS"
-script = ExtResource("4_dtcfx")
-
-[node name="Lab_Audio" type="Label" parent="Lab_Options"]
-layout_mode = 0
-offset_left = -204.0
-offset_top = 161.0
-offset_right = -21.0
-offset_bottom = 233.0
-theme_override_fonts/font = ExtResource("5_lb4i8")
+offset_left = 722.0
+offset_top = 146.0
+offset_right = 1167.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
 theme_override_font_sizes/font_size = 50
 text = "AUDIO"
-
-[node name="AudioBox" type="HBoxContainer" parent="Lab_Options"]
-layout_mode = 0
-offset_left = -206.0
-offset_top = 113.0
-offset_right = 112.0
-offset_bottom = 457.0
-alignment = 1
-
-[node name="Labels" type="VBoxContainer" parent="Lab_Options/AudioBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="Master" type="Label" parent="Lab_Options/AudioBox/Labels"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_afom6")
-theme_override_font_sizes/font_size = 28
-text = "Master"
-script = ExtResource("7_ub07u")
-
-[node name="Music" type="Label" parent="Lab_Options/AudioBox/Labels"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_afom6")
-theme_override_font_sizes/font_size = 28
-text = "Music"
-script = ExtResource("8_jeota")
-
-[node name="SoundFX" type="Label" parent="Lab_Options/AudioBox/Labels"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_afom6")
-theme_override_font_sizes/font_size = 28
-text = "SoundFX"
 horizontal_alignment = 1
-script = ExtResource("9_b1m41")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Lab_Options/AudioBox"]
+[node name="AudioBox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 113.0
+offset_right = 1108.0
+offset_bottom = 530.0
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AudioBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Master" type="HSlider" parent="Lab_Options/AudioBox/VBoxContainer2"]
-modulate = Color(0.679788, 0.547754, 9.62615e-07, 1)
+[node name="Master2" type="Label" parent="AudioBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 22
+text = "Master"
+script = ExtResource("7_ub07u")
+
+[node name="Master" type="HSlider" parent="AudioBox/VBoxContainer2"]
+modulate = Color(0.431373, 0.686275, 0.305882, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+clip_contents = true
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="Music2" type="Label" parent="AudioBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 22
+text = "Music"
+script = ExtResource("8_jeota")
+
+[node name="Music" type="HSlider" parent="AudioBox/VBoxContainer2"]
+modulate = Color(0.431373, 0.686275, 0.305882, 1)
 material = SubResource("CanvasItemMaterial_arlll")
 layout_mode = 2
 min_value = -30.0
 max_value = 0.0
 
-[node name="Music" type="HSlider" parent="Lab_Options/AudioBox/VBoxContainer2"]
-modulate = Color(0.679788, 0.547754, 9.62615e-07, 1)
+[node name="SoundFX2" type="Label" parent="AudioBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 22
+text = "SoundFX"
+script = ExtResource("9_b1m41")
+
+[node name="SoundFX" type="HSlider" parent="AudioBox/VBoxContainer2"]
+modulate = Color(0.431373, 0.686275, 0.305882, 1)
 material = SubResource("CanvasItemMaterial_arlll")
 layout_mode = 2
 min_value = -30.0
 max_value = 0.0
-
-[node name="SoundFX" type="HSlider" parent="Lab_Options/AudioBox/VBoxContainer2"]
-modulate = Color(0.679788, 0.547754, 9.62615e-07, 1)
-material = SubResource("CanvasItemMaterial_arlll")
-layout_mode = 2
-min_value = -30.0
-max_value = 0.0
-
-[node name="Lab_Screen" type="Label" parent="Lab_Options"]
-layout_mode = 0
-offset_left = 339.0
-offset_top = 153.0
-offset_right = 525.0
-offset_bottom = 216.0
-theme_override_fonts/font = ExtResource("5_lb4i8")
-theme_override_font_sizes/font_size = 50
-text = "SCREEN"
-script = ExtResource("10_kqthh")
-
-[node name="ScreenBox" type="HBoxContainer" parent="Lab_Options"]
-layout_mode = 0
-offset_left = 343.0
-offset_top = 213.0
-offset_right = 650.0
-offset_bottom = 349.0
-
-[node name="Labels" type="VBoxContainer" parent="Lab_Options/ScreenBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="FullScreen" type="Label" parent="Lab_Options/ScreenBox/Labels"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_afom6")
-theme_override_font_sizes/font_size = 28
-text = "FullScreen"
-script = ExtResource("11_w6rb2")
-
-[node name="Borderless" type="Label" parent="Lab_Options/ScreenBox/Labels"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_afom6")
-theme_override_font_sizes/font_size = 28
-text = "Borderless"
-script = ExtResource("12_kfk1k")
-
-[node name="VSync" type="Label" parent="Lab_Options/ScreenBox/Labels"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_afom6")
-theme_override_font_sizes/font_size = 28
-text = "VSync"
-script = ExtResource("13_fij2g")
-
-[node name="Checks" type="VBoxContainer" parent="Lab_Options/ScreenBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="FullScreen" type="CheckBox" parent="Lab_Options/ScreenBox/Checks"]
-layout_mode = 2
-
-[node name="Borderless" type="CheckBox" parent="Lab_Options/ScreenBox/Checks"]
-layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 522.0
-offset_right = 609.0
-offset_bottom = 608.0
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_fecfv")
-theme_override_font_sizes/font_size = 30
-text = "BACK"
+offset_left = 941.0
+offset_top = 598.0
+offset_right = 1097.0
+offset_bottom = 684.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_hover_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0i5ak")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xicsi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_daowj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fwi8o")
+text = "ATRAS"
 script = ExtResource("15_4movy")
 
-[connection signal="value_changed" from="Lab_Options/AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="Lab_Options/AudioBox/VBoxContainer2/Master" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="Lab_Options/AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
-[connection signal="value_changed" from="Lab_Options/AudioBox/VBoxContainer2/Music" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="Lab_Options/AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
-[connection signal="value_changed" from="Lab_Options/AudioBox/VBoxContainer2/SoundFX" to="." method="_on_h_slider_value_changed"]
-[connection signal="toggled" from="Lab_Options/ScreenBox/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
-[connection signal="toggled" from="Lab_Options/ScreenBox/Checks/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

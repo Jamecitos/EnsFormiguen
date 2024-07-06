@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scenes/Música/Scripts/ControlMusica.gd" id="1_tm8gf"]
 [ext_resource type="Script" path="res://Assets/Scenes/Música/Scripts/MusicaMenu.gd" id="2_bdf3v"]
-[ext_resource type="AudioStream" uid="uid://d1ignpltu66xp" path="res://Assets/Sounds/Menú V1.mp3" id="2_xx43s"]
+[ext_resource type="AudioStream" uid="uid://dsbdyehydgae2" path="res://Assets/Sounds/Menú 2.wav" id="2_l7bwb"]
 
 [node name="Controlmusica" type="Control"]
 layout_mode = 3
@@ -13,6 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tm8gf")
 
+[node name="Button" type="AudioStreamPlayer" parent="."]
+
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_xx43s")
+stream = ExtResource("2_l7bwb")
 script = ExtResource("2_bdf3v")
