@@ -71,10 +71,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 
 [node name="Cueva7" type="Button" parent="Area2D2"]
-offset_left = 1266.98
-offset_top = 787.93
-offset_right = 1525.98
-offset_bottom = 962.93
+offset_left = 1267.0
+offset_top = 788.0
+offset_right = 1639.0
+offset_bottom = 1036.0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 
@@ -87,10 +87,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 
 [node name="Cueva8" type="Button" parent="Area2D2"]
-offset_left = 819.39
-offset_top = 876.59
-offset_right = 1048.39
-offset_bottom = 1012.59
+offset_left = 817.0
+offset_top = 861.0
+offset_right = 1159.0
+offset_bottom = 1070.0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 

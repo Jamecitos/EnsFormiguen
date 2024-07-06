@@ -21,3 +21,9 @@ func _physics_process(delta):
 	if target_position.distance_to(global_position) > 2:
 		velocity = direction.normalized() * speed
 		move_and_slide()
+	for button in buttons:
+		if(button.name.contains("Cueva")):
+			#if(!button.has_been_pressed):
+				if (button.global_position + button.size*.5).distance_to(global_position) < 3:
+					get_tree().change_scene_to_file("res://Assets/Scenes/Combate/combat.tscn")
+					#button.has_been_pressed = true
