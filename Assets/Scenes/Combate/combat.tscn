@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=23 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/combat.gd" id="1_o05wq"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ProgressBarEnemy.gd" id="2_nkpeu"]
@@ -26,6 +27,7 @@
 size = Vector2(219, 252)
 
 [node name="Combat" type="Node2D"]
+script = ExtResource("1_o05wq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

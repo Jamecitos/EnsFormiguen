@@ -11,7 +11,7 @@ var recentGenerat:bool = true
 
 var probabilitatTipusFormiga = [1,2,3]
 var tamanyGrupFormigues:int =17
-var enemicsPendents:int = 3
+@onready var enemicsPendents:int = $"..".enemicsPendents
 
 var enemigo
 signal señalHormiga
