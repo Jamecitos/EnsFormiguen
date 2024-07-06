@@ -3,7 +3,12 @@ extends Container
 
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
+const maxCadenaSimbols:int=15
+var llargadaSecuencia=[4,5,6]
+@onready var controlEnemics = $"../../../SpawnEnemies"
+
 var secuenciaEnemigo = []
+var vocabularioEnemigo=[]
 signal codigoListo
 
 
@@ -22,23 +27,34 @@ func _generarSimbolo(x, y, textura):
 	simbolo2.texture = textura
 	add_child(simbolo2)
 
+func _llargadaSecuencia():
+	llargadaSecuencia.shuffle()
+	return llargadaSecuencia[0]
 
 func _generarSecuencia(numero, arrayTexturas):
-	arrayTexturas.shuffle()
-	if numero > arrayTexturas.size():
-		numero = arrayTexturas.size()
+	secuenciaEnemigo.clear()
+	if numero > maxCadenaSimbols:
+		numero = maxCadenaSimbols
 	for i in numero:
-		_generarSimbolo(50*(i+1), 50, arrayTexturas[i])
+		arrayTexturas.shuffle()
+		_generarSimbolo(50*(i+1), 50, arrayTexturas[0])
+		secuenciaEnemigo.append(arrayTexturas[0])
 	codigoListo.emit()
 
 
 func _resetSecuenciaEnemigo():
 	for child in get_children():
 		child.queue_free()
-	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
+	_generarSecuencia(_llargadaSecuencia(), vocabularioEnemigo)
+
+
+func _limpiarSecuenciaEnemigo():
+	for child in get_children():
+		child.queue_free()
+
 
 
 func _on_spawn_enemies_señal_hormiga():
-	var copiaSecuencia = $"../../../SpawnEnemies".get_child(2).vocabulario
-	secuenciaEnemigo = copiaSecuencia.duplicate()
-	_generarSecuencia(secuenciaEnemigo.size(), secuenciaEnemigo)
+	var copiaSecuencia = controlEnemics.get_child(controlEnemics.POSICIO_CHILD_ENEMIC).vocabulario
+	vocabularioEnemigo = copiaSecuencia.duplicate()
+	_generarSecuencia(_llargadaSecuencia(), vocabularioEnemigo)

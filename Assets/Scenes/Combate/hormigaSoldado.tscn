@@ -1,27 +1,33 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3jqyefikotcy"]
 
-[ext_resource type="Texture2D" uid="uid://btik3a0mw6f8r" path="res://Assets/Sprites/AtomicAnt_460875.jpg" id="1_5566q"]
+[ext_resource type="Texture2D" uid="uid://ce1bv3cflitl" path="res://Assets/Sprites/Personajes/Combate/Enemiga Soldado.png" id="1_re31t"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/hormigaSoldado.gd" id="2_0mew1"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_b3s77"]
 
 [node name="Soldado" type="Sprite2D"]
-texture = ExtResource("1_5566q")
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("1_re31t")
 script = ExtResource("2_0mew1")
 
 [node name="DialogueEnemy" type="TextureRect" parent="."]
-offset_left = 166.0
-offset_top = -92.0
-offset_right = 283.0
-offset_bottom = 17.0
+visible = false
+modulate = Color(0.685835, 0.685835, 0.685835, 1)
+offset_left = 690.0
+offset_top = -780.0
+offset_right = 890.0
+offset_bottom = -670.0
+scale = Vector2(5, 5)
 texture = SubResource("CanvasTexture_b3s77")
 
 [node name="Label" type="Label" parent="DialogueEnemy"]
 layout_mode = 0
-offset_right = 117.0
-offset_bottom = 109.0
+offset_right = 200.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Los osos
 hormiguero
 no esisten"
+horizontal_alignment = 1
+vertical_alignment = 1

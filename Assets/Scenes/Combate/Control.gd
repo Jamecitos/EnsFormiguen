@@ -2,14 +2,29 @@ extends Control
 
 
 #Variables:
-var empiezaTiempo:bool = false
-const rapidezContador:int = 1
+const rapidezContador:float = 0.1
+var gameOver:bool=false
 
+
+func _process(_delta):
+	if not $"../../AudioStreamPlayer".playing and not gameOver:
+		$"../../AudioStreamPlayer".play()
 
 func _on_timer_timeout():
-	if empiezaTiempo:
-		$ProgressBarTime.value -= rapidezContador
+	$ProgressBarTime.value -= rapidezContador
+	if($ProgressBarTime.value<=0):
+		_derrota()
 
 
-func _on_timer_2_timeout():
-	empiezaTiempo = true
+func _victoria():
+	$"../../Victoria".visible=true
+	_finalCombat()
+
+func _derrota():
+	$"../../Derrota".visible=true
+	_finalCombat()
+
+func _finalCombat():
+	$Timer.stop()
+	gameOver=true
+	$"../../AudioStreamPlayer".stop()
