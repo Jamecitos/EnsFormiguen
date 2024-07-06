@@ -7,11 +7,11 @@ const HORMIGA_SOLDADO = preload("res://Assets/Scenes/Combate/hormigaSoldado.tscn
 const HORMIGA_GIGACHAD = preload("res://Assets/Scenes/Combate/hormigaGigachad.tscn")
 @onready var BARRA_ENEMIGO = $"../CanvasLayer/Control/ProgressBarEnemy"
 const POSICIO_CHILD_ENEMIC:int = 2
-var enemicsPendents:int = 3
 var recentGenerat:bool = true
 
 var probabilitatTipusFormiga = [1,2,3]
 var tamanyGrupFormigues:int =17
+var enemicsPendents:int = 3
 
 var enemigo
 signal señalHormiga

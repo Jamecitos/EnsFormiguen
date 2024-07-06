@@ -69,6 +69,7 @@ func _comparacionSecuencias():
 
 
 func _sequenciaCompletada():
+	print("ya fui")
 	var barraEnemigo = $"../ProgressBarEnemy"
 	barraEnemigo.value -= corduraGanada
 	_resetSecuenciaJugador()
@@ -89,6 +90,7 @@ func _sequenciaFallida():
 	barraPlayer.value += corduraGanada
 	controlEnemigos.enemigo._dialogoEntrada()
 	_switchDisabledButton()
+	print("pene")
 	$"../../../cooldownError".start()
 	
 	if barraPlayer.value >=90:
@@ -112,7 +114,8 @@ func _botonPulsado(textura):
 	if secuenciaJugador.size() >= secuenciaEnem.size() \
 	and _comparacionSecuencias():
 		_sequenciaCompletada()
-	elif _comparacionSecuencias():
+	elif not secuenciaJugador.size() >= secuenciaEnem.size() \
+	and _comparacionSecuencias():
 		_añadirSimbolo(textura)
 	else:
 		_resetSecuenciaJugador()
