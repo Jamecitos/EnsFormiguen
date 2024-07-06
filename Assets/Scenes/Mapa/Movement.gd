@@ -1,26 +1,18 @@
 extends CharacterBody2D
  
 var speed = 200
+var buttons: Array[Button]
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
-@onready var button1: Button = $"../Cueva1"
-@onready var button2: Button = $"../Cueva2"
-@onready var button3: Button = $"../Cueva3"
-@onready var button4: Button = $"../Cueva4"
-	
+
+func _ready():	
+	for child in get_parent().get_children():
+		if child is Button:
+			buttons.append(child)
+
 func _physics_process(delta):
-	
-	if button1.button_pressed:
-		print(button1.position)
-		nav.target_position = button1.position
-	if button2.button_pressed:
-		print(button2.position)
-		nav.target_position = button2.position
-	if button3.button_pressed:
-		print(button3.position)
-		nav.target_position = button3.position
-	if button4.button_pressed:
-		print(button4.position)
-		nav.target_position = button4.position
+	for button in buttons:
+		if(button.button_pressed):
+			nav.target_position = button.global_position + button.size*.5
 	
 	var target_position = nav.get_next_path_position()
 	
