@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkvc20g8d8qdq"]
+[gd_scene load_steps=9 format=3 uid="uid://bkvc20g8d8qdq"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/MenuPrincipal.gd" id="1_sxf7w"]
 [ext_resource type="Texture2D" uid="uid://cxbakr4vfxhbk" path="res://Assets/Sprites/FondoMenu.png" id="2_wittu"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/BU_CATALAN.gd" id="6_vwcjo"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/BU_ENGLISH.gd" id="7_0jj01"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_EXIT.gd" id="8_qv7fk"]
-[ext_resource type="AudioStream" uid="uid://bo61mjl42advo" path="res://Assets/Sounds/Tuneles.mp3" id="9_ugg7b"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -79,9 +78,6 @@ theme_override_font_sizes/font_size = 50
 text = "
 "
 script = ExtResource("8_qv7fk")
-
-[node name="MusicaMenu" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_ugg7b")
 
 [connection signal="pressed" from="BU_PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="BU_OPTIONS" to="." method="_on_options_pressed"]

@@ -5,8 +5,7 @@ extends Control
 # Llamado cuando el nodo entra en el árbol de la escena por primera vez.
 func _ready():
 	# Reproduce la música de opciones del menú. Asume que hay un nodo de audio llamado 'MusicaMenuOpciones'.
-	$MusicaMenuOpciones.play()
-
+	ControlMusica.play_music = true
 # Función que se llama cuando el valor del control maestro cambia.
 func _on_master_value_changed(value):
 	# Ajusta el volumen del bus maestro (índice 0) al valor proporcionado.

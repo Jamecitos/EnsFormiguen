@@ -8,7 +8,7 @@ extends Control
 
 func _ready():
 	# Reproduce la música del menú. Asume que hay un nodo de audio llamado 'MusicaMenu'.
-	$MusicaMenu.play()
+	ControlMusica.play_music = true
 	
 func _on_play_pressed():
 	# Cambia la escena actual a 'Combate.tscn'. Se asume que este archivo existe en el directorio 'res://'.

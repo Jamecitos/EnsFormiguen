@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="res://Assets/Sounds/Masterizador.tres"
 
+[autoload]
+
+ControlMusica="*res://Assets/Scenes/Música/ControlMusica.tscn"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
