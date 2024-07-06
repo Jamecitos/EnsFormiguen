@@ -6,7 +6,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_s7rcf"]
 
 [node name="Gigachad" type="Sprite2D"]
-scale = Vector2(0.22, 0.22)
+scale = Vector2(0.13, 0.13)
 texture = ExtResource("1_6kqf3")
 script = ExtResource("2_m2ckc")
 
@@ -24,7 +24,7 @@ offset_right = 244.5
 offset_bottom = -1239.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4, 4.003)
+scale = Vector2(5, 5.004)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("CanvasTexture_s7rcf")

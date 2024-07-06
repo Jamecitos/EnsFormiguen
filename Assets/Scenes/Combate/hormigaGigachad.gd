@@ -4,7 +4,7 @@ extends Sprite2D
 
 #Variables
 const nom:String="Gigachad"#repetitiu pero util per evitar problemes al instanciar
-var sanity = 180
+var sanity = 120
 
 
 const signSprite1 = preload("res://Assets/Sprites/xbox_button_color_x.png")

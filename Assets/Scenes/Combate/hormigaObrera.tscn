@@ -6,7 +6,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_knv81"]
 
 [node name="Obrera" type="Sprite2D"]
-scale = Vector2(0.22, 0.22)
+scale = Vector2(0.13, 0.13)
 texture = ExtResource("1_cpipy")
 script = ExtResource("2_gpaem")
 
@@ -17,7 +17,7 @@ offset_left = 690.0
 offset_top = -780.0
 offset_right = 890.0
 offset_bottom = -670.0
-scale = Vector2(4, 3.999)
+scale = Vector2(5, 5)
 texture = SubResource("CanvasTexture_knv81")
 
 [node name="Label" type="Label" parent="DialogueEnemy"]

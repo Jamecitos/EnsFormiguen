@@ -80,7 +80,8 @@ func _actualitzarTamanyGrup():
 
 func _on_timer_timeout():#Entra/sale enemigo en combate
 	if recentGenerat:
-		enemigo.position.x += 5
+		enemigo.position.x += 10
+		#enemigo.rotation+=1.2554 solo activar si se quiere hacer reir al Álvaro
 		if enemigo.position.x >= 350:
 			$Timer.stop()
 			señalHormiga.emit()
@@ -89,7 +90,7 @@ func _on_timer_timeout():#Entra/sale enemigo en combate
 			enemigo.get_child(0).visible=true
 			_mostrarPensamiento()
 	else:
-		enemigo.position.x -= 5
+		enemigo.position.x -= 10
 		if enemigo.position.x <= 0:
 			$Timer.stop()
 			_liberarEnemigo()
