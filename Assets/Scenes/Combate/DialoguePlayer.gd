@@ -2,8 +2,8 @@ extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
-var repositorioFrasesJugadorInicio=["Definitivamente \nno tienes razón..."]
-var repositorioFrasesJugadorFinal=["Ya decía yo"]
+var repositorioFrasesJugadorInicio=[tr("txt_respuesta11")]
+var repositorioFrasesJugadorFinal=[tr("txt_victoria11")]
 
 
 

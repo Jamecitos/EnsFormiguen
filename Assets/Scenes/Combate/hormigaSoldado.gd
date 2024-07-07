@@ -15,8 +15,8 @@ const vocabulario = [signSprite1, signSprite2, signSprite3, signSprite4]
 const UBI:int=390
 
 
-var frasesDuda = ["Pues ahora \nque lo \ndices...","Esto...","A ver, \nvisto asi..."]
-var frasesEntrada = ["Los osos \nhormiguero \nno esisten","¡Las moscas\n nos fumigan!","Esa miel \nestaba \ndeliciosa..."]
+var frasesDuda = [tr("txt_convencido11")]
+var frasesEntrada = [tr("txt_pregunta11")]
 @onready var label = $DialogueEnemy/Label
 #to-do sonidos propios
 
