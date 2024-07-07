@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5oqp7jqd1i4a"]
+
+[ext_resource type="Texture2D" uid="uid://drnm5c4ei3p16" path="res://Assets/Sprites/Personajes/Combate/Enemigo Obrera.png" id="1_cpipy"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/hormigaObrera.gd" id="2_gpaem"]
+[ext_resource type="Texture2D" uid="uid://cyd8wjvkr1xnx" path="res://Assets/Sprites/UI/dialogo 1 (enemigo).png" id="3_khjqw"]
+[ext_resource type="LabelSettings" uid="uid://3ftvf8a3fp56" path="res://Fonts/combat_text_setting.tres" id="4_c23wp"]
+
+[node name="Obrera" type="Sprite2D"]
+scale = Vector2(0.156, 0.156)
+texture = ExtResource("1_cpipy")
+script = ExtResource("2_gpaem")
+
+[node name="DialogueEnemy" type="TextureRect" parent="."]
+visible = false
+offset_left = 470.0
+offset_top = -1350.0
+offset_right = 2574.0
+offset_bottom = -374.0
+scale = Vector2(0.993, 0.99)
+texture = ExtResource("3_khjqw")
+
+[node name="Label" type="Label" parent="DialogueEnemy"]
+layout_mode = 0
+offset_left = 191.598
+offset_top = -10.101
+offset_right = 476.598
+offset_bottom = 99.899
+scale = Vector2(6.04717, 5.60566)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Los osos aaaaaaaaaaaaaaaaa
+hormiguero
+no esisten"
+label_settings = ExtResource("4_c23wp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1aa3uwifi6t6"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/CInematica/tutorial_soldado.gd" id="1_xg4qt"]
+[ext_resource type="Texture2D" uid="uid://bml3c6oagoboo" path="res://Assets/Scenes/CInematica/fondo TUTORIAL COMBATE.jpg" id="2_pyd6x"]
+[ext_resource type="Texture2D" uid="uid://5tetfmsrf7u" path="res://Assets/Scenes/CInematica/Cinemarica Alien.png" id="2_urevt"]
+[ext_resource type="Texture2D" uid="uid://bmn7pca2un66c" path="res://Assets/Scenes/CInematica/Combate Anthony_2.png" id="3_ci7ru"]
+[ext_resource type="Texture2D" uid="uid://djypkf8hl6h8x" path="res://Assets/Scenes/CInematica/Enemiga Soldado.png" id="4_p4eli"]
+[ext_resource type="Texture2D" uid="uid://d3wdbrx5bdpe8" path="res://Assets/Scenes/CInematica/dialogo tutorual anthony hablando.png" id="5_fqhx8"]
+[ext_resource type="FontFile" uid="uid://bos8uw1x3nmrm" path="res://Assets/Scenes/CInematica/Pixellari.ttf" id="6_8y0ra"]
+[ext_resource type="Texture2D" uid="uid://cb5ramo4ykvp1" path="res://Assets/Scenes/CInematica/BOTON PASAR DIALOGO_1.png" id="8_juvfn"]
+[ext_resource type="Texture2D" uid="uid://ysbj4s3hoyci" path="res://Assets/Scenes/CInematica/BOTON PASAR DIALOGO_2.png" id="9_ee27v"]
+[ext_resource type="AudioStream" uid="uid://cyti6w1mbvjic" path="res://Assets/Scenes/CInematica/Combate.wav" id="10_g48h7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sybo0"]
+line_spacing = 1.0
+font = ExtResource("6_8y0ra")
+font_size = 120
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[node name="TutorialSoldado" type="Node2D"]
+script = ExtResource("1_xg4qt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.418437, 0.418118)
+texture = ExtResource("2_pyd6x")
+
+[node name="Santi" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(804.375, 625.828)
+scale = Vector2(0.56153, 0.56153)
+texture = ExtResource("2_urevt")
+
+[node name="Anthony" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(980.75, 588.968)
+scale = Vector2(0.583333, 0.583333)
+texture = ExtResource("3_ci7ru")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(214.536, 520.703)
+scale = Vector2(0.321868, 0.321868)
+texture = ExtResource("4_p4eli")
+
+[node name="TextAnthony" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(678.553, 336.5)
+scale = Vector2(0.276765, 0.276765)
+texture = ExtResource("5_fqhx8")
+
+[node name="LabelAnthony" type="Label" parent="TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.005
+anchor_right = 0.031
+anchor_bottom = 0.005
+offset_left = -872.451
+offset_top = -439.39
+offset_right = 785.549
+offset_bottom = 114.61
+theme_override_fonts/font = ExtResource("6_8y0ra")
+theme_override_font_sizes/font_size = 77
+text = "Esta es una hormiga
+soldado, tendrás que
+darle la vuelta a
+sus argumentos, ¡contradice!"
+label_settings = SubResource("LabelSettings_sybo0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1176.0
+offset_top = 622.0
+offset_right = 1613.0
+offset_bottom = 1031.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_juvfn")
+texture_pressed = ExtResource("9_ee27v")
+
+[node name="MusicaTuto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_g48h7")
+volume_db = -10.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

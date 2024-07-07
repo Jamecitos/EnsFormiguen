@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2clktqdi7ifa"]
+
+[ext_resource type="Texture2D" uid="uid://3kr5fof5uafm" path="res://Assets/Sprites/UI/iconos/hormiga.png" id="1_q4n78"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.259301, 0.259301)
+texture = ExtResource("1_q4n78")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh8yv2tjt7xv"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Música/Scripts/ControlMusica.gd" id="1_jkqfl"]
+[ext_resource type="AudioStream" path="res://Assets/Sounds/Menú.wav" id="2_03isr"]
+
+[node name="Controlmusica" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkqfl")
+
+[node name="Button" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_03isr")
+bus = &"Music"
