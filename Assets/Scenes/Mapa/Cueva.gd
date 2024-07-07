@@ -1,4 +1,4 @@
-extends Button
+extends Location
 class_name cuevita
 
 var has_been_pressed: bool

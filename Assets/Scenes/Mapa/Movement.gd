@@ -1,25 +1,26 @@
 extends CharacterBody2D
 
-var buttons: Array[Button]
+var locations: Array[Location]
 var speed = 200
 var nAnts: int =1
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var combat_scene = preload("res://Assets/Scenes/Combate/combat.tscn")
 func _ready():
 	for child in get_parent().get_children():
-		if child is Button:
-			buttons.append(child)
+		if child is Location:
+			locations.append(child)
 
 func _physics_process(delta):
-	for button in buttons:
-		if(button.button_pressed):
-			nav.target_position = button.global_position + button.size*.5
-		if(button is cuevita):
-			if(!button.has_been_pressed):
-				if (button.global_position + button.size*.5).distance_to(global_position) < 3:
-					#$"../..".get_child(0).hide()
-					create_combat(button)
-					button.has_been_pressed = true
+			
+	for location in locations:
+		if(location.button_pressed && nav.is_navigation_finished()):
+			nav.target_position = location.global_position + location.size*.5
+			enable_colindant(location)
+		if(location is cuevita):
+			if(!location.has_been_pressed):
+				if (location.global_position + location.size*.5).distance_to(global_position) < 3:
+					create_combat(location)
+					location.has_been_pressed = true
 	
 	var target_position = nav.get_next_path_position()
 	
@@ -45,3 +46,7 @@ func create_combat(cueva:cuevita):
 	new_combat.get_child(6).position += elements_position_adjustment
 	new_combat.get_child(9).position += elements_position_adjustment
 	$"../..".add_child(new_combat)
+
+func enable_colindant(lloc:Location):
+	for loc in locations:
+		loc.disabled = lloc.covesColindants.find(loc) == -1

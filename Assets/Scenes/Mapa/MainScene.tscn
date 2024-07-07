@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://go8w5tcm6jxv"]
+[gd_scene load_steps=8 format=3 uid="uid://go8w5tcm6jxv"]
 
 [ext_resource type="Texture2D" uid="uid://d1s7ehekowr22" path="res://Assets/Sprites/EnsFormiguen_mapa_placeholder.jpg" id="1_oibfd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Mapa/Movement.gd" id="2_tdass"]
 [ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="3_2r5n5"]
 [ext_resource type="Script" path="res://Assets/Scenes/Mapa/Cueva.gd" id="4_6cb0g"]
+[ext_resource type="Script" path="res://Assets/Scenes/Mapa/Location.gd" id="5_xgnyw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4fm0f"]
 vertices = PackedVector2Array(209, 1216, 217, 1234, 214, 1240, 205, 1249, 186, 1247, 180, 1246, 190, 1207, 481, 1548, 487, 1551, 503, 1588, 499, 1593, 423, 1593, 418, 1591, 417, 1553, 423, 1549, 235, 1491, 234, 1531, 176, 1535, 169, 1533, 166, 1485, 173, 1483, 327, 1318, 328, 1328, 286, 1334, 280, 1332, 254, 1284, 29, 1473, 41, 1427, 46, 1423, 97, 1430, 111, 1458, 111, 1463, 77, 1485, 34, 1482, 32, 1480, 328, 794, 271, 797, 267, 792, 273, 756, 281, 752, 293, 750, 351, 761, 359, 781, 357, 786, 256, 1064, 269, 1068, 268, 1068, 282, 1458, 303, 1470, 302, 1470, 276, 1459, 613, 525, 621, 512, 631, 507, 641, 516, 644, 528, 637, 538, 620, 537, 612, 532, 671, 1291, 654, 1371, 584, 1314, 587, 1308, 504, 1497, 511, 1497, -86, 1479, -92, 1479, -103, 1453, -76, 1453, -73, 1460, 383, 1639, 379, 1636, 264, 734, 258, 738, 247, 721, 243, 726, 616, 945, 627, 903, 624, 948, 605, 998, 615, 903, 492, 1454, 554, 1455, 541, 1497, 488, 1461, 38, 1420, 42, 1418, 35, 1381, 39, 1380, 501, 1368, 505, 1354, 511, 1342, 511, 1354, 507, 1370, 503, 1380, 615, 488, 622, 471, 611, 478, 604, 454, 607, 469, 591, 461, 579, 416, 597, 1538, 625, 1553, 633, 1592, 562, 1591, 558, 1588, 549, 1594, 551, 1600, 537, 1604, 403, 1293, 400, 1307, 397, 1293, 397, 1276, 404, 1277, 392, 1304, 151, 792, 58, 811, 34, 744, 92, 735, 121, 743, 131, 747, 154, 784, 193, 814, 189, 823, 188, 824, 177, 808, 180, 800, 194, 941, 193, 941, 200, 903, 570, 1303, 569, 1311, 549, 1304, 180, 1123, 189, 1124, 202, 1134, 191, 1144, 178, 1144, 173, 1134, 245, 1774, 268, 1917, 209, 1916, 234, 1775, 551, 1313, 461, 1318, 385, 967, 405, 944, 458, 945, 467, 995, 397, 996, 384, 972, 273, 1375, 280, 1377, 244, 1738, 232, 1737, 220, 1727, 232, 1716, 243, 1719, 253, 1727, -140, 1418, -173, 1478, -206, 1455, -194, 1427, -147, 1414, -109, 1400, -112, 1394, -52, 1362, 441, 857, 437, 893, 385, 899, 384, 853, 413, 845, 421, 846, 422, 786, 410, 785, 169, 1553, 164, 1550, 148, 1568, 146, 1565, 178, 1268, 186, 1269, 171, 1314, 163, 1314, 403, 661, 419, 646, 429, 669, 435, 710, 422, 711, 410, 711, 386, 688, 246, 1373, 303, 1423, 272, 1436, 223, 1391, 495, 1379, 493, 1390, 486, 1387, 483, 1396, 477, 1392, 474, 1400, 467, 1396, 462, 1401, 459, 1395, 233, 1090, 187, 1097, 180, 1097, 164, 1090, 154, 1005, 205, 1002, 255, 1073, 490, 790, 554, 790, 553, 810, 551, 816, 504, 818, 487, 798, 363, 1258, 398, 1224, 432, 1228, 441, 1271, 365, 1264, 9, 1503, 14, 1506, 36, 1556, 34, 1564, -62, 1576, -67, 1514, -62, 1510, 537, 1597, 518, 1594, 516, 1602, 459, 1443, 465, 1439, 448, 1412, 454, 1409, 435, 1408, 429, 1406, 425, 1391, 428, 1385, 450, 1380, 429, 1413, 405, 1435, 409, 1438, 398, 1450, 402, 1451, 325, 1043, 318, 1044, 313, 999, 319, 999, 584, 963, 646, 966, 637, 997, 615, 998, 601, 1015, 611, 1016, 604, 1028, 598, 1024, 288, 162, 287, 98, 295, 98, 295, 161, 243, 1673, 232, 1673, 239, 1670, 286, 1537, 326, 1556, 314, 1581, 289, 1570, 280, 1539, 279, 1524, 275, 1525, 276, 1488, 282, 1489, 322, 1292, 327, 1296, 504, 1341, 54, 1361, 55, 1367, 27, 1349, 33, 1347, 386, 711, -12, 1295, -16, 1300, -29, 1304, -38, 1301, -36, 1273, -20, 1274, -15, 1279, 267, 1439, 225, 1442, 221, 1395, 164, 1467, 161, 1474, 154, 1469, 156, 1463, 372, 970, 370, 963, 359, 966, 360, 973, 330, 975, 331, 981, 308, 967, 317, 960, 697, 1037, 747, 1057, 739, 1091, 660, 1077, 659, 1072, 643, 1072, 642, 1078, 616, 1073, 616, 1065, 596, 1059, 601, 1053, 593, 858, 645, 860, 646, 897, 595, 902, 580, 844, 587, 842, 581, 825, 575, 830, 570, 816, 567, 822, 477, 784, 477, 791, 463, 779, 465, 773, 450, 770, 449, 776, 435, 771, 435, 776, 287, 196, 272, 179, 310, 178, 296, 196, 300, 1479, 300, 1478, 128, 1318, 191, 1316, 194, 1359, 186, 1360, 125, 1363, 110, 1353, 288, 231, 297, 232, 288, 1079, 262, 1074, 262, 1073, 290, 1072, 360, 1634, 374, 1658, 351, 1655, 348, 1651, 332, 1659, 332, 1654, 283, 1657, 285, 1650, 401, 1520, 408, 1517, 235, 899, 226, 960, 220, 960, 193, 951, 218, 897, 230, 895, 235, 896, 509, 1276, 532, 1333, 470, 1329, 463, 1322, 439, 1326, 439, 1322, 406, 1323, 405, 1328, 200, 900, 202, 895, 200, 901, 254, 1325, 164, 716, 171, 698, 239, 696, 171, 730, 163, 724, 144, 720, 147, 728, 131, 729, 139, 734, 298, 976, 303, 970, 573, 1035, 568, 1048, 567, 1042, 552, 1047, 555, 1052, 536, 1056, 523, 1060, 537, 1064, 522, 1065, 416, 1384, 420, 1381, 411, 1376, 409, 1381, 401, 1372, 404, 1369, 395, 1364, 399, 1361, 389, 1355, 395, 1354, 391, 1336, 386, 1336, 403, 1452, 427, 1474, 365, 1510, 346, 1482, 381, 1449, 396, 1449, 346, 1476, 328, 1481, 311, 1479, 279, 1446, 273, 1448, 196, 1368, 189, 1370, 97, 1354, 98, 1358, 71, 1361, 84, 1357, 87, 1363, 72, 1366, 18, 1321, 13, 1325, 7, 1308, 0, 1311, 288, 942, 284, 948, 269, 931, 267, 939, -95, 1358, -26, 1382, -34, 1414, -60, 1420, -67, 1419, -46, 1364, 609, 546, 605, 537, 585, 547, 594, 537, 584, 537, 556, 575, 464, 398, 477, 400, 481, 419, 33, 365, -2, 345, 3, 312, 14, 306, 83, 361, 131, 317, 111, 346, 23, 295, 47, 281, 84, 277, 101, 278, 120, 286, 127, 295, 150, 307, 158, 315, 192, 316, 185, 305, 206, 308, 201, 321, 222, 335, 212, 329, 227, 302, 234, 307, 238, 320, 234, 332, 202, 839, 195, 839, 190, 831, 217, 815, 217, 821, 506, 1077, 430, 1079, 426, 1072, 456, 1033, 509, 1048, 231, 1672, 467, 432, 445, 425, 440, 421, 443, 411, 479, 426, 151, 1611, 143, 1614, 76, 1609, 65, 1575, 68, 1570, 470, 540, 470, 547, 448, 538, 448, 536, 459, 530, 189, 1632, 248, 1611, 199, 1672, 186, 1643, 186, 1640, 168, 1627, 161, 1632, 67, 1570, -82, 1493, -89, 1495, -62, 1443, -69, 1442, 6, 1268, -6, 1275, -10, 1265, 4, 1260, 28, 1261, 29, 1268, 554, 420, 537, 458, 530, 440, 535, 430, 327, 462, 327, 478, 314, 486, 293, 492, 251, 488, 241, 463, 242, 451, 282, 440, 320, 449, 239, 950, 239, 953, 365, 1081, 365, 1088, 354, 1099, 319, 1103, 293, 1097, 356, 1057, 412, 1082, 417, 1088, 120, 1263, 58, 1283, 58, 1238, 103, 1243, 120, 1258, 146, 1255, 142, 1250, 157, 1241, 160, 1244, 158, 1240, 373, 1318, 392, 1336, 385, 1336, 374, 1325, 327, 1313, 260, 1281, 241, 1259, 247, 1253, 572, 573, 199, 425, 148, 441, 133, 429, 122, 405, 133, 374, 153, 363, 184, 378, 247, 901, 449, 431, 457, 432, 440, 392, 453, 395, 166, 1245, 161, 1245, 170, 1214, 182, 1207, 188, 1151, 182, 1153, 214, 997, 217, 1001, 532, 524, 565, 523, 526, 571, 514, 552, 518, 534, 505, 543, 499, 551, 482, 542, 456, 502, 460, 517, 444, 494, 258, 268, 254, 251, 262, 239, 322, 240, 330, 261, 320, 278, 314, 280, 266, 274, 417, 587, 427, 606, 420, 622, 409, 643, 404, 621, 406, 588, 421, 752, 431, 765, 431, 784, 401, 776, 399, 769, 412, 752, 410, 296, 433, 303, 442, 325, 441, 340, 429, 354, 414, 360, 370, 296, 601, 419, 612, 428, 612, 444, 516, 423, 513, 431, 499, 428, 431, 368, 422, 366, 206, 859, 200, 855, 199, 847, 205, 852, 209, 856, 214, 863, 488, 310, 515, 277, 558, 268, 593, 293, 599, 335, 587, 351, 573, 357, 490, 350, 478, 327, 466, 340, 459, 328, 345, 308, 359, 299, 394, 368, 363, 367, 344, 360, 335, 345, 341, 315, 331, 305, 330, 296, 325, 286, 323, 297, 320, 290, 245, 288, 241, 285, 216, 342, 206, 357, 214, 361, 200, 376, 208, 416, 208, 422, 339, 508, 334, 490, 346, 501, 373, 517, 374, 508, 407, 548, 382, 533, 399, 497, 425, 494, 444, 539, 421, 547, 438, 490, 398, 604, 223, 985, 218, 985, 234, 875, 229, 876, 231, 867, 228, 869, 225, 862, 223, 866, 216, 859, 204, 848, 247, 811, 245, 807, 367, 786, 383, 778, 385, 782, 459, 433)
@@ -48,7 +49,7 @@ debug_path_custom_color = Color(1, 0.152941, 1, 1)
 scale = Vector2(3.27869, 3.27869)
 position_smoothing_enabled = true
 
-[node name="Cueva5" type="Button" parent="MapArea"]
+[node name="Cueva5" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -69,19 +70,9 @@ script = ExtResource("4_6cb0g")
 enemicsPendents = 1
 probabilitatTipusFormiga = [1]
 llargadaSecuencia = [3, 4]
+covesColindants = [NodePath("../Intersection1"), NodePath("../Intersection2"), NodePath("../Cueva8")]
 
-[node name="Cueva6" type="Button" parent="MapArea"]
-offset_left = 1151.0
-offset_top = 1195.0
-offset_right = 1271.0
-offset_bottom = 1304.0
-toggle_mode = true
-button_group = SubResource("ButtonGroup_1602k")
-flat = true
-script = ExtResource("4_6cb0g")
-enemicsPendents = 1
-
-[node name="Cueva7" type="Button" parent="MapArea"]
+[node name="Cueva7" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 1267.0
 offset_top = 788.0
 offset_right = 1639.0
@@ -91,8 +82,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 enemicsPendents = 2
+covesColindants = [NodePath("../Cueva8")]
 
-[node name="Cueva8" type="Button" parent="MapArea"]
+[node name="Cueva8" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 817.0
 offset_top = 861.0
 offset_right = 1159.0
@@ -102,8 +94,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 enemicsPendents = 2
+covesColindants = [NodePath("../Cueva5"), NodePath("../Cueva7"), NodePath("../Intersection18")]
 
-[node name="Cueva9" type="Button" parent="MapArea"]
+[node name="Cueva9" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 920.0
 offset_top = 1494.0
 offset_right = 1205.0
@@ -113,8 +106,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 enemicsPendents = 3
+covesColindants = [NodePath("../Cueva12"), NodePath("../Cueva14"), NodePath("../Intersection18")]
 
-[node name="Cueva10" type="Button" parent="MapArea"]
+[node name="Cueva10" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 1447.0
 offset_top = 1229.0
 offset_right = 1726.0
@@ -124,8 +118,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 enemicsPendents = 2
+covesColindants = [NodePath("../Intersection3"), NodePath("../Intersection18")]
 
-[node name="Cueva11" type="Button" parent="MapArea"]
+[node name="Cueva11" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -146,8 +141,9 @@ script = ExtResource("4_6cb0g")
 enemicsPendents = 2
 probabilitatTipusFormiga = [1]
 llargadaSecuencia = [2, 3]
+covesColindants = [NodePath("../Intersection2")]
 
-[node name="Cueva12" type="Button" parent="MapArea"]
+[node name="Cueva12" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 1381.0
 offset_top = 1586.0
 offset_right = 1629.0
@@ -157,8 +153,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 enemicsPendents = 2
+covesColindants = [NodePath("../Cueva9"), NodePath("../Intersection3")]
 
-[node name="Cueva13" type="Button" parent="MapArea"]
+[node name="Cueva13" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -179,8 +176,9 @@ script = ExtResource("4_6cb0g")
 enemicsPendents = 2
 probabilitatTipusFormiga = [1]
 llargadaSecuencia = [2, 3]
+covesColindants = [NodePath("../Intersection2"), NodePath("../Cueva14")]
 
-[node name="Cueva14" type="Button" parent="MapArea"]
+[node name="Cueva14" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -199,8 +197,9 @@ flat = true
 icon_alignment = 1
 script = ExtResource("4_6cb0g")
 enemicsPendents = 2
+covesColindants = [NodePath("../Cueva13"), NodePath("../Cueva9")]
 
-[node name="Cueva15" type="Button" parent="MapArea"]
+[node name="Cueva15" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 909.0
 offset_top = 2069.0
 offset_right = 1216.0
@@ -209,6 +208,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+covesColindants = [NodePath("../Intersection4"), NodePath("../Intersection5")]
 
 [node name="Cueva16" type="Button" parent="MapArea"]
 offset_left = 555.0
@@ -250,7 +250,7 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 
-[node name="Cueva20" type="Button" parent="MapArea"]
+[node name="Cueva20" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = 872.0
 offset_top = 2655.0
 offset_right = 1207.0
@@ -259,6 +259,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+covesColindants = [NodePath("../Intersection5")]
 
 [node name="Cueva21" type="Button" parent="MapArea"]
 offset_left = 1294.0
@@ -550,7 +551,7 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
 
-[node name="Intersection1" type="Button" parent="MapArea"]
+[node name="Intersection1" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -567,8 +568,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
+covesColindants = [NodePath("../Cueva5")]
 
-[node name="Intersection2" type="Button" parent="MapArea"]
+[node name="Intersection2" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -585,8 +588,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
+covesColindants = [NodePath("../Cueva5"), NodePath("../Cueva11"), NodePath("../Cueva13")]
 
-[node name="Intersection3" type="Button" parent="MapArea"]
+[node name="Intersection3" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -603,8 +608,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
+covesColindants = [NodePath("../Cueva10"), NodePath("../Cueva12")]
 
-[node name="Intersection4" type="Button" parent="MapArea"]
+[node name="Intersection4" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -621,8 +628,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
+covesColindants = [NodePath("../Cueva9"), NodePath("../Cueva15")]
 
-[node name="Intersection5" type="Button" parent="MapArea"]
+[node name="Intersection5" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -639,6 +648,8 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
+covesColindants = [NodePath("../Cueva15"), NodePath("../Cueva16"), NodePath("../Cueva20"), NodePath("../Cueva21")]
 
 [node name="Intersection6" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -657,6 +668,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection7" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -675,6 +687,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection8" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -693,6 +706,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection9" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -711,6 +725,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection10" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -729,6 +744,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection11" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -747,6 +763,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection12" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -765,6 +782,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection13" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -783,6 +801,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection14" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -801,6 +820,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection15" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -819,6 +839,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection16" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -837,6 +858,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
 
 [node name="Intersection17" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -855,3 +877,15 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
+script = ExtResource("5_xgnyw")
+
+[node name="Intersection18" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
+offset_left = 1151.0
+offset_top = 1195.0
+offset_right = 1271.0
+offset_bottom = 1304.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1602k")
+flat = true
+script = ExtResource("5_xgnyw")
+covesColindants = [NodePath("../Cueva8"), NodePath("../Cueva9"), NodePath("../Cueva10")]
