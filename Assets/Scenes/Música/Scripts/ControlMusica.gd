@@ -8,11 +8,9 @@ func _ready():
 	pass # Inicializar si es necesario
 
 func play_music():
-	if musica_menu:
 		musica_menu.play()
 
 func stop_music():
-	if musica_menu:
 		musica_menu.stop()
 
 func is_playing() -> bool:

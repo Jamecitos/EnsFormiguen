@@ -19,6 +19,7 @@ agent_radius = 0.0
 [node name="MapArea" type="Area2D" parent="."]
 
 [node name="BackgroundImage" type="Sprite2D" parent="MapArea"]
+z_index = -8
 position = Vector2(577.001, 2979)
 scale = Vector2(1.43, 1.43)
 texture = ExtResource("1_oibfd")
@@ -29,6 +30,7 @@ scale = Vector2(3.28185, 3.28185)
 navigation_polygon = SubResource("NavigationPolygon_4fm0f")
 
 [node name="Player2" type="CharacterBody2D" parent="MapArea"]
+z_index = -6
 position = Vector2(662, 538)
 scale = Vector2(0.43615, 0.43615)
 script = ExtResource("2_tdass")
@@ -64,6 +66,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
 script = ExtResource("4_6cb0g")
+enemicsPendents = 1
+probabilitatTipusFormiga = [1]
+llargadaSecuencia = [3, 4]
 
 [node name="Cueva6" type="Button" parent="MapArea"]
 offset_left = 1151.0
@@ -74,6 +79,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 1
 
 [node name="Cueva7" type="Button" parent="MapArea"]
 offset_left = 1267.0
@@ -84,6 +90,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
 
 [node name="Cueva8" type="Button" parent="MapArea"]
 offset_left = 817.0
@@ -94,6 +101,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
 
 [node name="Cueva9" type="Button" parent="MapArea"]
 offset_left = 920.0
@@ -104,6 +112,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 3
 
 [node name="Cueva10" type="Button" parent="MapArea"]
 offset_left = 1447.0
@@ -114,6 +123,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
 
 [node name="Cueva11" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -133,6 +143,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
+probabilitatTipusFormiga = [1]
+llargadaSecuencia = [2, 3]
 
 [node name="Cueva12" type="Button" parent="MapArea"]
 offset_left = 1381.0
@@ -143,6 +156,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
 
 [node name="Cueva13" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -162,6 +176,9 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
+probabilitatTipusFormiga = [1]
+llargadaSecuencia = [2, 3]
 
 [node name="Cueva14" type="Button" parent="MapArea"]
 anchors_preset = 8
@@ -181,6 +198,7 @@ button_group = SubResource("ButtonGroup_1602k")
 flat = true
 icon_alignment = 1
 script = ExtResource("4_6cb0g")
+enemicsPendents = 2
 
 [node name="Cueva15" type="Button" parent="MapArea"]
 offset_left = 909.0

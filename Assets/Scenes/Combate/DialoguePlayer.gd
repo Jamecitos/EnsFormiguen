@@ -2,14 +2,25 @@ extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
-var repositorioFrasesJugador=["No.","A mi que \nme cuentas","Basadon't","Y cómo \nexplicas \nesta pedazo \nde trompa?"]
+var repositorioFrasesJugadorInicio=["Definitivamente \n no tienes razón"]
+var repositorioFrasesJugadorFinal=["Ya decía yo"]
+
+func _fraseNuevaJugadorInicio():
+	repositorioFrasesJugadorInicio.shuffle()
+	$Label.text=repositorioFrasesJugadorInicio[0]
+
+func _fraseNuevaJugadorFinal():
+	repositorioFrasesJugadorFinal.shuffle()
+	$Label.text=repositorioFrasesJugadorFinal[0]
 
 
-func _fraseNuevaJugador():
-	repositorioFrasesJugador.shuffle()
-	$Label.text=repositorioFrasesJugador[0]
 
-
-func _on_control_panel_2_secuencia_acertada():
+func _on_spawn_enemies_dialogo_player_inicio():
 	visible=true
-	_fraseNuevaJugador()
+	_fraseNuevaJugadorInicio()
+
+
+
+func _on_spawn_enemies_dialogo_player_final():
+	visible=true
+	_fraseNuevaJugadorFinal()

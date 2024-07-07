@@ -17,7 +17,7 @@ var y = 55
 var secuenciaJugador = []
 var secuenciaEnem = []
 
-signal secuenciaAcertada
+
 
 
 func _on_texture_button_1_button_down():
@@ -72,9 +72,10 @@ func _sequenciaCompletada():
 	var barraEnemigo = $"../ProgressBarEnemy"
 	barraEnemigo.value -= corduraGanada
 	_resetSecuenciaJugador()
-	controlEnemigos.enemigo._dialogoDuda()
-	secuenciaAcertada.emit()
+	#controlEnemigos.enemigo._dialogoDuda()
+	
 	if barraEnemigo.value<=0:
+		controlEnemigos.enemigo._dialogoDuda()
 		nodoPuzzlePanel._limpiarSecuenciaEnemigo()
 		controlEnemigos._retirarEnemigo()
 		
@@ -87,7 +88,7 @@ func _sequenciaCompletada():
 func _sequenciaFallida():
 	var barraPlayer = $"../ProgressBarPlayer"
 	barraPlayer.value += corduraGanada
-	controlEnemigos.enemigo._dialogoEntrada()
+	#controlEnemigos.enemigo._dialogoEntrada()
 	_switchDisabledButton()
 	$"../../../cooldownError".start()
 	
@@ -112,7 +113,8 @@ func _botonPulsado(textura):
 	if secuenciaJugador.size() >= secuenciaEnem.size() \
 	and _comparacionSecuencias():
 		_sequenciaCompletada()
-	elif _comparacionSecuencias():
+	elif not secuenciaJugador.size() >= secuenciaEnem.size() \
+	and _comparacionSecuencias():
 		_añadirSimbolo(textura)
 	else:
 		_resetSecuenciaJugador()
@@ -129,7 +131,7 @@ func _on_puzzle_panel_codigo_listo():
 	texturaBoton2.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[1]
 	texturaBoton3.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[2]
 	texturaBoton4.texture_normal=$"../PuzzlePanel".vocabularioEnemigo[3]
-	
+
 
 
 func _on_spawn_enemies_switch_enable_botons():

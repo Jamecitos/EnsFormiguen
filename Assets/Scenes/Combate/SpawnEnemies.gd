@@ -10,12 +10,15 @@ const POSICIO_CHILD_ENEMIC:int = 2
 var enemicsPendents:int = 3
 var recentGenerat:bool = true
 
-var probabilitatTipusFormiga = [1,2,3]
+var probabilitatTipusFormiga = [1,3]
 var tamanyGrupFormigues:int =17
 
 var enemigo
 signal señalHormiga
 signal switchEnableBotons
+
+signal dialogoPlayerInicio
+signal dialogoPlayerFinal
 
 
 func _ready():
@@ -55,6 +58,8 @@ func _liberarEnemigo():
 		_generarEnemigo()
 	else:
 		$"../CanvasLayer/Control"._victoria()
+		get_parent().get_parent().get_child(0).get_child(2).nAnts=tamanyGrupFormigues
+		#print(get_parent().get_parent().get_child(0).name)
 		get_parent().remove_child($"../")
 		$"../".call_deferred("free")
 
@@ -62,10 +67,12 @@ func _liberarEnemigo():
 func _retirarEnemigo():
 	recentGenerat=false
 	switchEnableBotons.emit()
-	$Timer.start()
-	$"../CanvasLayer/Control/Timer".stop()
-	_ocultarDialogos()
 	_ocultarPensamiento()
+	dialogoPlayerFinal.emit()
+	$"../CanvasLayer/Control/Timer".stop()
+	$"../EspacioDialogoDuda".start()
+
+
 
 func _ocultarDialogos():
 	$"../CanvasLayer/Control/DialoguePlayer".visible=false
@@ -86,13 +93,23 @@ func _on_timer_timeout():#Entra/sale enemigo en combate
 		#enemigo.rotation+=1.2554 solo activar si se quiere hacer reir al Álvaro
 		if enemigo.position.x >= 350:
 			$Timer.stop()
-			señalHormiga.emit()
-			switchEnableBotons.emit()
-			$"../CanvasLayer/Control/Timer".start()
+			$"../EspacioDialogo".start()
 			enemigo.get_child(0).visible=true
-			_mostrarPensamiento()
+			dialogoPlayerInicio.emit()
 	else:
 		enemigo.position.x -= 10
 		if enemigo.position.x <= 0:
 			$Timer.stop()
 			_liberarEnemigo()
+
+
+func _on_espacio_dialogo_timeout():
+	señalHormiga.emit()
+	switchEnableBotons.emit()
+	$"../CanvasLayer/Control/Timer".start()
+	_mostrarPensamiento()
+
+
+func _on_espacio_dialogo_duda_timeout():
+	$Timer.start()
+	_ocultarDialogos()
