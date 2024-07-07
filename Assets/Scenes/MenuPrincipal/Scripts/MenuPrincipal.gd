@@ -15,7 +15,9 @@ func _ready():
 func _on_play_pressed():
 	# Cambia la escena actual a 'Combate.tscn'. Se asume que este archivo existe en el directorio 'res://'.
 	audio.play()
-	get_tree().change_scene_to_file("res://Assets/Scenes/Combate/combat.tscn")
+	ControlMusica.stop_music()
+	get_tree().change_scene_to_file("res://Assets/Scenes/CInematica/intro.tscn")
+	
 	
 
 func _on_exit_pressed():

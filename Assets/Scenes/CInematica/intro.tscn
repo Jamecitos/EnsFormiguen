@@ -1,0 +1,263 @@
+[gd_scene load_steps=20 format=3 uid="uid://ktskxf63b1n4"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/CInematica/intro.gd" id="1_h0g56"]
+[ext_resource type="Texture2D" uid="uid://b3yrrhrffwn2k" path="res://Assets/Scenes/CInematica/EnsFormiguen_mapaFINAL.jpg" id="1_xiyuj"]
+[ext_resource type="Texture2D" uid="uid://cmq744meh2sua" path="res://Assets/Scenes/CInematica/Cinematica Anthony.png" id="4_i1iwx"]
+[ext_resource type="Texture2D" uid="uid://bnr21hul0ntm" path="res://Assets/Scenes/CInematica/dialogo 1 (enemigo).png" id="5_0oscu"]
+[ext_resource type="Texture2D" uid="uid://diauxxcadalgs" path="res://Assets/Scenes/CInematica/Cinematica Alien_2.png" id="5_2o30o"]
+[ext_resource type="FontFile" uid="uid://bos8uw1x3nmrm" path="res://Assets/Scenes/CInematica/Pixellari.ttf" id="6_6oi7u"]
+[ext_resource type="Texture2D" uid="uid://d3wdbrx5bdpe8" path="res://Assets/Scenes/CInematica/dialogo tutorual anthony hablando.png" id="8_t3gru"]
+[ext_resource type="Texture2D" uid="uid://cb5ramo4ykvp1" path="res://Assets/Scenes/CInematica/BOTON PASAR DIALOGO_1.png" id="9_uepsk"]
+[ext_resource type="Texture2D" uid="uid://ysbj4s3hoyci" path="res://Assets/Scenes/CInematica/BOTON PASAR DIALOGO_2.png" id="10_la8nh"]
+[ext_resource type="AudioStream" uid="uid://co45ebtje7g7t" path="res://Assets/Scenes/CInematica/Cinematica.wav" id="10_ym1ns"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_neunb"]
+line_spacing = 1.0
+font = ExtResource("6_6oi7u")
+font_size = 98
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pbl02"]
+line_spacing = 1.0
+font = ExtResource("6_6oi7u")
+font_size = 95
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kh26"]
+line_spacing = 1.0
+font = ExtResource("6_6oi7u")
+font_size = 110
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_krh6s"]
+line_spacing = 1.0
+font = ExtResource("6_6oi7u")
+font_size = 115
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4nse8"]
+line_spacing = 1.0
+font = ExtResource("6_6oi7u")
+font_size = 200
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2eu2j"]
+line_spacing = 1.0
+font = ExtResource("6_6oi7u")
+font_size = 105
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="Animation" id="Animation_dkwcb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 992)]
+}
+
+[sub_resource type="Animation" id="Animation_jfwj0"]
+resource_name = "cameraAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 992), Vector2(640, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbv6h"]
+_data = {
+"RESET": SubResource("Animation_dkwcb"),
+"cameraAnim": SubResource("Animation_jfwj0")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_h0g56")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(640, 992)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(554, 3000)
+scale = Vector2(1.50255, 1.30405)
+texture = ExtResource("1_xiyuj")
+
+[node name="Anthony" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(469, 443)
+scale = Vector2(0.23578, 0.23578)
+texture = ExtResource("4_i1iwx")
+
+[node name="TextAnthony" type="Sprite2D" parent="Anthony"]
+visible = false
+position = Vector2(869.475, -544.781)
+scale = Vector2(0.865932, 0.933842)
+texture = ExtResource("5_0oscu")
+
+[node name="LabelAnthony" type="Label" parent="Anthony/TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0415589
+anchor_top = -0.0357141
+anchor_right = 0.0415589
+anchor_bottom = -0.0357141
+offset_left = -1052.44
+offset_top = -488.143
+offset_right = 896.56
+offset_bottom = 153.857
+theme_override_fonts/font = ExtResource("6_6oi7u")
+theme_override_font_sizes/font_size = 77
+text = "No me puedo creer que haya
+tenido que
+salir por patitas. Esa miel
+que encontraron el otro dia
+ha trastocado a mis compañeras…"
+label_settings = SubResource("LabelSettings_neunb")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelAnthony2" type="Label" parent="Anthony/TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.065
+anchor_top = 0.031
+anchor_right = 0.065
+anchor_bottom = 0.031
+offset_left = -1192.76
+offset_top = -479.256
+offset_right = 921.24
+offset_bottom = 30.744
+text = "Compañero!! Tu debes ser de otra
+colonia, mis amigas hormigas se han vuelto unas
+conspiranoicas por culpa de una miel
+que han tomado. Yo soy intolerante…"
+label_settings = SubResource("LabelSettings_pbl02")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelAnthony3" type="Label" parent="Anthony/TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.013
+anchor_right = 0.024
+anchor_bottom = 0.013
+offset_left = -886.614
+offset_top = -476.656
+offset_right = 811.386
+offset_bottom = 72.3435
+text = "Debes ayudarme a hacerlas entrar
+en razón! Tienes pinta de ser
+un tipo inteligente."
+label_settings = SubResource("LabelSettings_7kh26")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelAnthony4" type="Label" parent="Anthony/TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.013
+anchor_right = 0.024
+anchor_bottom = 0.013
+offset_left = -886.614
+offset_top = -476.656
+offset_right = 812.386
+offset_bottom = 72.3437
+text = "Quan siguem dins del formiguer
+indica’m a on vols anar
+i jo et guiaré.
+"
+label_settings = SubResource("LabelSettings_krh6s")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Santi" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(917, 441)
+scale = Vector2(0.231977, 0.231977)
+texture = ExtResource("5_2o30o")
+
+[node name="TextSanti" type="Sprite2D" parent="Santi"]
+visible = false
+position = Vector2(-882.329, -605.111)
+scale = Vector2(0.972962, 0.93327)
+texture = ExtResource("8_t3gru")
+
+[node name="LabelSanti" type="Label" parent="Santi"]
+visible = false
+anchors_preset = -1
+anchor_left = -4.205
+anchor_top = -0.888
+anchor_right = -4.205
+anchor_bottom = -0.888
+offset_left = -169.491
+offset_top = -352.505
+offset_right = 1280.51
+offset_bottom = 93.4948
+theme_override_fonts/font = ExtResource("6_6oi7u")
+theme_override_font_sizes/font_size = 77
+text = "…"
+label_settings = SubResource("LabelSettings_4nse8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelSanti2" type="Label" parent="Santi"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.043
+anchor_right = 0.018
+anchor_bottom = 0.043
+offset_left = -1707.48
+offset_top = -1036.51
+offset_right = -20.4788
+offset_bottom = -554.51
+text = "Una miel extraña… yo te ayudo…"
+label_settings = SubResource("LabelSettings_2eu2j")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1176.0
+offset_top = 622.0
+offset_right = 1613.0
+offset_bottom = 1031.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("9_uepsk")
+texture_pressed = ExtResource("10_la8nh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pbv6h")
+}
+
+[node name="MusicaTuto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ym1ns")
+
+[connection signal="texture_changed" from="Santi" to="." method="_on_santi_texture_changed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

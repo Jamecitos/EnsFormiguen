@@ -32,7 +32,7 @@ navigation_polygon = SubResource("NavigationPolygon_4fm0f")
 
 [node name="Player2" type="CharacterBody2D" parent="MapArea"]
 z_index = -6
-position = Vector2(662, 538)
+position = Vector2(299, 3605)
 scale = Vector2(0.43615, 0.43615)
 script = ExtResource("2_tdass")
 
@@ -70,6 +70,7 @@ script = ExtResource("4_6cb0g")
 enemicsPendents = 1
 probabilitatTipusFormiga = [1]
 llargadaSecuencia = [3, 4]
+tuto1 = true
 covesColindants = [NodePath("../Intersection1"), NodePath("../Intersection2"), NodePath("../Cueva8")]
 
 [node name="Cueva7" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
@@ -210,6 +211,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+tuto2 = true
 covesColindants = [NodePath("../Intersection4"), NodePath("../Intersection5")]
 
 [node name="Cueva16" type="Button" parent="MapArea"]
@@ -352,6 +354,7 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+tuto3 = true
 
 [node name="Cueva30" type="Button" parent="MapArea"]
 offset_left = -212.0
@@ -552,6 +555,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
+enemicsPendents = 1
+probabilitatTipusFormiga = [1]
+llargadaSecuencia = [7]
+boss = true
 
 [node name="Intersection1" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
