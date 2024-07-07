@@ -7,10 +7,10 @@ const nom:String="Soldado"#repetitiu pero util per evitar problemes al instancia
 var sanity = 90
 
 
-const signSprite1 = preload("res://Assets/Sprites/xbox_button_color_x.png")
-const signSprite2 = preload("res://Assets/Sprites/testSimboloAlternativo.png")
-const signSprite3 = preload("res://Assets/Sprites/xbox_button_color_a.png")
-const signSprite4 = preload("res://Assets/Sprites/xbox_button_color_y.png")
+const signSprite1 = preload("res://Assets/Sprites/UI/iconos/frasco.png")
+const signSprite2 = preload("res://Assets/Sprites/UI/iconos/jeringuilla.png")
+const signSprite3 = preload("res://Assets/Sprites/UI/iconos/saturno.png")
+const signSprite4 = preload("res://Assets/Sprites/UI/iconos/fuego.png")
 const vocabulario = [signSprite1, signSprite2, signSprite3, signSprite4]
 
 

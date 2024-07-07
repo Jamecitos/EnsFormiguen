@@ -4,7 +4,7 @@ extends Container
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const maxCadenaSimbols:int=15
-var llargadaSecuencia=[4,5,6]
+var llargadaSecuencia=[7]
 @onready var controlEnemics = $"../../../SpawnEnemies"
 
 var secuenciaEnemigo = []
@@ -32,12 +32,13 @@ func _llargadaSecuencia():
 	return llargadaSecuencia[0]
 
 func _generarSecuencia(numero, arrayTexturas):
+	var offset:int=65
 	secuenciaEnemigo.clear()
 	if numero > maxCadenaSimbols:
 		numero = maxCadenaSimbols
 	for i in numero:
 		arrayTexturas.shuffle()
-		_generarSimbolo(50*(i+1), 50, arrayTexturas[0])
+		_generarSimbolo(65*(i+1)+offset, 70, arrayTexturas[0])
 		secuenciaEnemigo.append(arrayTexturas[0])
 	codigoListo.emit()
 

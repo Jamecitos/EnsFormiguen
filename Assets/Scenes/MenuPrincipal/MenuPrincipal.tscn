@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkvc20g8d8qdq"]
+[gd_scene load_steps=14 format=3 uid="uid://bkvc20g8d8qdq"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/MenuPrincipal.gd" id="1_sxf7w"]
 [ext_resource type="FontFile" uid="uid://bx5wrvmbi735q" path="res://Fonts/MADE Waffle Soft PERSONAL USE.otf" id="3_j7lfx"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_PLAY.gd" id="4_igupd"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_OPTIONS.gd" id="5_0mv6m"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/BU_CATALAN.gd" id="6_vwcjo"]
-[ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/BU_ENGLISH.gd" id="7_0jj01"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuPrincipal/Scripts/Bu_EXIT.gd" id="8_qv7fk"]
 [ext_resource type="AudioStream" uid="uid://bik80a0oqqihn" path="res://Assets/Sounds/BotonMenú__alirabiei__digging-dirt.mp3" id="9_g1csa"]
 [ext_resource type="Texture2D" uid="uid://bjgdsuet55p8y" path="res://Assets/Sprites/Fondo_menu.jpg" id="9_xcme0"]
@@ -35,6 +34,7 @@ texture = ExtResource("9_xcme0")
 script = ExtResource("10_7wg6q")
 
 [node name="BU_CASTELLANO" type="Button" parent="."]
+layout_mode = 0
 offset_left = 886.0
 offset_top = 431.0
 offset_right = 1099.0
@@ -52,7 +52,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_q2ca4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x05vh")
 text = "CASTELLANO
 "
-script = ExtResource("7_0jj01")
 
 [node name="BU_PLAY" type="Button" parent="."]
 layout_mode = 0
@@ -138,12 +137,12 @@ script = ExtResource("8_qv7fk")
 stream = ExtResource("9_g1csa")
 bus = &"SoundsFX"
 
-[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_bu_catalan_pressed"]
 [connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_bu_castellano_pressed"]
+[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="BU_OPTIONS" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="BU_CATALAN" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_CATALAN" to="." method="_on_bu_catalan_pressed"]
+[connection signal="pressed" from="BU_CATALAN" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="BU_EXIT" to="." method="_on_bu_exit_pressed"]

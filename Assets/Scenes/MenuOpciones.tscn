@@ -129,10 +129,10 @@ script = ExtResource("8_b41o8")
 stream = ExtResource("9_3l6tf")
 bus = &"SoundsFX"
 
-[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
