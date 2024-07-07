@@ -2,7 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctpm15fspvrh8"
+ feature/Menu_Inicio
+uid="uid://dv0257iq1pj0i"
+ release
 path="res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"
 metadata={
 "vram_texture": false

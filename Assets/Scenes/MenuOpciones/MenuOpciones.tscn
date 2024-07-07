@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=3 uid="uid://b61rog7oe2n2k"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/MenuOpciones.gd" id="1_lxtyl"]
+[ext_resource type="Texture2D" uid="uid://beqxeyxb2ymiu" path="res://Assets/Sprites/Fondo_Configuracion.jpg" id="2_3ecxw"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/FondoConfiguracion.gd" id="3_2hdlg"]
+[ext_resource type="FontFile" uid="uid://bx5wrvmbi735q" path="res://Fonts/MADE Waffle Soft PERSONAL USE.otf" id="4_xsn3x"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Master.gd" id="7_ub07u"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Music.gd" id="8_jeota"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/SoundFX.gd" id="9_b1m41"]
+[ext_resource type="AudioStream" uid="uid://bik80a0oqqihn" path="res://Assets/Sounds/BotonMenú__alirabiei__digging-dirt.mp3" id="9_sb756"]
+[ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Button.gd" id="15_4movy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_arlll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i5ak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xicsi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_daowj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwi8o"]
+
+[node name="MenuOpciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lxtyl")
+
+[node name="FondoConfiguracion" type="Sprite2D" parent="."]
+position = Vector2(640.063, 360)
+scale = Vector2(0.418478, 0.418118)
+texture = ExtResource("2_3ecxw")
+script = ExtResource("3_2hdlg")
+
+[node name="Lab_Audio" type="Label" parent="."]
+layout_mode = 0
+offset_left = 722.0
+offset_top = 146.0
+offset_right = 1167.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 50
+text = "AUDIO"
+horizontal_alignment = 1
+
+[node name="AudioBox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 113.0
+offset_right = 1108.0
+offset_bottom = 530.0
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AudioBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Master2" type="Label" parent="AudioBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 22
+text = "Master"
+script = ExtResource("7_ub07u")
+
+[node name="Master" type="HSlider" parent="AudioBox/VBoxContainer2"]
+modulate = Color(0.431373, 0.686275, 0.305882, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+clip_contents = true
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="Music2" type="Label" parent="AudioBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 22
+text = "Music"
+script = ExtResource("8_jeota")
+
+[node name="Music" type="HSlider" parent="AudioBox/VBoxContainer2"]
+modulate = Color(0.431373, 0.686275, 0.305882, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="SoundFX2" type="Label" parent="AudioBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 22
+text = "SoundFX"
+script = ExtResource("9_b1m41")
+
+[node name="SoundFX" type="HSlider" parent="AudioBox/VBoxContainer2"]
+modulate = Color(0.431373, 0.686275, 0.305882, 1)
+material = SubResource("CanvasItemMaterial_arlll")
+layout_mode = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 598.0
+offset_right = 1097.0
+offset_bottom = 684.0
+theme_override_colors/font_color = Color(0.215686, 0.192157, 0.545098, 1)
+theme_override_colors/font_pressed_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_colors/font_hover_color = Color(0.431373, 0.74902, 0.215686, 1)
+theme_override_fonts/font = ExtResource("4_xsn3x")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0i5ak")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xicsi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_daowj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fwi8o")
+text = "ATRAS"
+script = ExtResource("15_4movy")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_sb756")
+bus = &"SoundsFX"
+
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

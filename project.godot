@@ -11,18 +11,37 @@ config_version=5
 [application]
 
 config/name="EnsFormiguen"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[display]
+ feature/Menu_Inici0
+[audio]
+
+buses/default_bus_layout="res://Assets/Sounds/Masterizador.tres"
+
+[autoload]
+
+ControlMusica="*res://Assets/Scenes/Música/ControlMusica.tscn"
+
+
+
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+ feature/Menu_Inicio
+mouse_cursor/custom_image="res://Assets/Sprites/cursor 3.png"
+=======
+ release
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Assets/Language/Translate - Hoja 1 (10).es.translation", "res://Assets/Language/Translate - Hoja 1 (10).ca.translation")
 
 [rendering]
 
