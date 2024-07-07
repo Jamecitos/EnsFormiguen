@@ -12,17 +12,18 @@ extends TextureRect
 
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const corduraGanada = 30
-var x = 55
+var x = 65
 var y = 55
 var secuenciaJugador = []
 var secuenciaEnem = []
 
+@onready var sorollBotonsCombat:AudioStreamPlayer = $"../../../botonsCombat"
 
 
 
 func _on_texture_button_1_button_down():
 	_botonPulsado(texturaBoton1.texture_normal)
-
+	sorollBotonsCombat.play()
 
 func _on_texture_button_2_button_down():
 	_botonPulsado(texturaBoton2.texture_normal)

@@ -27,3 +27,10 @@ func _finalCombat():
 	$Timer.stop()
 	gameOver=true
 	$"../../AudioStreamPlayer".stop()
+
+
+
+
+func _on_boton_pausa_pressed():
+	$"../../MenuPausa".visible=true
+	get_tree().paused=true
