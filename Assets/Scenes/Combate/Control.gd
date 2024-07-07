@@ -4,6 +4,8 @@ extends Control
 #Variables:
 const rapidezContador:float = 0.1
 var gameOver:bool=false
+func _ready():
+	ControlMusica.stop_music()
 
 func _process(_delta):
 	if not $"../../AudioStreamPlayer".playing and not gameOver:
