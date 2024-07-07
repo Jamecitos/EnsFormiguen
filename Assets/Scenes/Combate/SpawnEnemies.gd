@@ -64,6 +64,7 @@ func _liberarEnemigo():
 		$"../CanvasLayer/Control"._victoria()
 		get_parent().get_parent().get_child(0).get_child(2).nAnts=tamanyGrupFormigues
 		#print(get_parent().get_parent().get_child(0).name)
+		ControlMusica.play_music_tunel()
 		get_parent().remove_child($"../")
 		$"../".call_deferred("free")
 

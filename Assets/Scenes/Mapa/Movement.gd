@@ -11,6 +11,7 @@ const TUTORIAL_SOLDADO = preload("res://Assets/Scenes/CInematica/tutorial_soldad
 const TUTORIAL_DRON = preload("res://Assets/Scenes/CInematica/tutorial_dron.tscn")
 
 func _ready():
+	ControlMusica.play_music_tunel()
 	for child in get_parent().get_children():
 		if child is Location:
 			locations.append(child)
@@ -24,6 +25,7 @@ func _physics_process(delta):
 		if(location is cuevita):
 			if(!location.has_been_pressed):
 				if (location.global_position + location.size*.5).distance_to(global_position) < 3:
+					ControlMusica.stop_music_tunel()
 					if(location.tuto1):
 						tuto1(location)
 						location.has_been_pressed = true
