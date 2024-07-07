@@ -27,7 +27,6 @@ Global="*res://Assets/Scenes/MenuOpciones/global.tscn"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 feature/Menu_Iniciomouse_cursor/custom_image="res://Assets/Sprites/cursor 3.png"
-ControlMusica="*res://Assets/Scenes/ControlMusica.tscn"
 
 [display]
 
