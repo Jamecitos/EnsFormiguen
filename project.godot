@@ -41,7 +41,7 @@ version_control/autoload_on_startup=true
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Assets/Language/Translate - Hoja 1 (10).es.translation", "res://Assets/Language/Translate - Hoja 1 (10).ca.translation")
+locale/translations=PackedStringArray("res://Assets/Language/Translate - Hoja 1.ca.translation", "res://Assets/Language/Translate - Hoja 1.es.translation")
 
 [rendering]
 

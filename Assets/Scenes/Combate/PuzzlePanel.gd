@@ -4,7 +4,7 @@ extends Container
 #Variables
 const SIMBOLO = preload("res://Assets/Scenes/Combate/simbolo.tscn")
 const maxCadenaSimbols:int=15
-var llargadaSecuencia=[7]
+var llargadaSecuencia=[3]
 @onready var controlEnemics = $"../../../SpawnEnemies"
 
 var secuenciaEnemigo = []

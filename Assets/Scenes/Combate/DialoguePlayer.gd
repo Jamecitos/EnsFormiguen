@@ -2,18 +2,17 @@ extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
-var repositorioFrasesJugadorInicio=["Definitivamente \n no tienes razón"]
-var repositorioFrasesJugadorFinal=[tr("txt_catalan")]
+var repositorioFrasesJugadorInicio=["Definitivamente \nno tienes razón..."]
+var repositorioFrasesJugadorFinal=["Ya decía yo"]
 
-func _ready():
-	TranslationServer.set_locale("ca")
+
 
 func _fraseNuevaJugadorInicio():
-	repositorioFrasesJugadorInicio.shuffle()
+	
 	$Label.text=repositorioFrasesJugadorInicio[0]
 
 func _fraseNuevaJugadorFinal():
-	repositorioFrasesJugadorFinal.shuffle()
+	
 	$Label.text=repositorioFrasesJugadorFinal[0]
 
 

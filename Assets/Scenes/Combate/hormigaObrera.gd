@@ -12,14 +12,14 @@ const signSprite2 = preload("res://Assets/Sprites/UI/iconos/crazy.png")
 const signSprite3 = preload("res://Assets/Sprites/UI/iconos/flor.png")
 const signSprite4 = preload("res://Assets/Sprites/UI/iconos/hoja.png")
 const vocabulario = [signSprite1, signSprite2, signSprite3, signSprite4]
-
+const UBI:int=350
+var nums=[1]
 
 var frasesDuda = ["Pues ahora \nque lo \ndices...","Esto...","A ver, \nvisto asi..."]
-var frasesEntrada = ["Los osos \nhormiguero \nno esisten","¡Las moscas\n nos fumigan!","Esa miel \nestaba \ndeliciosa..."]
+var frasesEntrada = ["Los osos \nhormiguero \nno existen","¡Las moscas\n nos fumigan!","Esa miel \nestaba \ndeliciosa..."]
 @onready var label = $DialogueEnemy/Label
 
 #to-do sonidos propios
-
 
 func _ready():
 	_dialogoEntrada()

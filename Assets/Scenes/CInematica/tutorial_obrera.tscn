@@ -1,0 +1,228 @@
+[gd_scene load_steps=20 format=3 uid="uid://cqpvjmy0dggj8"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/CInematica/tutorial_obrera.gd" id="1_lcsb2"]
+[ext_resource type="Texture2D" uid="uid://5tetfmsrf7u" path="res://Assets/Scenes/CInematica/Cinemarica Alien.png" id="2_63o0q"]
+[ext_resource type="Texture2D" uid="uid://bml3c6oagoboo" path="res://Assets/Scenes/CInematica/fondo TUTORIAL COMBATE.jpg" id="2_niijr"]
+[ext_resource type="Texture2D" uid="uid://bmn7pca2un66c" path="res://Assets/Scenes/CInematica/Combate Anthony_2.png" id="3_cr6vg"]
+[ext_resource type="Texture2D" uid="uid://8nabg4hbwueb" path="res://Assets/Scenes/CInematica/Enemigo Obrera.png" id="4_dex7r"]
+[ext_resource type="Texture2D" uid="uid://cgtv5yj0cuun5" path="res://Assets/Scenes/CInematica/tablet tutorial.png" id="5_vx4kl"]
+[ext_resource type="Texture2D" uid="uid://trngg3mayj3j" path="res://Assets/Scenes/CInematica/barra tiempo tutorial.png" id="6_7ke7e"]
+[ext_resource type="Texture2D" uid="uid://qgga2nrqorqp" path="res://Assets/Scenes/CInematica/globo simbolos tuto.png" id="7_wcyry"]
+[ext_resource type="Texture2D" uid="uid://d3wdbrx5bdpe8" path="res://Assets/Scenes/CInematica/dialogo tutorual anthony hablando.png" id="9_qot51"]
+[ext_resource type="FontFile" uid="uid://bos8uw1x3nmrm" path="res://Assets/Scenes/CInematica/Pixellari.ttf" id="10_6k5us"]
+[ext_resource type="Texture2D" uid="uid://bnr21hul0ntm" path="res://Assets/Scenes/CInematica/dialogo 1 (enemigo).png" id="11_nksc8"]
+[ext_resource type="Texture2D" uid="uid://cb5ramo4ykvp1" path="res://Assets/Scenes/CInematica/BOTON PASAR DIALOGO_1.png" id="12_p6m5w"]
+[ext_resource type="Texture2D" uid="uid://ysbj4s3hoyci" path="res://Assets/Scenes/CInematica/BOTON PASAR DIALOGO_2.png" id="13_jidcj"]
+[ext_resource type="AudioStream" uid="uid://cyti6w1mbvjic" path="res://Assets/Scenes/CInematica/Combate.wav" id="14_w5qmg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tw3l8"]
+line_spacing = 1.0
+font = ExtResource("10_6k5us")
+font_size = 118
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gp3pd"]
+line_spacing = 1.0
+font = ExtResource("10_6k5us")
+font_size = 100
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ntxc"]
+line_spacing = 1.0
+font = ExtResource("10_6k5us")
+font_size = 80
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjpyu"]
+line_spacing = 1.0
+font = ExtResource("10_6k5us")
+font_size = 116
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yy0ca"]
+line_spacing = 1.0
+font = ExtResource("10_6k5us")
+font_size = 148
+font_color = Color(0.215686, 0.192157, 0.545098, 1)
+
+[node name="TutorialObrera" type="Node2D"]
+script = ExtResource("1_lcsb2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.418437, 0.418118)
+texture = ExtResource("2_niijr")
+
+[node name="Santi" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571.375, 625.828)
+scale = Vector2(0.56153, 0.56153)
+texture = ExtResource("2_63o0q")
+
+[node name="Anthony" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(747.75, 588.968)
+scale = Vector2(0.583333, 0.583333)
+texture = ExtResource("3_cr6vg")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(148, 557)
+scale = Vector2(0.385427, 0.385427)
+texture = ExtResource("4_dex7r")
+
+[node name="BottonPanel" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1015, 403)
+scale = Vector2(0.262054, 0.262399)
+texture = ExtResource("5_vx4kl")
+
+[node name="TimeProgressBar" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(644.423, 54.0625)
+scale = Vector2(0.373936, 0.373936)
+texture = ExtResource("6_7ke7e")
+
+[node name="CloudDialogue" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(370.686, 205)
+scale = Vector2(0.200747, 0.166889)
+texture = ExtResource("7_wcyry")
+
+[node name="TextAnthony" type="Sprite2D" parent="."]
+position = Vector2(488.259, 358)
+scale = Vector2(0.22779, 0.22779)
+texture = ExtResource("9_qot51")
+
+[node name="LabelAnthony" type="Label" parent="TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.005
+anchor_right = 0.034
+anchor_bottom = 0.005
+offset_left = -872.26
+offset_top = -439.001
+offset_right = 759.74
+offset_bottom = 114.999
+theme_override_fonts/font = ExtResource("10_6k5us")
+theme_override_font_sizes/font_size = 77
+text = "Una de les
+meves companyes!
+S’han tornat totes igual de
+boges, escolta-la!"
+label_settings = SubResource("LabelSettings_tw3l8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelAnthony2" type="Label" parent="TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.065
+anchor_top = 0.031
+anchor_right = 0.065
+anchor_bottom = 0.031
+offset_left = -872.126
+offset_top = -439.12
+offset_right = 706.874
+offset_bottom = 72.8802
+text = "Esta es una hormiga 
+obrera, tendrás que utilizar
+sus propios argumentos contra ella.
+Tienes que conseguir
+que entre en razón!"
+label_settings = SubResource("LabelSettings_gp3pd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelAnthony3" type="Label" parent="TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.013
+anchor_right = 0.024
+anchor_bottom = 0.013
+offset_left = -871.374
+offset_top = -439.414
+offset_right = 803.626
+offset_bottom = 109.586
+text = "Con nuestra suma inteligencia, podemos
+ver lo que esta hormiga piensa, y usar
+tu super panel (para nada conveniente) para
+generar argumentos y convencerla. Ten
+cuidado no te equivoques, o
+te convencerán ellas…"
+label_settings = SubResource("LabelSettings_0ntxc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelAnthony4" type="Label" parent="TextAnthony"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.043
+anchor_right = 0.018
+anchor_bottom = 0.043
+offset_left = -871.455
+offset_top = -438.816
+offset_right = 815.545
+offset_bottom = 43.1838
+text = "Pero cuidado, se cansarán
+fácilmente de debatir contigo, así
+que aprovecha tu tiempo."
+label_settings = SubResource("LabelSettings_wjpyu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextEnemy" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(505, 364)
+scale = Vector2(0.201521, 0.217213)
+texture = ExtResource("11_nksc8")
+
+[node name="LabelEnemy" type="Label" parent="TextEnemy"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.005
+anchor_right = 0.08
+anchor_bottom = 0.005
+offset_left = -1051.6
+offset_top = -488.276
+offset_right = 743.398
+offset_bottom = 94.7238
+theme_override_fonts/font = ExtResource("10_6k5us")
+theme_override_font_sizes/font_size = 77
+text = "Esa miel nos ha
+hecho estar despiertas!!!
+Vosotros estáis dormidos!"
+label_settings = SubResource("LabelSettings_yy0ca")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1176.0
+offset_top = 622.0
+offset_right = 1613.0
+offset_bottom = 1031.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_p6m5w")
+texture_pressed = ExtResource("13_jidcj")
+
+[node name="MusicaTuto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_w5qmg")
+volume_db = -10.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -12,7 +12,7 @@ const signSprite2 = preload("res://Assets/Sprites/UI/iconos/jeringuilla.png")
 const signSprite3 = preload("res://Assets/Sprites/UI/iconos/saturno.png")
 const signSprite4 = preload("res://Assets/Sprites/UI/iconos/fuego.png")
 const vocabulario = [signSprite1, signSprite2, signSprite3, signSprite4]
-
+const UBI:int=390
 
 
 var frasesDuda = ["Pues ahora \nque lo \ndices...","Esto...","A ver, \nvisto asi..."]
