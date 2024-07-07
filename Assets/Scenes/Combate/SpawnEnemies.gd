@@ -10,7 +10,7 @@ const POSICIO_CHILD_ENEMIC:int = 2
 var enemicsPendents:int = 3
 var recentGenerat:bool = true
 
-var probabilitatTipusFormiga = [1,3]
+var probabilitatTipusFormiga = [1]
 var tamanyGrupFormigues:int =17
 
 var enemigo

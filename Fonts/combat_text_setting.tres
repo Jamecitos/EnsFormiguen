@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://3ftvf8a3fp56"]
+
+[ext_resource type="FontFile" uid="uid://bohqv6l353scf" path="res://Assets/Fonts/Pixellari (1).ttf" id="1_sldwm"]
+
+[resource]
+font = ExtResource("1_sldwm")
+font_size = 20
+font_color = Color(0.215686, 0.192157, 0.545098, 1)

@@ -7,10 +7,10 @@ const nom:String="Gigachad"#repetitiu pero util per evitar problemes al instanci
 var sanity = 120
 
 
-const signSprite1 = preload("res://Assets/Sprites/xbox_button_color_x.png")
-const signSprite2 = preload("res://Assets/Sprites/xbox_button_color_b.png")
-const signSprite3 = preload("res://Assets/Sprites/xbox_button_color_a.png")
-const signSprite4 = preload("res://Assets/Sprites/xbox_button_color_y.png")
+const signSprite1 = preload("res://Assets/Sprites/UI/iconos/hormiga.png")
+const signSprite2 = preload("res://Assets/Sprites/UI/iconos/gusano.png")
+const signSprite3 = preload("res://Assets/Sprites/UI/iconos/ovni.png")
+const signSprite4 = preload("res://Assets/Sprites/UI/iconos/tierra.png")
 const vocabulario = [signSprite1, signSprite2, signSprite3, signSprite4]
 
 

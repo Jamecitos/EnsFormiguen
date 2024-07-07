@@ -7,10 +7,10 @@ const nom:String="Obrera"#repetitiu pero util per evitar problemes al instanciar
 var sanity = 60
 
 
-const signSprite1 = preload("res://Assets/Sprites/xbox_button_color_x.png")
-const signSprite2 = preload("res://Assets/Sprites/xbox_button_color_b.png")
-const signSprite3 = preload("res://Assets/Sprites/xbox_button_color_a.png")
-const signSprite4 = preload("res://Assets/Sprites/xbox_button_color_y.png")
+const signSprite1 = preload("res://Assets/Sprites/UI/iconos/bacteria.png")
+const signSprite2 = preload("res://Assets/Sprites/UI/iconos/crazy.png")
+const signSprite3 = preload("res://Assets/Sprites/UI/iconos/flor.png")
+const signSprite4 = preload("res://Assets/Sprites/UI/iconos/hoja.png")
 const vocabulario = [signSprite1, signSprite2, signSprite3, signSprite4]
 
 

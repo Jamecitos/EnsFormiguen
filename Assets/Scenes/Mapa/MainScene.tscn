@@ -197,6 +197,8 @@ flat = true
 icon_alignment = 1
 script = ExtResource("4_6cb0g")
 enemicsPendents = 2
+probabilitatTipusFormiga = [1]
+llargadaSecuencia = [3, 4]
 covesColindants = [NodePath("../Cueva13"), NodePath("../Cueva9")]
 
 [node name="Cueva15" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
