@@ -1,12 +1,20 @@
-extends Control
+# ControlMusica.gd
+extends Node
 
-var play_music: bool = true
+# Referencia al nodo AudioStreamPlayer
+@onready var musica_menu: AudioStreamPlayer = $MusicaMenu
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass # Inicializar si es necesario
 
+func play_music():
+	if musica_menu:
+		musica_menu.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func stop_music():
+	if musica_menu:
+		musica_menu.stop()
+
+func is_playing() -> bool:
+	return musica_menu and musica_menu.playing
+
