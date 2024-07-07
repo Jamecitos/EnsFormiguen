@@ -1,0 +1,318 @@
+[gd_scene load_steps=22 format=3 uid="uid://btovjhdqxjqmp"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/ProgressBarEnemy.gd" id="2_nkpeu"]
+[ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
+[ext_resource type="Texture2D" uid="uid://bv1wucskxg5cm" path="res://Assets/Sprites/UI/Contador Tiempo.png" id="2_xo1kp"]
+[ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
+[ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/DialoguePlayer.gd" id="3_yo3q0"]
+[ext_resource type="Texture2D" uid="uid://3u7r3fb0uc2w" path="res://Assets/Sprites/botonBase.png" id="4_56nhf"]
+[ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
+[ext_resource type="Texture2D" uid="uid://bgtwlm7wnv46q" path="res://Assets/Sprites/Personajes/Combate/Combate Alien.png" id="12_3t4pb"]
+[ext_resource type="Texture2D" uid="uid://circhyyxkap5b" path="res://Assets/Sprites/UI/Contador Hormigas.png" id="12_438y7"]
+[ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="13_1b2n7"]
+[ext_resource type="Texture2D" uid="uid://cwo483lih4s8n" path="res://Assets/Sprites/Personajes/Combate/Combate Anthony_1.png" id="14_luk0i"]
+[ext_resource type="AudioStream" uid="uid://bd7vuojgxkd2l" path="res://Assets/Sounds/CombateV2.mp3" id="16_ahvp4"]
+[ext_resource type="Texture2D" uid="uid://ctpm15fspvrh8" path="res://Assets/Sprites/Fondo.jpg" id="19_gbruj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3yhc"]
+size = Vector2(219, 252)
+
+[node name="Combat" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b87dd")
+
+[node name="ProgressBarTime" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 25.0
+offset_right = 1250.0
+offset_bottom = 85.0
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control"]
+wait_time = 0.1
+
+[node name="IconBarTime" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 236.0
+offset_bottom = 234.0
+scale = Vector2(0.444321, 0.444321)
+texture = ExtResource("2_xo1kp")
+
+[node name="ProgressBarPlayer" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 642.0
+offset_right = 704.0
+offset_bottom = 698.0
+max_value = 90.0
+show_percentage = false
+
+[node name="ProgressBarEnemy" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 566.0
+offset_right = 363.0
+offset_bottom = 622.0
+max_value = 90.0
+value = 90.0
+show_percentage = false
+script = ExtResource("2_nkpeu")
+
+[node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0.683077, 0.683077, 0.683077, 1)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 107.0
+offset_right = 700.0
+offset_bottom = 223.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="BolasPensamiento" type="TextureRect" parent="CanvasLayer/Control/DialogueBattle"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 126.0
+offset_right = 43.0
+offset_bottom = 151.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialogueBattle/BolasPensamiento"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 32.0
+offset_right = 42.0
+offset_bottom = 57.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="DialoguePlayer2" type="TextureRect" parent="CanvasLayer/Control/DialogueBattle/BolasPensamiento/DialoguePlayer2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 31.0
+offset_right = 42.0
+offset_bottom = 56.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="DialoguePlayer" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0.685835, 0.685835, 0.685835, 1)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 360.0
+offset_right = 550.0
+offset_bottom = 465.0
+texture = SubResource("CanvasTexture_5ghdi")
+script = ExtResource("3_yo3q0")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/DialoguePlayer"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Y cómo
+explicas
+esta pedazo
+de trompa?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0.251745, 0.152084, 0.0121218, 1)
+layout_mode = 0
+offset_left = 723.0
+offset_top = 106.0
+offset_right = 1249.0
+offset_bottom = 698.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="ControlPanel" type="TextureRect" parent="CanvasLayer/Control"]
+self_modulate = Color(0.25098, 0.152941, 0.0117647, 1)
+layout_mode = 0
+offset_left = 728.0
+offset_top = 110.0
+offset_right = 1243.0
+offset_bottom = 571.0
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="TextureButton1" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
+z_index = 1
+layout_mode = 0
+offset_left = 33.0
+offset_top = 28.0
+offset_right = 228.0
+offset_bottom = 225.0
+disabled = true
+texture_normal = ExtResource("2_qq1cc")
+texture_disabled = ExtResource("4_56nhf")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
+z_index = 1
+layout_mode = 0
+offset_left = 285.0
+offset_top = 28.0
+offset_right = 480.0
+offset_bottom = 225.0
+disabled = true
+texture_normal = ExtResource("3_n1mf3")
+texture_disabled = ExtResource("4_56nhf")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
+z_index = 1
+layout_mode = 0
+offset_left = 33.0
+offset_top = 256.0
+offset_right = 228.0
+offset_bottom = 453.0
+disabled = true
+texture_normal = ExtResource("4_apb6d")
+texture_disabled = ExtResource("4_56nhf")
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
+z_index = 1
+layout_mode = 0
+offset_left = 285.0
+offset_top = 256.0
+offset_right = 480.0
+offset_bottom = 453.0
+disabled = true
+texture_normal = ExtResource("3_gga02")
+texture_disabled = ExtResource("4_56nhf")
+stretch_mode = 0
+
+[node name="ControlPanel2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 580.0
+offset_right = 1243.0
+offset_bottom = 694.0
+script = ExtResource("2_iolq6")
+
+[node name="PuzzlePanel" type="Container" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 115.0
+offset_right = 692.0
+offset_bottom = 216.0
+script = ExtResource("2_2sw2p")
+
+[node name="ContadorTamanyGrup" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -559.0
+offset_top = 661.0
+offset_right = -519.0
+offset_bottom = 684.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "10"
+horizontal_alignment = 1
+
+[node name="FonsContador" type="TextureRect" parent="CanvasLayer/Control/ContadorTamanyGrup"]
+modulate = Color(0.688595, 0.688595, 0.688595, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -26.5
+offset_right = 640.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0987675, 0.461164)
+texture = SubResource("CanvasTexture_5ghdi")
+
+[node name="ContadorHormigas" type="Sprite2D" parent="CanvasLayer/Control/ContadorTamanyGrup"]
+position = Vector2(-37, 11.0001)
+scale = Vector2(0.356534, 0.356534)
+texture = ExtResource("12_438y7")
+
+[node name="SpawnEnemies" type="Area2D" parent="."]
+position = Vector2(-165, 425)
+script = ExtResource("9_3vtxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnEnemies"]
+shape = SubResource("RectangleShape2D_e3yhc")
+
+[node name="Timer" type="Timer" parent="SpawnEnemies"]
+wait_time = 0.01
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(502, 553)
+scale = Vector2(0.22089, 0.218681)
+texture = ExtResource("12_3t4pb")
+script = ExtResource("11_2e5da")
+
+[node name="ANTthonySprite" type="Sprite2D" parent="."]
+position = Vector2(624, 552)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("14_luk0i")
+
+[node name="Victoria" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(382, 418)
+scale = Vector2(3.5625, 2.26563)
+texture = ExtResource("13_1b2n7")
+
+[node name="Derrota" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(376.5, 433.5)
+scale = Vector2(1.53906, 2.14844)
+texture = ExtResource("13_1b2n7")
+flip_v = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_ahvp4")
+autoplay = true
+
+[node name="cooldownError" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -7
+position = Vector2(639, 359)
+scale = Vector2(1.29637, 1.04073)
+texture = ExtResource("19_gbruj")
+
+[connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton1" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_1_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
+[connection signal="secuenciaAcertada" from="CanvasLayer/Control/ControlPanel2" to="CanvasLayer/Control/DialoguePlayer" method="_on_control_panel_2_secuencia_acertada"]
+[connection signal="codigoListo" from="CanvasLayer/Control/PuzzlePanel" to="CanvasLayer/Control/ControlPanel2" method="_on_puzzle_panel_codigo_listo"]
+[connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/PuzzlePanel" method="_on_spawn_enemies_señal_hormiga"]
+[connection signal="switchEnableBotons" from="SpawnEnemies" to="CanvasLayer/Control/ControlPanel2" method="_on_spawn_enemies_switch_enable_botons"]
+[connection signal="timeout" from="SpawnEnemies/Timer" to="SpawnEnemies" method="_on_timer_timeout"]
+[connection signal="timeout" from="cooldownError" to="CanvasLayer/Control/ControlPanel2" method="_on_cooldown_error_timeout"]

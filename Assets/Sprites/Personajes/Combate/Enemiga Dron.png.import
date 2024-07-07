@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
- feature/Menu_Inicio
-uid="uid://dv0257iq1pj0i"
- release
-path="res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"
+uid="uid://l616gvmr260q"
+path="res://.godot/imported/Enemiga Dron.png-8cdae9a7fa11aee2281b0e03eecec16b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fondo.jpg"
-dest_files=["res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"]
+source_file="res://Assets/Sprites/Personajes/Combate/Enemiga Dron.png"
+dest_files=["res://.godot/imported/Enemiga Dron.png-8cdae9a7fa11aee2281b0e03eecec16b.ctex"]
 
 [params]
 

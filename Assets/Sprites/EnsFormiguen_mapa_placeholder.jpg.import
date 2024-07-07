@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
- feature/Menu_Inicio
-uid="uid://dv0257iq1pj0i"
- release
-path="res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"
+uid="uid://d1s7ehekowr22"
+path="res://.godot/imported/EnsFormiguen_mapa_placeholder.jpg-45a2c34f0484e87673cac22313625b1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fondo.jpg"
-dest_files=["res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"]
+source_file="res://Assets/Sprites/EnsFormiguen_mapa_placeholder.jpg"
+dest_files=["res://.godot/imported/EnsFormiguen_mapa_placeholder.jpg-45a2c34f0484e87673cac22313625b1e.ctex"]
 
 [params]
 

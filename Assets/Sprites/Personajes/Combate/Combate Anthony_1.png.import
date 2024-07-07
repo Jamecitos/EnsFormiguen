@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
- feature/Menu_Inicio
-uid="uid://dv0257iq1pj0i"
- release
-path="res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"
+uid="uid://cwo483lih4s8n"
+path="res://.godot/imported/Combate Anthony_1.png-61e8e3d0d6040f4cf2f5b7381e16b65a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fondo.jpg"
-dest_files=["res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"]
+source_file="res://Assets/Sprites/Personajes/Combate/Combate Anthony_1.png"
+dest_files=["res://.godot/imported/Combate Anthony_1.png-61e8e3d0d6040f4cf2f5b7381e16b65a.ctex"]
 
 [params]
 

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cithef7fgjfsd"]
+
+[ext_resource type="Texture2D" uid="uid://l616gvmr260q" path="res://Assets/Sprites/Personajes/Combate/Enemiga Dron.png" id="1_6kqf3"]
+[ext_resource type="Script" path="res://Assets/Scenes/Combate/hormigaGigachad.gd" id="2_m2ckc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s7rcf"]
+
+[node name="Gigachad" type="Sprite2D"]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("1_6kqf3")
+script = ExtResource("2_m2ckc")
+
+[node name="DialogueEnemy" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.688595, 0.688595, 0.688595, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.5
+offset_top = -1349.0
+offset_right = 244.5
+offset_bottom = -1239.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5.004)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("CanvasTexture_s7rcf")
+
+[node name="Label" type="Label" parent="DialogueEnemy"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Los osos
+hormiguero
+no esisten"
+horizontal_alignment = 1
+vertical_alignment = 1

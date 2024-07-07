@@ -2,18 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
- feature/Menu_Inicio
-uid="uid://dv0257iq1pj0i"
- release
-path="res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"
+uid="uid://bv1wucskxg5cm"
+path="res://.godot/imported/Contador Tiempo.png-7b60a0070a97d6602d3abacdbc0b7047.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Fondo.jpg"
-dest_files=["res://.godot/imported/Fondo.jpg-04bb1734e21af80164df60683a31d8ae.ctex"]
+source_file="res://Assets/Sprites/UI/Contador Tiempo.png"
+dest_files=["res://.godot/imported/Contador Tiempo.png-7b60a0070a97d6602d3abacdbc0b7047.ctex"]
 
 [params]
 
