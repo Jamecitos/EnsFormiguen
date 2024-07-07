@@ -1,24 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=13 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ProgressBarEnemy.gd" id="2_nkpeu"]
-[ext_resource type="Texture2D" uid="uid://bg7ve2bdoccia" path="res://Assets/Sprites/xbox_button_color_x.png" id="2_qq1cc"]
-[ext_resource type="Texture2D" uid="uid://bv1wucskxg5cm" path="res://Assets/Sprites/UI/Contador Tiempo.png" id="2_xo1kp"]
-[ext_resource type="Texture2D" uid="uid://ctmy6dr8p3jmr" path="res://Assets/Sprites/xbox_button_color_a.png" id="3_gga02"]
-[ext_resource type="Texture2D" uid="uid://oe5sxrx2i1og" path="res://Assets/Sprites/xbox_button_color_b.png" id="3_n1mf3"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/DialoguePlayer.gd" id="3_yo3q0"]
-[ext_resource type="Texture2D" uid="uid://3u7r3fb0uc2w" path="res://Assets/Sprites/botonBase.png" id="4_56nhf"]
-[ext_resource type="Texture2D" uid="uid://blddsf1vvrp7s" path="res://Assets/Sprites/xbox_button_color_y.png" id="4_apb6d"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
+[ext_resource type="AudioStream" uid="uid://bd7vuojgxkd2l" path="res://Assets/Sounds/CombateV2.mp3" id="9_hhq0p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
-[ext_resource type="Texture2D" uid="uid://bgtwlm7wnv46q" path="res://Assets/Sprites/Personajes/Combate/Combate Alien.png" id="12_3t4pb"]
-[ext_resource type="Texture2D" uid="uid://circhyyxkap5b" path="res://Assets/Sprites/UI/Contador Hormigas.png" id="12_438y7"]
 [ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="13_1b2n7"]
-[ext_resource type="Texture2D" uid="uid://cwo483lih4s8n" path="res://Assets/Sprites/Personajes/Combate/Combate Anthony_1.png" id="14_luk0i"]
-[ext_resource type="AudioStream" uid="uid://bd7vuojgxkd2l" path="res://Assets/Sounds/CombateV2.mp3" id="16_ahvp4"]
-[ext_resource type="Texture2D" uid="uid://ctpm15fspvrh8" path="res://Assets/Sprites/Fondo.jpg" id="19_gbruj"]
+[ext_resource type="Texture2D" uid="uid://bkjk6lge44ib5" path="res://Assets/Sprites/Fondo.jpg" id="19_gbruj"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ghdi"]
 
@@ -57,7 +48,6 @@ offset_top = 3.0
 offset_right = 236.0
 offset_bottom = 234.0
 scale = Vector2(0.444321, 0.444321)
-texture = ExtResource("2_xo1kp")
 
 [node name="ProgressBarPlayer" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -161,8 +151,6 @@ offset_top = 28.0
 offset_right = 228.0
 offset_bottom = 225.0
 disabled = true
-texture_normal = ExtResource("2_qq1cc")
-texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -173,8 +161,6 @@ offset_top = 28.0
 offset_right = 480.0
 offset_bottom = 225.0
 disabled = true
-texture_normal = ExtResource("3_n1mf3")
-texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -185,8 +171,6 @@ offset_top = 256.0
 offset_right = 228.0
 offset_bottom = 453.0
 disabled = true
-texture_normal = ExtResource("4_apb6d")
-texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -197,8 +181,6 @@ offset_top = 256.0
 offset_right = 480.0
 offset_bottom = 453.0
 disabled = true
-texture_normal = ExtResource("3_gga02")
-texture_disabled = ExtResource("4_56nhf")
 stretch_mode = 0
 
 [node name="ControlPanel2" type="TextureRect" parent="CanvasLayer/Control"]
@@ -253,7 +235,6 @@ texture = SubResource("CanvasTexture_5ghdi")
 [node name="ContadorHormigas" type="Sprite2D" parent="CanvasLayer/Control/ContadorTamanyGrup"]
 position = Vector2(-37, 11.0001)
 scale = Vector2(0.356534, 0.356534)
-texture = ExtResource("12_438y7")
 
 [node name="SpawnEnemies" type="Area2D" parent="."]
 position = Vector2(-165, 425)
@@ -270,13 +251,11 @@ wait_time = 0.01
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(502, 553)
 scale = Vector2(0.22089, 0.218681)
-texture = ExtResource("12_3t4pb")
 script = ExtResource("11_2e5da")
 
 [node name="ANTthonySprite" type="Sprite2D" parent="."]
 position = Vector2(624, 552)
 scale = Vector2(0.22, 0.22)
-texture = ExtResource("14_luk0i")
 
 [node name="Victoria" type="Sprite2D" parent="."]
 visible = false
@@ -292,7 +271,7 @@ texture = ExtResource("13_1b2n7")
 flip_v = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_ahvp4")
+stream = ExtResource("9_hhq0p")
 autoplay = true
 
 [node name="cooldownError" type="Timer" parent="."]

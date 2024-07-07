@@ -14,23 +14,26 @@ config/name="EnsFormiguen"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+"feature/Menu_Inici0[audio]buses/default_bus_layout"="res://Assets/Sounds/Masterizador.tres"
 
- feature/Menu_Inici0
 [audio]
 
 buses/default_bus_layout="res://Assets/Sounds/Masterizador.tres"
 
 [autoload]
 
+window="*<null>"
 ControlMusica="*res://Assets/Scenes/Música/ControlMusica.tscn"
+Global="*res://Assets/Scenes/MenuOpciones/global.tscn"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+feature/Menu_Iniciomouse_cursor/custom_image="res://Assets/Sprites/cursor 3.png"
 
-
+[display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
- feature/Menu_Inicio
 mouse_cursor/custom_image="res://Assets/Sprites/cursor 3.png"
-
 
 [editor]
 

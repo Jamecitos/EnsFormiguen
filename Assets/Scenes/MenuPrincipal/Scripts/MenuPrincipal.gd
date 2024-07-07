@@ -8,13 +8,14 @@ extends Control
 @onready var audio: AudioStreamPlayer = $ButtonSound
 
 func _ready():
-	# Reproduce la música del menú. Asume que hay un nodo de audio llamado 'MusicaMenu'.
-	ControlMusica.play_music = true
+	# Reproduce la música del menú. 
+	if not ControlMusica.is_playing():
+		ControlMusica.play_music()
 	
 func _on_play_pressed():
 	# Cambia la escena actual a 'Combate.tscn'. Se asume que este archivo existe en el directorio 'res://'.
 	audio.play()
-	get_tree().change_scene_to_file("res://Combate.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scenes/Combate/combat.tscn")
 	
 
 func _on_exit_pressed():
