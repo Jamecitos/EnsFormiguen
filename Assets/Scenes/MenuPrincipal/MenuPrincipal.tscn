@@ -143,10 +143,4 @@ bus = &"SoundsFX"
 [connection signal="pressed" from="BU_PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="BU_OPTIONS" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="BU_CATALAN" to="." method="_on_bu_catalan_pressed"]
-<<<<<<< HEAD
-[connection signal="pressed" from="BU_CATALAN" to="." method="_on_language_pressed"]
-[connection signal="pressed" from="BU_EXIT" to="." method="_on_exit_pressed"]
-=======
->>>>>>> 34d12c2ff1adcdfe086f0430652b0704295dc304
-[connection signal="pressed" from="BU_EXIT" to="." method="_on_bu_exit_pressed"]
 [connection signal="pressed" from="BU_EXIT" to="." method="_on_exit_pressed"]

@@ -34,11 +34,7 @@ navigation_polygon = SubResource("NavigationPolygon_4fm0f")
 
 [node name="Player2" type="CharacterBody2D" parent="MapArea"]
 z_index = -6
-<<<<<<< HEAD
-position = Vector2(657, 328)
-=======
 position = Vector2(299, 3605)
->>>>>>> 34d12c2ff1adcdfe086f0430652b0704295dc304
 scale = Vector2(0.43615, 0.43615)
 script = ExtResource("2_tdass")
 
@@ -74,12 +70,8 @@ icon_alignment = 1
 script = ExtResource("4_6cb0g")
 enemicsPendents = 1
 probabilitatTipusFormiga = [1]
-<<<<<<< HEAD
 llargadaSecuencia = [4]
-=======
-llargadaSecuencia = [3, 4]
 tuto1 = true
->>>>>>> 34d12c2ff1adcdfe086f0430652b0704295dc304
 covesColindants = [NodePath("../Intersection1"), NodePath("../Intersection2"), NodePath("../Cueva8")]
 
 [node name="Cueva7" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
@@ -225,13 +217,10 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
-<<<<<<< HEAD
 enemicsPendents = 1
 probabilitatTipusFormiga = [2]
 llargadaSecuencia = [4]
-=======
 tuto2 = true
->>>>>>> 34d12c2ff1adcdfe086f0430652b0704295dc304
 covesColindants = [NodePath("../Intersection4"), NodePath("../Intersection5")]
 
 [node name="Cueva16" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
@@ -424,14 +413,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
-<<<<<<< HEAD
 enemicsPendents = 1
 probabilitatTipusFormiga = [3]
 llargadaSecuencia = [null, null, null, null]
 covesColindants = [NodePath("../Cueva32"), NodePath("../Cueva31"), NodePath("../Cueva30")]
-=======
 tuto3 = true
->>>>>>> 34d12c2ff1adcdfe086f0430652b0704295dc304
 
 [node name="Cueva30" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 offset_left = -212.0
@@ -708,17 +694,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_1602k")
 flat = true
 script = ExtResource("4_6cb0g")
-<<<<<<< HEAD
 enemicsPendents = 10
 probabilitatTipusFormiga = [1, 1, 1, 2, 2, 2, 3, 3, 3, 3]
 llargadaSecuencia = [5, 6, 7]
 covesColindants = [NodePath("../Cueva17")]
-=======
-enemicsPendents = 1
-probabilitatTipusFormiga = [1]
-llargadaSecuencia = [7]
 boss = true
->>>>>>> 34d12c2ff1adcdfe086f0430652b0704295dc304
 
 [node name="Intersection1" type="Button" parent="MapArea" node_paths=PackedStringArray("covesColindants")]
 anchors_preset = 8
