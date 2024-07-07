@@ -27,6 +27,8 @@ signal dialogoPlayerFinal
 func _ready():
 	_generarEnemigo()
 	_actualitzarTamanyGrup()
+	ControlMusica.stop_music()
+	ControlMusica.stop_music_mapa()
 
 func _process(_delta):
 	pass

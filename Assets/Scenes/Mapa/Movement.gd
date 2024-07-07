@@ -1,16 +1,19 @@
 extends CharacterBody2D
+@onready var MusicaFondo: AudioStreamPlayer = $"../../MusicaFondo"
 
 var locations: Array[Location]
 var speed = 200
 var nAnts: int =1
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var combat_scene = preload("res://Assets/Scenes/Combate/combat.tscn")
+@onready var audio: AudioStreamPlayer = $"../../ButtonSound"
 const BOSS = preload("res://Assets/Scenes/Combate/boss.tscn")
 const TUTORIAL_OBRERA = preload("res://Assets/Scenes/CInematica/tutorial_obrera.tscn")
 const TUTORIAL_SOLDADO = preload("res://Assets/Scenes/CInematica/tutorial_soldado.tscn")
 const TUTORIAL_DRON = preload("res://Assets/Scenes/CInematica/tutorial_dron.tscn")
 
 func _ready():
+	ControlMusica.play_music_mapa()
 	for child in get_parent().get_children():
 		if child is Location:
 			locations.append(child)
@@ -23,7 +26,11 @@ func _physics_process(delta):
 			enable_colindant(location)
 		if(location is cuevita):
 			if(!location.has_been_pressed):
+	
 				if (location.global_position + location.size*.5).distance_to(global_position) < 3:
+					ControlMusica.stop_music_mapa()
+					create_combat(location)
+					location.has_been_pressed = true
 					if(location.tuto1):
 						tuto1(location)
 						location.has_been_pressed = true
@@ -46,6 +53,8 @@ func _physics_process(delta):
 	
 	if target_position.distance_to(global_position) > 2:
 		velocity = direction.normalized() * speed
+		look_at(target_position)
+		rotate(-1.57)
 		move_and_slide()
 
 func create_combat(cueva:cuevita):

@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://d3d25ld7qaa2c"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/MenuOpciones.gd" id="1_8k5jo"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Fondo_Configuracion.jpg" id="2_0c4hq"]
+[ext_resource type="Texture2D" uid="uid://beqxeyxb2ymiu" path="res://Assets/Sprites/Fondo_Configuracion.jpg" id="2_0c4hq"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/FondoConfiguracion.gd" id="3_mr8m3"]
-[ext_resource type="FontFile" path="res://Fonts/MADE Waffle Soft PERSONAL USE.otf" id="4_x2taa"]
+[ext_resource type="FontFile" uid="uid://bx5wrvmbi735q" path="res://Fonts/MADE Waffle Soft PERSONAL USE.otf" id="4_x2taa"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Master.gd" id="5_ujbsy"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Music.gd" id="6_03fhd"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/SoundFX.gd" id="7_uilb6"]
 [ext_resource type="Script" path="res://Assets/Scenes/MenuOpciones/Scripts/Button.gd" id="8_b41o8"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/BotonMenú__alirabiei__digging-dirt.mp3" id="9_3l6tf"]
+[ext_resource type="AudioStream" uid="uid://bik80a0oqqihn" path="res://Assets/Sounds/BotonMenú__alirabiei__digging-dirt.mp3" id="9_3l6tf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_arlll"]
 
@@ -129,10 +129,10 @@ script = ExtResource("8_b41o8")
 stream = ExtResource("9_3l6tf")
 bus = &"SoundsFX"
 
-[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="AudioBox/VBoxContainer2/SoundFX" to="." method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

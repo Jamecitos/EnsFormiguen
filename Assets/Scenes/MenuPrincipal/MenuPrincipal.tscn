@@ -137,12 +137,10 @@ script = ExtResource("8_qv7fk")
 stream = ExtResource("9_g1csa")
 bus = &"SoundsFX"
 
-[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_bu_catalan_pressed"]
 [connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_bu_castellano_pressed"]
+[connection signal="pressed" from="BU_CASTELLANO" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="BU_OPTIONS" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="BU_CATALAN" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="BU_CATALAN" to="." method="_on_bu_catalan_pressed"]
-[connection signal="pressed" from="BU_EXIT" to="." method="_on_bu_exit_pressed"]
 [connection signal="pressed" from="BU_EXIT" to="." method="_on_exit_pressed"]
