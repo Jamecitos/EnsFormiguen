@@ -18,6 +18,8 @@ var secuenciaJugador = []
 var secuenciaEnem = []
 
 @onready var sorollBotonsCombat:AudioStreamPlayer = $"../../../botonsCombat"
+@onready var puzzle_exito = $"../../../PuzzleExito"
+@onready var puzzle_fallo = $"../../../PuzzleFallo"
 
 
 
@@ -27,15 +29,15 @@ func _on_texture_button_1_button_down():
 
 func _on_texture_button_2_button_down():
 	_botonPulsado(texturaBoton2.texture_normal)
-
+	sorollBotonsCombat.play()
 
 func _on_texture_button_3_button_down():
 	_botonPulsado(texturaBoton3.texture_normal)
-
+	sorollBotonsCombat.play()
 
 func _on_texture_button_4_button_down():
 	_botonPulsado(texturaBoton4.texture_normal)
-
+	sorollBotonsCombat.play()
 
 func _añadirSimbolo(textura):
 	var simbolo2 = SIMBOLO.instantiate()
@@ -72,6 +74,7 @@ func _comparacionSecuencias():
 func _sequenciaCompletada():
 	var barraEnemigo = $"../ProgressBarEnemy"
 	barraEnemigo.value -= corduraGanada
+	puzzle_exito.play()
 	_resetSecuenciaJugador()
 	#controlEnemigos.enemigo._dialogoDuda()
 	
@@ -88,6 +91,7 @@ func _sequenciaCompletada():
 
 func _sequenciaFallida():
 	var barraPlayer = $"../ProgressBarPlayer"
+	puzzle_fallo.play()
 	barraPlayer.value += corduraGanada
 	#controlEnemigos.enemigo._dialogoEntrada()
 	_switchDisabledButton()

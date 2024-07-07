@@ -6,15 +6,17 @@
 [ext_resource type="LabelSettings" uid="uid://3ftvf8a3fp56" path="res://Fonts/combat_text_setting.tres" id="4_k7jm0"]
 
 [node name="Soldado" type="Sprite2D"]
+position = Vector2(-177, -17)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("1_re31t")
 script = ExtResource("2_0mew1")
 
 [node name="DialogueEnemy" type="TextureRect" parent="."]
-offset_left = 470.0
-offset_top = -1350.0
-offset_right = 2574.0
-offset_bottom = -374.0
+visible = false
+offset_left = 440.0
+offset_top = -1400.0
+offset_right = 2544.0
+offset_bottom = -424.0
 scale = Vector2(0.993, 0.993)
 texture = ExtResource("3_ccwgm")
 

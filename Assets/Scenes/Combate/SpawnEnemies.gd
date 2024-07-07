@@ -7,8 +7,11 @@ const HORMIGA_SOLDADO = preload("res://Assets/Scenes/Combate/hormigaSoldado.tscn
 const HORMIGA_GIGACHAD = preload("res://Assets/Scenes/Combate/hormigaGigachad.tscn")
 @onready var BARRA_ENEMIGO = $"../CanvasLayer/Control/ProgressBarEnemy"
 const POSICIO_CHILD_ENEMIC:int = 2
-var enemicsPendents:int = 3
+var enemicsPendents:int = 1
 var recentGenerat:bool = true
+@onready var aparece_puzzle = $"../AparecePuzzle"
+@onready var ticking_timer = $"../TickingTimer"
+
 
 var probabilitatTipusFormiga = [1]
 var tamanyGrupFormigues:int =17
@@ -59,6 +62,7 @@ func _liberarEnemigo():
 	if enemicsPendents>0:
 		_generarEnemigo()
 	else:
+		ticking_timer.stop()
 		$"../CanvasLayer/Control"._victoria()
 		get_parent().get_parent().get_child(0).get_child(2).nAnts=tamanyGrupFormigues
 		#print(get_parent().get_parent().get_child(0).name)
@@ -85,6 +89,7 @@ func _ocultarPensamiento():
 
 func _mostrarPensamiento():
 	$"../CanvasLayer/Control/DialogueBattle".visible=true
+	aparece_puzzle.play()
 
 func _actualitzarTamanyGrup():
 	$"../CanvasLayer/Control/ContadorTamanyGrup".text=str(tamanyGrupFormigues)
@@ -92,8 +97,9 @@ func _actualitzarTamanyGrup():
 func _on_timer_timeout():#Entra/sale enemigo en combate
 	if recentGenerat:
 		enemigo.position.x += 10
-		#enemigo.rotation+=1.2554 solo activar si se quiere hacer reir al Álvaro
-		if enemigo.position.x >= 350:
+		enemigo.rotation+=1.2554 #solo activar si se quiere hacer reir al Álvaro
+		if enemigo.position.x >= enemigo.UBI:
+			enemigo.rotation =0
 			$Timer.stop()
 			$"../EspacioDialogo".start()
 			enemigo.get_child(0).visible=true

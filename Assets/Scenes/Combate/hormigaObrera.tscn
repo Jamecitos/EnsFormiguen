@@ -11,6 +11,7 @@ texture = ExtResource("1_cpipy")
 script = ExtResource("2_gpaem")
 
 [node name="DialogueEnemy" type="TextureRect" parent="."]
+visible = false
 offset_left = 470.0
 offset_top = -1350.0
 offset_right = 2574.0
@@ -33,3 +34,4 @@ no esisten"
 label_settings = ExtResource("4_c23wp")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
