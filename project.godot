@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EnsFormiguen"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://Assets/Scenes/MenuPrincipal/MenuPrincipal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 "feature/Menu_Inici0[audio]buses/default_bus_layout"="res://Assets/Sounds/Masterizador.tres"

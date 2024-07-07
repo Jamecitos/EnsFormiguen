@@ -2,7 +2,7 @@ extends Control
 
 
 #Variables:
-const rapidezContador:float = 0.1
+const rapidezContador:float = 0.2
 var gameOver:bool=false
 var tictacUp:bool=false
 @onready var ticking_timer = $"../../TickingTimer"
