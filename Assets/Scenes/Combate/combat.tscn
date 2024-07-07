@@ -1,16 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://btovjhdqxjqmp"]
+[gd_scene load_steps=13 format=3 uid="uid://btovjhdqxjqmp"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/Control.gd" id="1_b87dd"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PuzzlePanel.gd" id="2_2sw2p"]
-[ext_resource type="Texture2D" uid="uid://bv1wucskxg5cm" path="res://Assets/Sprites/UI/Contador Tiempo.png" id="2_47i8m"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ControlPanel2.gd" id="2_iolq6"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/ProgressBarEnemy.gd" id="2_nkpeu"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/DialoguePlayer.gd" id="3_yo3q0"]
-[ext_resource type="Texture2D" uid="uid://3u7r3fb0uc2w" path="res://Assets/Sprites/botonBase.png" id="5_1h3ck"]
-[ext_resource type="Texture2D" uid="uid://circhyyxkap5b" path="res://Assets/Sprites/UI/Contador Hormigas.png" id="7_45wvy"]
-[ext_resource type="Texture2D" uid="uid://bgtwlm7wnv46q" path="res://Assets/Sprites/Personajes/Combate/Combate Alien.png" id="7_c7jo5"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/SpawnEnemies.gd" id="9_3vtxa"]
-[ext_resource type="Texture2D" uid="uid://cwo483lih4s8n" path="res://Assets/Sprites/Personajes/Combate/Combate Anthony_1.png" id="9_ffb4p"]
 [ext_resource type="AudioStream" uid="uid://bd7vuojgxkd2l" path="res://Assets/Sounds/CombateV2.mp3" id="9_hhq0p"]
 [ext_resource type="Script" path="res://Assets/Scenes/Combate/PlayerSprite.gd" id="11_2e5da"]
 [ext_resource type="Texture2D" uid="uid://cdcvruoikuo8l" path="res://icon.svg" id="13_1b2n7"]
@@ -53,7 +48,6 @@ offset_top = 3.0
 offset_right = 236.0
 offset_bottom = 234.0
 scale = Vector2(0.444321, 0.444321)
-texture = ExtResource("2_47i8m")
 
 [node name="ProgressBarPlayer" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -76,7 +70,6 @@ show_percentage = false
 script = ExtResource("2_nkpeu")
 
 [node name="DialogueBattle" type="TextureRect" parent="CanvasLayer/Control"]
-visible = false
 modulate = Color(0.683077, 0.683077, 0.683077, 1)
 layout_mode = 0
 offset_left = 26.0
@@ -110,7 +103,6 @@ offset_bottom = 56.0
 texture = SubResource("CanvasTexture_5ghdi")
 
 [node name="DialoguePlayer" type="TextureRect" parent="CanvasLayer/Control"]
-visible = false
 modulate = Color(0.685835, 0.685835, 0.685835, 1)
 layout_mode = 0
 offset_left = 400.0
@@ -159,7 +151,6 @@ offset_top = 28.0
 offset_right = 228.0
 offset_bottom = 225.0
 disabled = true
-texture_disabled = ExtResource("5_1h3ck")
 stretch_mode = 0
 
 [node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -170,7 +161,6 @@ offset_top = 28.0
 offset_right = 480.0
 offset_bottom = 225.0
 disabled = true
-texture_disabled = ExtResource("5_1h3ck")
 stretch_mode = 0
 
 [node name="TextureButton3" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -181,7 +171,6 @@ offset_top = 256.0
 offset_right = 228.0
 offset_bottom = 453.0
 disabled = true
-texture_disabled = ExtResource("5_1h3ck")
 stretch_mode = 0
 
 [node name="TextureButton4" type="TextureButton" parent="CanvasLayer/Control/ControlPanel"]
@@ -192,7 +181,6 @@ offset_top = 256.0
 offset_right = 480.0
 offset_bottom = 453.0
 disabled = true
-texture_disabled = ExtResource("5_1h3ck")
 stretch_mode = 0
 
 [node name="ControlPanel2" type="TextureRect" parent="CanvasLayer/Control"]
@@ -247,7 +235,6 @@ texture = SubResource("CanvasTexture_5ghdi")
 [node name="ContadorHormigas" type="Sprite2D" parent="CanvasLayer/Control/ContadorTamanyGrup"]
 position = Vector2(-37, 11.0001)
 scale = Vector2(0.356534, 0.356534)
-texture = ExtResource("7_45wvy")
 
 [node name="SpawnEnemies" type="Area2D" parent="."]
 position = Vector2(-165, 425)
@@ -264,13 +251,11 @@ wait_time = 0.01
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(502, 553)
 scale = Vector2(0.22089, 0.218681)
-texture = ExtResource("7_c7jo5")
 script = ExtResource("11_2e5da")
 
 [node name="ANTthonySprite" type="Sprite2D" parent="."]
 position = Vector2(624, 552)
 scale = Vector2(0.22, 0.22)
-texture = ExtResource("9_ffb4p")
 
 [node name="Victoria" type="Sprite2D" parent="."]
 visible = false
@@ -299,25 +284,13 @@ position = Vector2(639, 359)
 scale = Vector2(1.29637, 1.04073)
 texture = ExtResource("19_gbruj")
 
-[node name="EspacioDialogo" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
-
-[node name="EspacioDialogoDuda" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
-
 [connection signal="timeout" from="CanvasLayer/Control/Timer" to="CanvasLayer/Control" method="_on_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton1" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_1_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton2" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton3" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_3_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/ControlPanel/TextureButton4" to="CanvasLayer/Control/ControlPanel2" method="_on_texture_button_4_button_down"]
 [connection signal="codigoListo" from="CanvasLayer/Control/PuzzlePanel" to="CanvasLayer/Control/ControlPanel2" method="_on_puzzle_panel_codigo_listo"]
-[connection signal="dialogoPlayerFinal" from="SpawnEnemies" to="CanvasLayer/Control/DialoguePlayer" method="_on_spawn_enemies_dialogo_player_final"]
-[connection signal="dialogoPlayerInicio" from="SpawnEnemies" to="CanvasLayer/Control/DialoguePlayer" method="_on_spawn_enemies_dialogo_player_inicio"]
 [connection signal="señalHormiga" from="SpawnEnemies" to="CanvasLayer/Control/PuzzlePanel" method="_on_spawn_enemies_señal_hormiga"]
 [connection signal="switchEnableBotons" from="SpawnEnemies" to="CanvasLayer/Control/ControlPanel2" method="_on_spawn_enemies_switch_enable_botons"]
 [connection signal="timeout" from="SpawnEnemies/Timer" to="SpawnEnemies" method="_on_timer_timeout"]
 [connection signal="timeout" from="cooldownError" to="CanvasLayer/Control/ControlPanel2" method="_on_cooldown_error_timeout"]
-[connection signal="timeout" from="EspacioDialogo" to="SpawnEnemies" method="_on_espacio_dialogo_timeout"]
-[connection signal="timeout" from="EspacioDialogoDuda" to="SpawnEnemies" method="_on_espacio_dialogo_duda_timeout"]
